@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description or 'Mind Bonanza - Your journey to mindfulness and inner peace begins here' }}">
+    <title>{{ title }} | Mind Bonanza</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP45H8LNWJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KP45H8LNWJ');
+    </script>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    {% include "header.njk" %}
+
+    <main>
+        {{ content | safe }}
+    </main>
+
+    {% include "footer.njk" %}
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
+

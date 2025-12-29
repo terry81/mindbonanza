@@ -1,0 +1,73 @@
+---
+layout: base.njk
+title: Blog
+permalink: /blog/
+---
+
+<section class="blog-listing">
+    <div class="container">
+        <h1 class="page-title">Mindfulness Blog</h1>
+        <p class="page-description">Explore articles on meditation, mindfulness techniques, and inner peace</p>
+
+        <div class="blog-filters">
+            <button class="filter-btn active" data-category="all">All Posts</button>
+            <button class="filter-btn" data-category="Techniques">Techniques</button>
+            <button class="filter-btn" data-category="Science">Science</button>
+            <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
+            <button class="filter-btn" data-category="Beginners">Beginners</button>
+        </div>
+
+        <div class="blog-grid" id="blog-grid">
+            {% for post in collections.posts %}
+            <article class="blog-card" data-category="{{ post.data.category }}">
+                {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-card-image">
+                {% endif %}
+                <div class="blog-card-content">
+                    <span class="blog-category">{{ post.data.category }}</span>
+                    <h3>{{ post.data.title }}</h3>
+                    <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+                    <div class="blog-meta">
+                        <span class="author">{{ post.data.author }}</span>
+                        <span class="date">{{ post.data.date | dateDisplay }}</span>
+                    </div>
+                    {% if post.data.tags %}
+                    <div class="post-tags">
+                        {% for tag in post.data.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <a href="{{ post.url }}" class="read-more">Read More →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+    // Blog filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const blogCards = document.querySelectorAll('.blog-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter cards
+            blogCards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
