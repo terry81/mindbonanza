@@ -69,3 +69,18 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
+# Eleventy output
+_site/
+.nojekyll
+
+# Build caches and tool caches
+.cache/
+.parcel-cache/
+.eslintcache
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Optional editor/workspace files
+*.sublime-workspace

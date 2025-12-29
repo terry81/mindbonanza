@@ -1,0 +1,168 @@
+---
+layout: base.njk
+title: Discover Your Inner Peace
+---
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Welcome to Mind Bonanza</h1>
+        <p>Discover peace, clarity, and mindfulness in your daily life</p>
+        <a href="#meditation" class="cta-button">Start Your Journey</a>
+        <div class="breathing-circle"></div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2 class="section-title">Explore Mindfulness</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧘‍♀️</div>
+                <h3>Guided Meditation</h3>
+                <p>Experience transformative guided meditations designed to bring peace and clarity to your mind.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>Daily Practices</h3>
+                <p>Build sustainable mindfulness habits with our carefully curated daily exercises and routines.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💫</div>
+                <h3>Stress Relief</h3>
+                <p>Learn powerful techniques to manage stress and cultivate inner calm in challenging moments.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Focus & Clarity</h3>
+                <p>Enhance your concentration and mental clarity through proven mindfulness techniques.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">❤️</div>
+                <h3>Self-Compassion</h3>
+                <p>Develop a kinder relationship with yourself through loving-kindness practices.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌙</div>
+                <h3>Better Sleep</h3>
+                <p>Improve your sleep quality with relaxing bedtime meditations and wind-down routines.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Preview Section -->
+<section class="blog-preview">
+    <div class="container">
+        <h2 class="section-title">Latest From Our Blog</h2>
+        <div class="blog-grid">
+            {%- set postCount = 0 -%}
+            {%- for post in collections.posts -%}
+            {%- if postCount < 3 -%}
+            {%- set postCount = postCount + 1 -%}
+            <article class="blog-card">
+                {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-card-image">
+                {% endif %}
+                <div class="blog-card-content">
+                    <span class="blog-category">{{ post.data.category }}</span>
+                    <h3>{{ post.data.title }}</h3>
+                    <p class="blog-excerpt">{{ post.data.excerpt }}</p>
+                    <div class="blog-meta">
+                        <span>{{ post.data.date | dateDisplay }}</span>
+                    </div>
+                    <a href="{{ post.url }}" class="read-more">Read More →</a>
+                </div>
+            </article>
+            {%- endif -%}
+            {%- endfor -%}
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="/blog/" class="cta-button">View All Posts</a>
+        </div>
+    </div>
+</section>
+
+<!-- Meditation Timer Section -->
+<section id="meditation" class="meditation-timer">
+    <div class="container">
+        <h2 class="section-title">Meditation Timer</h2>
+        <div class="timer-container">
+            <p style="color: white; font-size: 1.2rem;">Take a moment to breathe</p>
+            <div class="timer-display" id="timer">05:00</div>
+            <div class="timer-controls">
+                <button class="timer-btn" onclick="setTimer(5)">5 min</button>
+                <button class="timer-btn" onclick="setTimer(10)">10 min</button>
+                <button class="timer-btn" onclick="setTimer(15)">15 min</button>
+                <button class="timer-btn" onclick="startTimer()">Start</button>
+                <button class="timer-btn" onclick="pauseTimer()">Pause</button>
+                <button class="timer-btn" onclick="resetTimer()">Reset</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quotes Section -->
+<section class="quotes">
+    <div class="container">
+        <h2 class="section-title">Daily Inspiration</h2>
+        <div class="quote-card">
+            <p class="quote-text">"The present moment is the only time over which we have dominion."</p>
+            <p class="quote-author">— Thích Nhất Hạnh</p>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section id="benefits" class="benefits">
+    <div class="container">
+        <h2 class="section-title">Benefits of Mindfulness</h2>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <span class="benefit-icon">✨</span>
+                <span class="benefit-text">Reduced Anxiety</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🎨</span>
+                <span class="benefit-text">Enhanced Creativity</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">💪</span>
+                <span class="benefit-text">Improved Resilience</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🧠</span>
+                <span class="benefit-text">Better Focus</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">😌</span>
+                <span class="benefit-text">Emotional Balance</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🌟</span>
+                <span class="benefit-text">Greater Awareness</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">💝</span>
+                <span class="benefit-text">Increased Compassion</span>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">⚡</span>
+                <span class="benefit-text">More Energy</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter">
+    <div class="container">
+        <h2>Join Our Mindfulness Community</h2>
+        <p>Get weekly insights and meditation tips delivered to your inbox</p>
+        <form class="newsletter-form" action="#" method="post">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+    </div>
+</section>
