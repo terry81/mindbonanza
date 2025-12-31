@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Techniques"
 tags: ["mindfulness", "sleep", "evening-routine", "wellbeing", "habits"]
-image: "https://images.unsplash.com/photo-1505904267569-1d9a3a9d2a3f?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&h=500&fit=crop"
 excerpt: "Simple, science-informed mindfulness routines to help you close the day calmly, reduce bedtime rumination, and get better sleep."
 ---
 

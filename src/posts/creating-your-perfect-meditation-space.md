@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Creating Your Perfect Meditation Space at Home"
-author: "Lisa Martinez"
+author: "Toli"
 date: 2025-01-05
 category: "Lifestyle"
 tags: ["home", "meditation-space", "setup"]

@@ -10,7 +10,7 @@ title: Discover Your Inner Peace
         <div class="blog-grid">
             {%- set postCount = 0 -%}
             {%- for post in collections.posts -%}
-            {%- if postCount < 3 -%}
+            {%- if postCount < 6 -%}
             {%- set postCount = postCount + 1 -%}
             <article class="blog-card">
                 {% if post.data.image %}

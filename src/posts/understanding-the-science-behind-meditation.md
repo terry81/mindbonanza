@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Understanding the Science Behind Meditation"
-author: "Dr. Sarah Chen"
+author: "Toli"
 date: 2025-01-10
 category: "Science"
 tags: ["neuroscience", "research", "health-benefits"]
