@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Practice"
 tags: ["mindfulness", "journaling", "notes", "habit", "mental-health"]
-image: "https://images.unsplash.com/photo-1513483460603-7a5aef9e8af9?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1763844668956-3d1365351461?w=800&h=500&fit=crop"
 excerpt: "A simple notebook or note app can deepen awareness, clarify emotions, and anchor daily practice—here's why and how to get started."
 ---
 

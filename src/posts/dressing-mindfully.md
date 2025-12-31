@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Practice"
 tags: ["mindfulness", "clothing", "style", "habits", "sustainability"]
-image: "https://images.unsplash.com/photo-1520975917322-1f9b8f8d2b0d?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1738744369801-1ca46434da1a?w=800&h=500&fit=crop"
 excerpt: "Clothing shapes how we feel, move, and show up. Dressing mindfully helps you simplify decisions, express values, and build rituals that anchor presence every day."
 ---
 
