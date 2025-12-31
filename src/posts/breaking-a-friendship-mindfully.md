@@ -105,7 +105,3 @@ Losing a friendship can feel like mourning. Support your recovery:
 ### Closing: kindness with clarity
 Deciding to end a friendship mindfully is about honoring your needs while acting with integrity. Start with observation, try low-risk repairs, and choose boundaries that protect your wellbeing. You don’t need to rush—small, compassionate steps lead to clearer choices and healthier relationships.
 
-If you'd like, I can: create a printable friendship-decision checklist, draft tailored scripts for your situation, or build a simple journal template to track interactions. Which would you like next?
-
-<!-- end -->
-

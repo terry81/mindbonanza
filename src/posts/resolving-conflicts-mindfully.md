@@ -101,7 +101,4 @@ If conflicts repeatedly escalate to abuse, threats, or violence, prioritize safe
 
 Mindful conflict resolution isn't about always being right; it's about increasing safety, understanding, and connection. With simple pauses, clearer language, and curious listening, conflicts can become opportunities to deepen trust and solve real problems.
 
-If you'd like, I can: draft a printable two-column conversation worksheet (speak/listen), create a short guided audio for the Three-Breath Reset, or produce sample email templates for requesting difficult meetings. Which would you like next?
-
-<!-- end -->
 

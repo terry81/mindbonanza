@@ -98,7 +98,3 @@ Practice: Use the question trio — What happened? What did we learn? What’s n
 ### Closing: from reactive fixes to reflective solutions
 Difficult problems rarely yield to force or speed. A mindful workflow—pause, define, gather, reframe, prototype, and reflect—helps you make clearer decisions, reduce wasted effort, and learn faster. Start small: the pause and a clear problem statement will change how you approach challenges from this week onward.
 
-If you'd like, I can: create a one-page printable problem-definition worksheet, draft a short team facilitation guide, or produce a simple decision-scoring template in CSV. Which would you like next?
-
-<!-- end -->
-

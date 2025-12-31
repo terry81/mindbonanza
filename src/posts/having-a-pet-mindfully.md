@@ -98,7 +98,3 @@ Create a simple monthly budget before deciding and plan an emergency fund for un
 ### Closing: choosing compassion over impulse
 Bringing a pet into your life can be deeply rewarding when done with intention. A mindful decision honors both your needs and the animal's wellbeing: plan carefully, choose ethically, and practice gentle, present caregiving. If you're not ready for full-time ownership, fostering or volunteering is a powerful, compassionate alternative.
 
-If you'd like, I can: create a printable mindful-pet decision checklist, draft adoption/fostering email templates, or build a simple monthly pet-care budget template. Which would you like next?
-
-<!-- end -->
-

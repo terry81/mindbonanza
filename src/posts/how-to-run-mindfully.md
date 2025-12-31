@@ -75,7 +75,4 @@ Important safety note: this post offers general tips. Follow local traffic laws,
 ### Closing: running as a practice of attention
 Mindful running doesn't mean every run is serene. It means using running as a lab to practice attention, self-compassion, and listening to the body. Start small — a single breath check each run — and build the habit. Over time, runs can become a moving refuge: stronger body, clearer mind, and more enjoyment.
 
-If you'd like, I can: create a printable one-page mindful running checklist, draft a 5-minute audio-guided mindful run script, or generate a beginner-friendly 4-week mindful run schedule. Which would you like next?
-
-<!-- end -->
 
