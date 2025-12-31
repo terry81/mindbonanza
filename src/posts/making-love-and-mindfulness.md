@@ -79,7 +79,3 @@ Practice: Create a brief pre-intimacy check-in. Spend 2–5 minutes answering th
 
 Mindfulness doesn't prescribe a single way to be intimate. Instead, it offers tools—attention, compassion, and curiosity—that make connection safer and richer. Begin with small, consensual practices, keep communication open, and treat the path toward mindful intimacy as a shared exploration.
 
-If you'd like, I can: create a printable two-minute check-in worksheet for partners, draft a short social caption to promote this post, or produce a brief guided audio script for the Shared Breath exercise. Which would you like next?
-
-<!-- end -->
-

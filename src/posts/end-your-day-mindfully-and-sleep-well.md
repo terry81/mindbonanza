@@ -78,7 +78,3 @@ Evening habits influence how easily you fall asleep, how restorative your sleep 
 ### Closing: small rituals, better rest
 A mindful evening isn't a perfect routine—it's a set of small choices that protect your ability to rest. Start with one practice (a brain dump or a three-breath reset), try it for a week, and notice how your sleep and morning energy shift.
 
-If you'd like, I can: create a printable one-page bedtime checklist, draft a 5–8 minute guided audio script (and produce an MP3), or write social copy to promote this post. Which would you like next?
-
-<!-- end -->
-

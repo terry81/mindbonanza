@@ -83,8 +83,3 @@ Say it aloud or write it on a sticky note and put it where you’ll see it.
 
 ### Closing: small starts, steady results
 Mindful mornings are about choice, not perfection. Small, consistent changes—pausing before you reach for your phone, setting an intention, or doing a short body scan—reshape your attention and create more ease across the day. Pick one practice, try it for a week, and notice what shifts.
-
-If you’d like, I can: produce a printable one-page morning checklist, create a 5-minute audio-guided morning practice (MP3), or draft social-copy to promote this post. Which would you like next?
-
-<!-- end -->
-

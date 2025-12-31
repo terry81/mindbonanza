@@ -56,8 +56,3 @@ Start small. Pick two practices that fit your day — one morning anchor and one
 
 ### Final note
 Mindfulness is a skill grown through repetition, not an all-or-nothing state. The small, consistent practices above are designed to fit real life. Try one or two this week and notice the difference.
-
-If you'd like, I can: provide a printable two-week habit tracker, make a shareable excerpt for social media, or add an audio-guided one-minute practice to accompany this post. Which would you like next?
-
-<!-- end -->
-

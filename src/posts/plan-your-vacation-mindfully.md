@@ -103,7 +103,3 @@ Pack basic remedies and comfortable shoes. Schedule flexible pockets each day an
 ### Closing: travel with attention and care
 Mindful vacations are possible by setting intention, planning with purpose, and leaving room for rest and surprise. Small choices—one extra rest day, a tech boundary, a packed comfort item—compound into a trip that restores you. Try one mindful experiment this trip and notice how your travel changes.
 
-If you'd like, I can: create a printable one-page mindful-vacation checklist, build a sample flexible itinerary template (CSV/Markdown), or draft social copy to promote this post. Which would you like next?
-
-<!-- end -->
-

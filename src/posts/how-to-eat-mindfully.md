@@ -74,7 +74,3 @@ Start small. Add one new habit each week.
 ### Closing: practice with kindness
 Mindful eating is a lifelong skill learned through gentle repetition. Begin with curiosity and small experiments, not harsh rules. Over time, you’ll likely notice greater enjoyment, clearer hunger signals, and more ease around food.
 
-If you’d like, I can: create a printable one-week mindful-eating tracker, draft a short audio-guided Five-Bite Practice, or write social copy to share this post. Which would you like next?
-
-<!-- end -->
-

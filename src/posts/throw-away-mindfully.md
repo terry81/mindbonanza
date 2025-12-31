@@ -88,8 +88,3 @@ After the session, take a breath, notice how the space and body feel, and write 
 
 ### Closing: make space with kindness
 Mindful discarding isn't about ruthless minimalism; it's about making conscious choices that respect your belongings, your memories, and the planet. Start small, be compassionate with yourself, and celebrate the space you create.
-
-If you'd like, I can: create a printable one-page mindful-declutter checklist, draft email templates for donating or requesting pickup, or produce a short guided audio to support letting go. Which would you like next?
-
-<!-- end -->
-

@@ -101,7 +101,3 @@ Model mindful use and set household norms: device-free meals, bedtime charging s
 
 Mindful social media use is less about strict rules and more about choosing your relationship with platforms. Start with one small change, track the effects, and iterate. Over time, your digital life can reflect your values and support presence, connection, and calm.
 
-If you'd like, I can: create a printable one-week digital contract template, draft a social media caption promoting this post, or produce a short guided audio for the One-Breath Check. Which would you like next?
-
-<!-- end -->
-

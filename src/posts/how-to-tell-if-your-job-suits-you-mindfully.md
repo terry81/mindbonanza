@@ -116,7 +116,3 @@ If exit planning seems necessary, prioritize a safe, gradual plan over impulsive
 ### Closing: choose presence over panic
 Finding out whether your job suits you is an iterative, compassionate process. Mindful observation, small experiments, clear conversations, and practical planning help you move from reactive choices to deliberate ones. Start with a short mood log this week and notice how clarity begins to form.
 
-If you'd like, I can: create a printable one-page job-fit checklist, draft scripts for feedback conversations tailored to your role, or build a simple decision-matrix CSV to score values vs. realities. Which would you like next?
-
-<!-- end -->
-

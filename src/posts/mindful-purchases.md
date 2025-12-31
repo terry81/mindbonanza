@@ -89,8 +89,3 @@ Answering these reduces clutter and increases intentionality.
 
 ### Closing: shop with attention, not autopilot
 Mindful purchasing is a skill you build with small habits—pausing, questioning, and aligning purchases with your values. Over time, you’ll likely find more satisfaction, less clutter, and stronger financial health.
-
-If you’d like, I can: create a printable one-page mindful-purchase checklist, build a simple CSV wishlist template, or draft social copy to promote this post. Which would you like next?
-
-<!-- end -->
-

@@ -116,8 +116,3 @@ If possible, involve a therapist, mediator, or legal advisor to make transitions
 
 ### Closing: compassion and clarity
 Deciding to end a relationship is deeply personal. A mindful approach—observation, safety planning, compassionate conversation, practical steps, and attentive aftercare—helps you act with integrity and protect your wellbeing. If you’re unsure where to start, keep a brief decision journal this week and reach out to one trusted person for support.
-
-If you'd like, I can: create a printable separation checklist (documents, finances, emergency contacts), draft tailored conversation scripts for your situation, or compile local resources for safety and counseling. Which would you like next?
-
-<!-- end -->
-
