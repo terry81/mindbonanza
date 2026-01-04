@@ -83,5 +83,54 @@ document.addEventListener('DOMContentLoaded', function() {
 
         setInterval(rotateQuote, 10000); // Change quote every 10 seconds
     }
+
+    // ResponsiveVoice - Text to Speech for Blog Posts
+    const playButton = document.getElementById('playButton');
+    const pauseButton = document.getElementById('pauseButton');
+    const stopButton = document.getElementById('stopButton');
+    const postContent = document.getElementById('postContent');
+
+    if (playButton && postContent && typeof responsiveVoice !== 'undefined') {
+        playButton.addEventListener('click', function() {
+            // Extract text content from the post, excluding scripts and styles
+            const textContent = postContent.innerText || postContent.textContent;
+
+            // Start speaking
+            responsiveVoice.speak(textContent, "US English Female", {
+                pitch: 1,
+                rate: 0.9,
+                volume: 1,
+                onstart: function() {
+                    playButton.style.display = 'none';
+                    pauseButton.style.display = 'inline-block';
+                    stopButton.style.display = 'inline-block';
+                },
+                onend: function() {
+                    playButton.style.display = 'inline-block';
+                    pauseButton.style.display = 'none';
+                    stopButton.style.display = 'none';
+                }
+            });
+        });
+
+        pauseButton.addEventListener('click', function() {
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.pause();
+                pauseButton.innerHTML = '<span class="resume-icon">▶️</span> Resume';
+            } else {
+                responsiveVoice.resume();
+                pauseButton.innerHTML = '<span class="pause-icon">⏸️</span> Pause';
+            }
+        });
+
+        stopButton.addEventListener('click', function() {
+            responsiveVoice.cancel();
+            playButton.style.display = 'inline-block';
+            pauseButton.style.display = 'none';
+            stopButton.style.display = 'none';
+            pauseButton.innerHTML = '<span class="pause-icon">⏸️</span> Pause';
+        });
+    }
 });
+
 

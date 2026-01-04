@@ -61,10 +61,21 @@
                 
             </div>
             
+            <div class="audio-controls">
+                <button id="playButton" class="audio-btn" title="Listen to this article">
+                    <span class="play-icon">▶️</span> Listen to Article
+                </button>
+                <button id="pauseButton" class="audio-btn" style="display:none;" title="Pause audio">
+                    <span class="pause-icon">⏸️</span> Pause
+                </button>
+                <button id="stopButton" class="audio-btn" style="display:none;" title="Stop audio">
+                    <span class="stop-icon">⏹️</span> Stop
+                </button>
+            </div>
         </div>
     </header>
 
-    <div class="post-content container">
+    <div class="post-content container" id="postContent">
         <p>We live in a world obsessed with speed. Faster internet, quicker meals, express shipping, rapid responses. But this constant hurrying comes at a profound cost—it's the silent assassin of mindfulness and the architect of our modern anxiety.</p>
 <h3>The Paradox of Hurrying</h3>
 <p>Here's the irony: the more we hurry, the less we accomplish with awareness. We rush through breakfast without tasting it, speed through conversations without truly listening, and race from task to task without completing any with full presence. We're moving faster but living less.</p>
