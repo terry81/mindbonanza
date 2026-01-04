@@ -420,60 +420,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* Audio Controls for Text-to-Speech */
-.audio-controls {
-    display: flex;
-    justify-content: center;
-    gap: 0.8rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-}
-
-.audio-btn {
-    padding: 0.7rem 1.5rem;
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 25px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
-}
-
-.audio-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4);
-}
-
-.audio-btn:active {
-    transform: translateY(0);
-}
-
-.audio-btn span {
-    font-size: 1.1rem;
-}
-
-#stopButton {
-    background: #e53e3e;
-}
-
-#stopButton:hover {
-    background: #c53030;
-}
-
-#pauseButton {
-    background: #f6ad55;
-}
-
-#pauseButton:hover {
-    background: #ed8936;
-}
 
 .post-content {
     max-width: 800px;
