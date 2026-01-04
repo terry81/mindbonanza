@@ -90,10 +90,48 @@ document.addEventListener('DOMContentLoaded', function() {
     const stopButton = document.getElementById('stopButton');
     const postContent = document.getElementById('postContent');
 
-    if (playButton && postContent && typeof responsiveVoice !== 'undefined') {
+    // Function to initialize ResponsiveVoice controls
+    function initializeAudioControls() {
+        if (!playButton || !postContent) {
+            console.log('Audio controls not found on this page');
+            return;
+        }
+
+        // Check if ResponsiveVoice is available
+        if (typeof responsiveVoice === 'undefined') {
+            console.warn('ResponsiveVoice not loaded yet, retrying...');
+            // Retry after a short delay
+            setTimeout(initializeAudioControls, 200);
+            return;
+        }
+
+        console.log('ResponsiveVoice initialized successfully!');
+
+        // Set up the ready callback
+        if (responsiveVoice.OnVoiceReady) {
+            responsiveVoice.OnVoiceReady = function() {
+                console.log('ResponsiveVoice voices are ready');
+            };
+        }
+
         playButton.addEventListener('click', function() {
+            console.log('Play button clicked');
+
             // Extract text content from the post, excluding scripts and styles
             const textContent = postContent.innerText || postContent.textContent;
+
+            if (!textContent || textContent.trim().length === 0) {
+                console.error('No content to read!');
+                alert('No content to read!');
+                return;
+            }
+
+            console.log('Starting to read article... Text length:', textContent.length);
+
+            // Cancel any existing speech
+            if (responsiveVoice.isPlaying()) {
+                responsiveVoice.cancel();
+            }
 
             // Start speaking
             responsiveVoice.speak(textContent, "US English Female", {
@@ -101,11 +139,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 rate: 0.9,
                 volume: 1,
                 onstart: function() {
+                    console.log('Audio started playing');
                     playButton.style.display = 'none';
                     pauseButton.style.display = 'inline-block';
                     stopButton.style.display = 'inline-block';
                 },
                 onend: function() {
+                    console.log('Audio finished playing');
+                    playButton.style.display = 'inline-block';
+                    pauseButton.style.display = 'none';
+                    stopButton.style.display = 'none';
+                },
+                onerror: function(error) {
+                    console.error('Audio error:', error);
+                    alert('Error playing audio: ' + error);
                     playButton.style.display = 'inline-block';
                     pauseButton.style.display = 'none';
                     stopButton.style.display = 'none';
@@ -114,16 +161,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         pauseButton.addEventListener('click', function() {
+            console.log('Pause button clicked');
             if (responsiveVoice.isPlaying()) {
                 responsiveVoice.pause();
                 pauseButton.innerHTML = '<span class="resume-icon">▶️</span> Resume';
+                console.log('Audio paused');
             } else {
                 responsiveVoice.resume();
                 pauseButton.innerHTML = '<span class="pause-icon">⏸️</span> Pause';
+                console.log('Audio resumed');
             }
         });
 
         stopButton.addEventListener('click', function() {
+            console.log('Stop button clicked');
             responsiveVoice.cancel();
             playButton.style.display = 'inline-block';
             pauseButton.style.display = 'none';
@@ -131,6 +182,9 @@ document.addEventListener('DOMContentLoaded', function() {
             pauseButton.innerHTML = '<span class="pause-icon">⏸️</span> Pause';
         });
     }
+
+    // Initialize audio controls with a small delay to ensure ResponsiveVoice loads
+    setTimeout(initializeAudioControls, 100);
 });
 
 
