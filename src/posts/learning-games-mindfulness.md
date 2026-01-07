@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-07
 category: "Lifestyle"
 tags: ["mindfulness", "games", "learning", "flow", "presence"]
-image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1632501641765-e568d28b0015?w=800&h=500&fit=crop"
 excerpt: "From chess to video games, learning to play develops focus, flow states, and strategic awareness—core mindfulness capacities disguised as entertainment."
 ---
 Games often get dismissed as frivolous distractions from "real" mindfulness practice. Yet the process of learning and playing games—whether board games, card games, sports, or video games—can cultivate many of the same mental qualities that meditation develops: sustained attention, present-moment awareness, pattern recognition, emotional regulation, and the capacity to enter flow states.

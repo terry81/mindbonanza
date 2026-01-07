@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Practice Tool | Mind Bonanza</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --accent: #F6AD55;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --warning: #ED8936;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+        }
+
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .warning-box {
+            background: #FFF5F5;
+            border-left: 4px solid #FC8181;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box h3 {
+            color: #C53030;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .warning-box p {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .info-box p, .info-box ul {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .exercise-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .exercise-card {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .exercise-card:hover {
+            background: var(--white);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(107, 70, 193, 0.2);
+        }
+
+        .exercise-card.active {
+            background: var(--primary);
+            color: var(--white);
+            border-color: var(--primary);
+        }
+
+        .exercise-card h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .exercise-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .exercise-area {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px 0;
+            min-height: 400px;
+        }
+
+        .exercise-area h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .slider-group {
+            margin-bottom: 20px;
+        }
+
+        .slider-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .slider-value {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #E2E8F0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--warning);
+            transform: translateY(-2px);
+        }
+
+        .result-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 2px solid var(--primary);
+        }
+
+        .result-box h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .result-box p {
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .cognitive-distortion {
+            background: #FFF5F5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border-left: 4px solid var(--accent);
+        }
+
+        .cognitive-distortion strong {
+            color: var(--primary);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--bg-light);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .exercise-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% include "header.njk" %}
+    <div class="container">
+        <header>
+            <h1>🧠 CBT Practice Tool</h1>
+            <p class="subtitle">Cognitive Behavioral Therapy Exercises for Mindfulness</p>
+        </header>
+
+        <div class="warning-box">
+            <h3>⚠️ Important Notice</h3>
+            <p><strong>This tool is for educational and self-practice purposes only.</strong> CBT therapy should be conducted by a trained, licensed mental health professional. If you are experiencing severe depression, anxiety, or other mental health concerns, please work with a qualified therapist. This tool is not a substitute for professional treatment.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>What is CBT?</h3>
+            <p>Cognitive Behavioral Therapy (CBT) is an evidence-based psychotherapy approach that focuses on identifying and changing negative thought patterns and behaviors. CBT is based on the understanding that our thoughts, feelings, and behaviors are interconnected.</p>
+            <p><strong>Core CBT principles:</strong></p>
+            <ul>
+                <li>Our thoughts influence our emotions and behaviors</li>
+                <li>Negative thought patterns (cognitive distortions) can be identified and challenged</li>
+                <li>We can learn to replace unhelpful thoughts with more balanced, realistic ones</li>
+                <li>Behavioral changes can improve mood and reduce anxiety</li>
+                <li>Practice and repetition strengthen new, healthier thinking patterns</li>
+            </ul>
+        </div>
+
+        <h3 style="text-align: center; margin: 30px 0 20px; color: var(--primary);">Choose a CBT Exercise</h3>
+
+        <div class="exercise-selector">
+            <div class="exercise-card active" onclick="selectExercise('thought-record')">
+                <h4>📝 Thought Record</h4>
+                <p>Identify and challenge negative thoughts</p>
+            </div>
+            <div class="exercise-card" onclick="selectExercise('cognitive-distortions')">
+                <h4>🔍 Cognitive Distortions</h4>
+                <p>Recognize thinking errors</p>
+            </div>
+            <div class="exercise-card" onclick="selectExercise('behavioral-activation')">
+                <h4>⚡ Behavioral Activation</h4>
+                <p>Plan mood-boosting activities</p>
+            </div>
+        </div>
+
+        <div class="exercise-area" id="exerciseArea">
+            <!-- Exercise content will be loaded here -->
+        </div>
+
+        <div class="info-box">
+            <h3>Tips for Effective CBT Practice</h3>
+            <ul>
+                <li>Practice regularly - daily or several times per week works best</li>
+                <li>Be honest and specific when identifying thoughts and feelings</li>
+                <li>Challenge thoughts with evidence, not just positive thinking</li>
+                <li>Start with less distressing situations to build skills</li>
+                <li>Keep a journal to track patterns over time</li>
+                <li>Be patient - changing thought patterns takes time and practice</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Part of <a href="/">Mind Bonanza</a> — Your journey to mindfulness and inner peace</p>
+            <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">
+                For professional CBT therapy, consult a licensed therapist trained in cognitive behavioral therapy.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let currentExercise = 'thought-record';
+
+        // Thought Record Exercise HTML
+        const thoughtRecordHTML = `
+            <h3>📝 Thought Record Exercise</h3>
+            <p>This exercise helps you identify automatic negative thoughts and challenge them with evidence.</p>
+
+            <div class="form-group">
+                <label>1. Situation: What happened?</label>
+                <textarea id="situation" placeholder="Describe the situation that triggered your negative thoughts..."></textarea>
+            </div>
+
+            <div class="slider-group">
+                <label>2. Emotions: What did you feel?</label>
+                <input type="text" id="emotions" placeholder="e.g., anxious, sad, angry, frustrated" style="margin-bottom: 10px;">
+                <label>Intensity (0-10):</label>
+                <input type="range" id="emotionIntensity" min="0" max="10" value="5">
+                <div class="slider-value"><span id="emotionValue">5</span>/10</div>
+            </div>
+
+            <div class="form-group">
+                <label>3. Automatic Thought: What went through your mind?</label>
+                <textarea id="autoThought" placeholder="What negative thought came up automatically?"></textarea>
+            </div>
+
+            <div class="slider-group">
+                <label>How much do you believe this thought? (0-100%)</label>
+                <input type="range" id="beliefBefore" min="0" max="100" value="50">
+                <div class="slider-value"><span id="beliefValue">50</span>%</div>
+            </div>
+
+            <div class="form-group">
+                <label>4. Evidence For: What supports this thought?</label>
+                <textarea id="evidenceFor" placeholder="List facts that support this thought..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>5. Evidence Against: What contradicts this thought?</label>
+                <textarea id="evidenceAgainst" placeholder="List facts that contradict this thought..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>6. Alternative Thought: What's a more balanced perspective?</label>
+                <textarea id="altThought" placeholder="Considering all evidence, what's a more realistic thought?"></textarea>
+            </div>
+
+            <div class="slider-group">
+                <label>How much do you believe the alternative thought? (0-100%)</label>
+                <input type="range" id="beliefAfter" min="0" max="100" value="50">
+                <div class="slider-value"><span id="beliefAfterValue">50</span>%</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-primary" onclick="processThoughtRecord()">💡 Process Thought Record</button>
+                <button class="btn-secondary" onclick="clearThoughtRecord()">🔄 Clear</button>
+            </div>
+
+            <div id="thoughtResult" class="hidden"></div>
+        `;
+
+        // Cognitive Distortions Exercise HTML
+        const cognitiveDistortionsHTML = `
+            <h3>🔍 Cognitive Distortions Identifier</h3>
+            <p>Learn to recognize common thinking errors that contribute to negative emotions.</p>
+
+            <div class="form-group">
+                <label>Describe a negative thought you've been having:</label>
+                <textarea id="negativeThought" placeholder="Enter your negative thought..."></textarea>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-primary" onclick="identifyDistortions()">🔍 Identify Distortions</button>
+                <button class="btn-secondary" onclick="clearDistortions()">🔄 Clear</button>
+            </div>
+
+            <div id="distortionResult" class="hidden"></div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <h4>Common Cognitive Distortions:</h4>
+                <div class="cognitive-distortion">
+                    <strong>All-or-Nothing Thinking:</strong> Seeing things in black and white categories.
+                    <em>Example: "If I'm not perfect, I'm a failure."</em>
+                </div>
+                <div class="cognitive-distortion">
+                    <strong>Overgeneralization:</strong> Seeing a single negative event as a never-ending pattern.
+                    <em>Example: "I failed once, so I always fail."</em>
+                </div>
+                <div class="cognitive-distortion">
+                    <strong>Mental Filter:</strong> Focusing exclusively on negatives while filtering out positives.
+                    <em>Example: Dwelling on one criticism while ignoring ten compliments.</em>
+                </div>
+                <div class="cognitive-distortion">
+                    <strong>Catastrophizing:</strong> Expecting the worst possible outcome.
+                    <em>Example: "If I make this mistake, everything will be ruined."</em>
+                </div>
+                <div class="cognitive-distortion">
+                    <strong>Mind Reading:</strong> Assuming you know what others are thinking.
+                    <em>Example: "They think I'm incompetent."</em>
+                </div>
+                <div class="cognitive-distortion">
+                    <strong>Should Statements:</strong> Using "should," "must," or "ought" creates unrealistic expectations.
+                    <em>Example: "I should always be happy."</em>
+                </div>
+            </div>
+        `;
+
+        // Behavioral Activation Exercise HTML
+        const behavioralActivationHTML = `
+            <h3>⚡ Behavioral Activation Planner</h3>
+            <p>Plan activities that boost your mood and energy. The goal is to engage in meaningful activities even when you don't feel like it.</p>
+
+            <div class="slider-group">
+                <label>Current Mood (0-10):</label>
+                <input type="range" id="currentMood" min="0" max="10" value="5">
+                <div class="slider-value"><span id="currentMoodValue">5</span>/10</div>
+            </div>
+
+            <div class="form-group">
+                <label>Activity Category:</label>
+                <select id="activityCategory">
+                    <option value="physical">Physical Activity (exercise, walk, stretch)</option>
+                    <option value="social">Social Connection (call friend, visit family)</option>
+                    <option value="achievement">Achievement (complete task, learn something)</option>
+                    <option value="pleasure">Pleasure (hobby, music, relaxation)</option>
+                    <option value="selfcare">Self-Care (shower, healthy meal, rest)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Specific Activity:</label>
+                <input type="text" id="specificActivity" placeholder="e.g., Walk for 15 minutes, Call a friend, Read a chapter">
+            </div>
+
+            <div class="form-group">
+                <label>When will you do this?</label>
+                <input type="datetime-local" id="activityTime">
+            </div>
+
+            <div class="slider-group">
+                <label>Expected Mood After (0-10):</label>
+                <input type="range" id="expectedMood" min="0" max="10" value="7">
+                <div class="slider-value"><span id="expectedMoodValue">7</span>/10</div>
+            </div>
+
+            <div class="buttons">
+                <button class="btn-primary" onclick="planActivity()">📅 Add to Plan</button>
+                <button class="btn-secondary" onclick="clearActivation()">🔄 Clear</button>
+            </div>
+
+            <div id="activityPlan" class="hidden"></div>
+
+            <div class="info-box" style="margin-top: 30px;">
+                <h4>Behavioral Activation Tips:</h4>
+                <ul>
+                    <li>Start small - even 5-10 minutes of activity counts</li>
+                    <li>Schedule activities in advance</li>
+                    <li>Do activities even if you don't feel motivated</li>
+                    <li>Track your mood before and after to see patterns</li>
+                    <li>Mix different types of activities for balance</li>
+                    <li>Be specific about what, when, and where</li>
+                </ul>
+            </div>
+        `;
+
+        // Initialize with thought record
+        loadExercise('thought-record');
+
+        function selectExercise(exercise) {
+            currentExercise = exercise;
+
+            document.querySelectorAll('.exercise-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.exercise-card').classList.add('active');
+
+            loadExercise(exercise);
+        }
+
+        function loadExercise(exercise) {
+            const area = document.getElementById('exerciseArea');
+
+            switch(exercise) {
+                case 'thought-record':
+                    area.innerHTML = thoughtRecordHTML;
+                    setupThoughtRecord();
+                    break;
+                case 'cognitive-distortions':
+                    area.innerHTML = cognitiveDistortionsHTML;
+                    break;
+                case 'behavioral-activation':
+                    area.innerHTML = behavioralActivationHTML;
+                    setupBehavioralActivation();
+                    break;
+            }
+        }
+
+        function setupThoughtRecord() {
+            const emotionSlider = document.getElementById('emotionIntensity');
+            const emotionValue = document.getElementById('emotionValue');
+            const beliefSlider = document.getElementById('beliefBefore');
+            const beliefValue = document.getElementById('beliefValue');
+            const beliefAfterSlider = document.getElementById('beliefAfter');
+            const beliefAfterValue = document.getElementById('beliefAfterValue');
+
+            if (emotionSlider) emotionSlider.addEventListener('input', (e) => {
+                emotionValue.textContent = e.target.value;
+            });
+
+            if (beliefSlider) beliefSlider.addEventListener('input', (e) => {
+                beliefValue.textContent = e.target.value;
+            });
+
+            if (beliefAfterSlider) beliefAfterSlider.addEventListener('input', (e) => {
+                beliefAfterValue.textContent = e.target.value;
+            });
+        }
+
+        function processThoughtRecord() {
+            const situation = document.getElementById('situation').value;
+            const autoThought = document.getElementById('autoThought').value;
+            const altThought = document.getElementById('altThought').value;
+            const beliefBefore = document.getElementById('beliefBefore').value;
+            const beliefAfter = document.getElementById('beliefAfter').value;
+
+            if (!situation || !autoThought || !altThought) {
+                alert('Please fill in at least the situation, automatic thought, and alternative thought fields.');
+                return;
+            }
+
+            const resultDiv = document.getElementById('thoughtResult');
+            const beliefChange = beliefAfter - beliefBefore;
+            const changeDirection = beliefChange > 0 ? 'increased' : 'decreased';
+
+            resultDiv.innerHTML = `
+                <div class="result-box">
+                    <h4>✅ Thought Record Summary</h4>
+                    <p><strong>Situation:</strong> ${situation}</p>
+                    <p><strong>Original Thought:</strong> ${autoThought}</p>
+                    <p><strong>Belief in Original Thought:</strong> ${beliefBefore}%</p>
+                    <p><strong>Alternative Thought:</strong> ${altThought}</p>
+                    <p><strong>Belief in Alternative:</strong> ${beliefAfter}%</p>
+                    <p style="color: var(--success); font-weight: 600;">
+                        Your belief in the alternative thought ${changeDirection} by ${Math.abs(beliefChange)}%.
+                        ${beliefChange > 0 ? 'Great progress! The alternative perspective is becoming more believable.' : 'Keep practicing. Alternative thoughts become more believable with repetition.'}
+                    </p>
+                    <p style="margin-top: 15px;"><strong>Next Steps:</strong> Review this thought record when similar situations arise. Over time, alternative thoughts will become more automatic.</p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function clearThoughtRecord() {
+            document.getElementById('situation').value = '';
+            document.getElementById('emotions').value = '';
+            document.getElementById('autoThought').value = '';
+            document.getElementById('evidenceFor').value = '';
+            document.getElementById('evidenceAgainst').value = '';
+            document.getElementById('altThought').value = '';
+            document.getElementById('emotionIntensity').value = 5;
+            document.getElementById('beliefBefore').value = 50;
+            document.getElementById('beliefAfter').value = 50;
+            document.getElementById('emotionValue').textContent = '5';
+            document.getElementById('beliefValue').textContent = '50';
+            document.getElementById('beliefAfterValue').textContent = '50';
+            document.getElementById('thoughtResult').classList.add('hidden');
+        }
+
+        function identifyDistortions() {
+            const thought = document.getElementById('negativeThought').value;
+
+            if (!thought) {
+                alert('Please enter a negative thought.');
+                return;
+            }
+
+            const resultDiv = document.getElementById('distortionResult');
+            const lowerThought = thought.toLowerCase();
+            const distortions = [];
+
+            if (lowerThought.includes('always') || lowerThought.includes('never') || lowerThought.includes('every')) {
+                distortions.push({
+                    name: 'All-or-Nothing Thinking or Overgeneralization',
+                    advice: 'Look for exceptions. Are there times when this isn\'t true? Use words like "sometimes" or "often" instead of "always" or "never."'
+                });
+            }
+
+            if (lowerThought.includes('should') || lowerThought.includes('must') || lowerThought.includes('ought')) {
+                distortions.push({
+                    name: 'Should Statements',
+                    advice: 'Replace "should" with "prefer to" or "would like to." This reduces pressure and self-criticism.'
+                });
+            }
+
+            if (lowerThought.includes('terrible') || lowerThought.includes('awful') || lowerThought.includes('disaster') || lowerThought.includes('worst')) {
+                distortions.push({
+                    name: 'Catastrophizing',
+                    advice: 'Ask yourself: What\'s the worst that could happen? What\'s the best? What\'s most realistic? Focus on realistic outcomes.'
+                });
+            }
+
+            if (lowerThought.includes('they think') || lowerThought.includes('everyone thinks') || lowerThought.includes('people think')) {
+                distortions.push({
+                    name: 'Mind Reading',
+                    advice: 'You can\'t know what others think unless they tell you. Ask for clarification instead of assuming.'
+                });
+            }
+
+            if (lowerThought.includes('failure') || lowerThought.includes('worthless') || lowerThought.includes('useless')) {
+                distortions.push({
+                    name: 'Labeling',
+                    advice: 'Describe the specific behavior instead of labeling yourself. "I made a mistake" is different from "I\'m a failure."'
+                });
+            }
+
+            if (distortions.length === 0) {
+                distortions.push({
+                    name: 'Potential Mental Filter or Disqualifying the Positive',
+                    advice: 'Are you focusing only on the negative aspects and ignoring any positives? Try to identify balanced perspectives.'
+                });
+            }
+
+            let distortionHTML = '<div class="result-box"><h4>🔍 Identified Distortions</h4>';
+            distortions.forEach(d => {
+                distortionHTML += `
+                    <div class="cognitive-distortion">
+                        <strong>${d.name}</strong>
+                        <p style="margin-top: 8px;">${d.advice}</p>
+                    </div>
+                `;
+            });
+            distortionHTML += '<p style="margin-top: 20px;"><strong>Challenge:</strong> Rewrite your thought in a more balanced way, avoiding the distortions identified above.</p></div>';
+
+            resultDiv.innerHTML = distortionHTML;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function clearDistortions() {
+            document.getElementById('negativeThought').value = '';
+            document.getElementById('distortionResult').classList.add('hidden');
+        }
+
+        function setupBehavioralActivation() {
+            const currentMoodSlider = document.getElementById('currentMood');
+            const currentMoodValue = document.getElementById('currentMoodValue');
+            const expectedMoodSlider = document.getElementById('expectedMood');
+            const expectedMoodValue = document.getElementById('expectedMoodValue');
+
+            if (currentMoodSlider) currentMoodSlider.addEventListener('input', (e) => {
+                currentMoodValue.textContent = e.target.value;
+            });
+
+            if (expectedMoodSlider) expectedMoodSlider.addEventListener('input', (e) => {
+                expectedMoodValue.textContent = e.target.value;
+            });
+        }
+
+        function planActivity() {
+            const currentMood = document.getElementById('currentMood').value;
+            const category = document.getElementById('activityCategory').value;
+            const activity = document.getElementById('specificActivity').value;
+            const time = document.getElementById('activityTime').value;
+            const expectedMood = document.getElementById('expectedMood').value;
+
+            if (!activity || !time) {
+                alert('Please fill in the activity and time.');
+                return;
+            }
+
+            const categoryNames = {
+                'physical': '🏃 Physical',
+                'social': '👥 Social',
+                'achievement': '🎯 Achievement',
+                'pleasure': '😊 Pleasure',
+                'selfcare': '🛀 Self-Care'
+            };
+
+            const resultDiv = document.getElementById('activityPlan');
+            const timeObj = new Date(time);
+            const formattedTime = timeObj.toLocaleString();
+
+            resultDiv.innerHTML = `
+                <div class="result-box">
+                    <h4>📅 Activity Scheduled</h4>
+                    <p><strong>Category:</strong> ${categoryNames[category]}</p>
+                    <p><strong>Activity:</strong> ${activity}</p>
+                    <p><strong>Scheduled:</strong> ${formattedTime}</p>
+                    <p><strong>Current Mood:</strong> ${currentMood}/10</p>
+                    <p><strong>Expected Mood After:</strong> ${expectedMood}/10</p>
+                    <p style="margin-top: 15px; color: var(--success); font-weight: 600;">
+                        Great! You've planned an activity. Remember: motivation often comes AFTER starting, not before.
+                    </p>
+                    <p style="margin-top: 10px;"><strong>Tip:</strong> Set a reminder on your phone for this activity. After completing it, rate your actual mood to see if it improved as expected.</p>
+                </div>
+            `;
+            resultDiv.classList.remove('hidden');
+        }
+
+        function clearActivation() {
+            document.getElementById('currentMood').value = 5;
+            document.getElementById('currentMoodValue').textContent = '5';
+            document.getElementById('activityCategory').selectedIndex = 0;
+            document.getElementById('specificActivity').value = '';
+            document.getElementById('activityTime').value = '';
+            document.getElementById('expectedMood').value = 7;
+            document.getElementById('expectedMoodValue').textContent = '7';
+            document.getElementById('activityPlan').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
+
