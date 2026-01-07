@@ -515,6 +515,42 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Practice Tools Section */
+.practice-tools {
+    padding: 5rem 2rem;
+    background: var(--white);
+}
+
+.practice-tools .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.practice-tools .feature-card {
+    text-align: center;
+}
+
+.practice-tools .read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.practice-tools .read-more:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4);
+}
+
 /* Quotes Section */
 .quotes {
     padding: 5rem 2rem;
