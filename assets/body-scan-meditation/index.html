@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Scan Meditation Guide | Mind Bonanza</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --accent: #F6AD55;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --active: #ED8936;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+        }
+
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+        }
+
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .info-box p, .info-box ul {
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .info-box ul {
+            margin-left: 20px;
+        }
+
+        .settings-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .settings-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .setting-group {
+            margin-bottom: 20px;
+        }
+
+        .setting-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .setting-group select {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .setting-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .body-visualization {
+            position: relative;
+            margin: 30px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .body-svg-container {
+            max-width: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .body-part {
+            transition: all 0.5s ease;
+            cursor: pointer;
+        }
+
+        .body-part:hover {
+            opacity: 0.8;
+        }
+
+        .body-part.active {
+            fill: var(--active) !important;
+            filter: drop-shadow(0 0 10px var(--active));
+        }
+
+        .meditation-area {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .meditation-area.active {
+            display: block;
+        }
+
+        .current-focus {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 15px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .current-focus h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .current-focus p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .progress-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.5s ease;
+            border-radius: 10px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(107, 70, 193, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--text-light);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-dark);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .timer-display {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0;
+        }
+
+        .instructions-text {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+            margin: 20px 0;
+        }
+
+        .instructions-text h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .instructions-text p {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .audio-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .audio-controls label {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .volume-slider {
+            width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .current-focus h2 {
+                font-size: 1.5rem;
+            }
+
+            .timer-display {
+                font-size: 2rem;
+            }
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #E2E8F0;
+        }
+
+        .completion-message {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--success), #38A169);
+            border-radius: 15px;
+            color: white;
+            display: none;
+        }
+
+        .completion-message.active {
+            display: block;
+        }
+
+        .completion-message h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .completion-message p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <div class="logo">🧘 Mind Bonanza</div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/tools/">Tools</a></li>
+                <li><a href="/#features">Features</a></li>
+                <li><a href="/#meditation">Meditate</a></li>
+                <li><a href="/#benefits">Benefits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <a href="/tools/" class="back-link">← Back to Tools</a>
+
+            <header>
+                <h1>🧘 Body Scan Meditation Guide</h1>
+                <p class="subtitle">Cultivate body awareness and release tension through guided meditation</p>
+            </header>
+
+            <div class="info-box">
+                <h3>About Body Scan Meditation</h3>
+                <p>Body scan meditation is a foundational mindfulness practice that systematically brings awareness to different parts of your body. This technique:</p>
+                <ul>
+                    <li>Helps you recognize and release physical tension</li>
+                    <li>Develops mind-body connection and interoceptive awareness</li>
+                    <li>Reduces stress, anxiety, and chronic pain</li>
+                    <li>Improves sleep quality when practiced before bed</li>
+                    <li>Anchors you firmly in the present moment</li>
+                    <li>Reveals patterns of tension you may not notice otherwise</li>
+                </ul>
+                <p>Choose your preferences below, find a comfortable position (lying down or seated), and let the guide lead you through your body.</p>
+            </div>
+
+            <div class="settings-section">
+                <h3>⚙️ Customize Your Session</h3>
+                <div class="setting-group">
+                    <label for="duration">Duration per body part:</label>
+                    <select id="duration">
+                        <option value="15">Quick (15 seconds)</option>
+                        <option value="30" selected>Standard (30 seconds)</option>
+                        <option value="45">Extended (45 seconds)</option>
+                        <option value="60">Deep (60 seconds)</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="voice">Guidance style:</label>
+                    <select id="voice">
+                        <option value="minimal">Minimal (Brief prompts)</option>
+                        <option value="standard" selected>Standard (Clear guidance)</option>
+                        <option value="detailed">Detailed (Rich descriptions)</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label for="chime">Transition sound:</label>
+                    <select id="chime">
+                        <option value="soft" selected>Soft bell</option>
+                        <option value="none">No sound</option>
+                        <option value="singing-bowl">Singing bowl</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="setup-area">
+                <div class="body-visualization">
+                    <svg class="body-svg-container" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Head -->
+                        <ellipse class="body-part" data-part="head" cx="100" cy="30" rx="25" ry="30" fill="#9F7AEA" />
+
+                        <!-- Neck -->
+                        <rect class="body-part" data-part="neck" x="90" y="55" width="20" height="20" fill="#B794F4" />
+
+                        <!-- Shoulders -->
+                        <ellipse class="body-part" data-part="shoulders" cx="100" cy="85" rx="50" ry="15" fill="#D6BCFA" />
+
+                        <!-- Arms -->
+                        <rect class="body-part" data-part="arms" x="40" y="85" width="15" height="80" rx="7" fill="#E9D8FD" />
+                        <rect class="body-part" data-part="arms" x="145" y="85" width="15" height="80" rx="7" fill="#E9D8FD" />
+
+                        <!-- Hands -->
+                        <ellipse class="body-part" data-part="hands" cx="47" cy="175" rx="12" ry="15" fill="#FAF5FF" />
+                        <ellipse class="body-part" data-part="hands" cx="153" cy="175" rx="12" ry="15" fill="#FAF5FF" />
+
+                        <!-- Torso -->
+                        <rect class="body-part" data-part="chest" x="70" y="90" width="60" height="50" rx="10" fill="#B794F4" />
+                        <rect class="body-part" data-part="abdomen" x="75" y="140" width="50" height="45" rx="8" fill="#D6BCFA" />
+
+                        <!-- Hips -->
+                        <ellipse class="body-part" data-part="hips" cx="100" cy="200" rx="45" ry="20" fill="#E9D8FD" />
+
+                        <!-- Legs -->
+                        <rect class="body-part" data-part="legs" x="70" y="210" width="20" height="100" rx="10" fill="#E9D8FD" />
+                        <rect class="body-part" data-part="legs" x="110" y="210" width="20" height="100" rx="10" fill="#E9D8FD" />
+
+                        <!-- Feet -->
+                        <ellipse class="body-part" data-part="feet" cx="80" cy="320" rx="15" ry="20" fill="#FAF5FF" />
+                        <ellipse class="body-part" data-part="feet" cx="120" cy="320" rx="15" ry="20" fill="#FAF5FF" />
+                    </svg>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-primary" id="startBtn">Begin Body Scan</button>
+                </div>
+            </div>
+
+            <div id="meditation-area" class="meditation-area">
+                <div class="current-focus" id="currentFocus">
+                    <h2 id="bodyPartName">Preparing...</h2>
+                    <p id="guidanceText">Take a moment to settle into a comfortable position.</p>
+                </div>
+
+                <div class="timer-display" id="timerDisplay">0:00</div>
+
+                <div class="progress-indicator">
+                    <span id="progressText">Part 1 of 10</span>
+                    <span id="totalTime">Total: 0:00</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+
+                <div class="controls">
+                    <button class="btn btn-secondary" id="pauseBtn">Pause</button>
+                    <button class="btn btn-secondary" id="skipBtn">Skip to Next</button>
+                    <button class="btn btn-secondary" id="resetBtn">Start Over</button>
+                </div>
+
+                <div class="instructions-text">
+                    <h4>💡 Tips for Practice</h4>
+                    <p id="currentTip">Simply notice sensations without judgment. There's no right or wrong way to feel.</p>
+                </div>
+            </div>
+
+            <div id="completionMessage" class="completion-message">
+                <h2>🌟 Body Scan Complete!</h2>
+                <p>You've successfully completed the body scan meditation. Take a moment to notice how you feel.</p>
+                <p style="margin-top: 15px;">Regular practice strengthens your mind-body connection and helps you recognize tension earlier.</p>
+                <button class="btn btn-primary" id="restartBtn" style="margin-top: 20px;">Practice Again</button>
+            </div>
+
+            <div class="info-box">
+                <h3>🎯 Getting the Most from Body Scan</h3>
+                <ul>
+                    <li><strong>Find comfort first:</strong> Lie down or sit in a position you can maintain</li>
+                    <li><strong>Stay warm:</strong> Body temperature drops during relaxation; use a blanket if needed</li>
+                    <li><strong>Accept what you find:</strong> Tension, pain, or numbness are all valid experiences</li>
+                    <li><strong>Don't force relaxation:</strong> Simply observe; release happens naturally with awareness</li>
+                    <li><strong>If you fall asleep:</strong> That's okay! Your body might need rest</li>
+                    <li><strong>Practice regularly:</strong> Daily practice yields the most benefits</li>
+                    <li><strong>Try different times:</strong> Morning for alertness, evening for sleep preparation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Body parts sequence
+        const bodyParts = [
+            {
+                name: 'Head & Face',
+                part: 'head',
+                minimal: 'Focus on your head and face.',
+                standard: 'Bring awareness to your head. Notice your scalp, forehead, eyes, cheeks, jaw, and the sensations in your face.',
+                detailed: 'Gently bring your attention to the top of your head. Notice any sensations—tingling, warmth, pressure, or simply the awareness of your scalp. Let your attention flow down to your forehead, softening any tension. Notice your eyes, your cheeks, your jaw. Is your jaw clenched or relaxed? Simply observe without changing anything.'
+            },
+            {
+                name: 'Neck & Throat',
+                part: 'neck',
+                minimal: 'Shift attention to your neck.',
+                standard: 'Move your awareness to your neck and throat. Notice any tension, temperature, or sensation in this area.',
+                detailed: 'Let your awareness flow down to your neck and throat. This area often holds tension from stress. Notice the front of your neck, the sides, the back. Feel the gentle rise and fall as you breathe. You might notice tightness, softness, warmth, or coolness. Simply acknowledge what\'s there.'
+            },
+            {
+                name: 'Shoulders',
+                part: 'shoulders',
+                minimal: 'Notice your shoulders.',
+                standard: 'Bring awareness to both shoulders. Notice the weight, any tension, or the feeling of your shoulders against the surface.',
+                detailed: 'Shift your attention to your shoulders, a common place where we carry stress. Notice both shoulders at once. Are they lifted toward your ears or relaxed down? Do you feel heaviness, lightness, tension, or ease? Notice the tops of your shoulders, the front, and the back. Breathe into this area.'
+            },
+            {
+                name: 'Arms',
+                part: 'arms',
+                minimal: 'Focus on both arms.',
+                standard: 'Move awareness down both arms from shoulders to elbows to wrists. Notice temperature, weight, and any sensations.',
+                detailed: 'Let your attention flow down both arms simultaneously. Notice your upper arms, elbows, forearms. Feel the weight of your arms. Are they heavy or light? Warm or cool? Notice any tingling, pulsing, or the simple feeling of your arms being supported by the surface beneath you.'
+            },
+            {
+                name: 'Hands',
+                part: 'hands',
+                minimal: 'Bring attention to your hands.',
+                standard: 'Notice both hands—palms, backs of hands, fingers, and thumbs. Observe any sensations present.',
+                detailed: 'Bring awareness to both hands. Notice your palms, the backs of your hands, each finger and thumb. You might feel tingling, warmth, coolness, or pulsing. Notice if your hands are open or closed, tense or relaxed. Your hands do so much for you—simply acknowledge them with gentle awareness.'
+            },
+            {
+                name: 'Chest',
+                part: 'chest',
+                minimal: 'Notice your chest area.',
+                standard: 'Bring awareness to your chest. Notice your breath moving, your heartbeat, any tightness or openness.',
+                detailed: 'Shift attention to your chest, the home of your heart and lungs. Notice the gentle rise and fall with each breath. Can you feel your heartbeat? Notice any tightness or spaciousness. This area holds emotions—simply observe whatever sensations arise without judgment or analysis.'
+            },
+            {
+                name: 'Abdomen',
+                part: 'abdomen',
+                minimal: 'Focus on your belly.',
+                standard: 'Move awareness to your abdomen and belly. Notice how it moves with each breath, any tension or softness.',
+                detailed: 'Bring awareness to your abdomen—your belly, stomach, lower abdomen. Notice how this area expands and contracts with each breath. This is often called "belly breathing." Notice any gurgling, warmth, tightness, or softness. The belly holds a lot of tension and emotion. Simply observe with kindness.'
+            },
+            {
+                name: 'Hips & Lower Back',
+                part: 'hips',
+                minimal: 'Notice your hips and lower back.',
+                standard: 'Bring awareness to your hips, pelvis, and lower back. Notice the contact with the surface, any tension or ease.',
+                detailed: 'Let your attention rest on your hips, pelvis, and lower back. Notice where your body makes contact with the surface supporting you. This area carries the weight of your upper body. Notice any pressure, aching, tightness, or release. Breathe awareness into this foundation of your body.'
+            },
+            {
+                name: 'Legs',
+                part: 'legs',
+                minimal: 'Shift attention to your legs.',
+                standard: 'Move awareness down both legs—thighs, knees, calves. Notice weight, temperature, and any sensations.',
+                detailed: 'Bring awareness to both legs at once. Notice your thighs—front, back, and sides. Move down to your knees, then your calves. Feel the weight of your legs. Are they heavy or light? Notice any tingling, aching, warmth, or coolness. Your legs carry you through each day—acknowledge them with gratitude.'
+            },
+            {
+                name: 'Feet',
+                part: 'feet',
+                minimal: 'Finally, notice your feet.',
+                standard: 'Bring awareness to both feet—tops, soles, heels, and toes. Notice any sensations present.',
+                detailed: 'Finally, bring awareness to your feet. Notice the tops of your feet, your soles, your heels, each toe. Your feet connect you to the earth. They might feel tingly, warm, cool, heavy, or light. Notice any pulsing or throbbing. Take a moment to appreciate your feet and all they do for you.'
+            }
+        ];
+
+        // State
+        let currentPartIndex = 0;
+        let isPaused = false;
+        let isRunning = false;
+        let partDuration = 30;
+        let guidanceStyle = 'standard';
+        let chimeSound = 'soft';
+        let countdownInterval = null;
+        let remainingSeconds = 0;
+        let totalTimeElapsed = 0;
+        let timerInterval = null;
+
+        // DOM elements
+        const setupArea = document.getElementById('setup-area');
+        const meditationArea = document.getElementById('meditation-area');
+        const completionMessage = document.getElementById('completionMessage');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const skipBtn = document.getElementById('skipBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const bodyPartName = document.getElementById('bodyPartName');
+        const guidanceText = document.getElementById('guidanceText');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const progressText = document.getElementById('progressText');
+        const totalTime = document.getElementById('totalTime');
+        const progressBar = document.getElementById('progressBar');
+        const currentTip = document.getElementById('currentTip');
+        const bodyPartElements = document.querySelectorAll('.body-part');
+
+        // Settings
+        document.getElementById('duration').addEventListener('change', (e) => {
+            partDuration = parseInt(e.target.value);
+        });
+
+        document.getElementById('voice').addEventListener('change', (e) => {
+            guidanceStyle = e.target.value;
+        });
+
+        document.getElementById('chime').addEventListener('change', (e) => {
+            chimeSound = e.target.value;
+        });
+
+        // Start meditation
+        startBtn.addEventListener('click', () => {
+            setupArea.style.display = 'none';
+            meditationArea.classList.add('active');
+            isRunning = true;
+            currentPartIndex = 0;
+            totalTimeElapsed = 0;
+            startBodyPart();
+            startTotalTimer();
+        });
+
+        // Pause/Resume
+        pauseBtn.addEventListener('click', () => {
+            if (isPaused) {
+                resumeBodyScan();
+            } else {
+                pauseBodyScan();
+            }
+        });
+
+        // Skip to next
+        skipBtn.addEventListener('click', () => {
+            nextBodyPart();
+        });
+
+        // Reset
+        resetBtn.addEventListener('click', () => {
+            resetBodyScan();
+        });
+
+        // Restart after completion
+        restartBtn.addEventListener('click', () => {
+            completionMessage.classList.remove('active');
+            setupArea.style.display = 'block';
+            meditationArea.classList.remove('active');
+            resetBodyScan();
+        });
+
+        function startBodyPart() {
+            if (currentPartIndex >= bodyParts.length) {
+                completeBodyScan();
+                return;
+            }
+
+            const current = bodyParts[currentPartIndex];
+            bodyPartName.textContent = current.name;
+            guidanceText.textContent = current[guidanceStyle];
+
+            // Highlight body part
+            bodyPartElements.forEach(el => el.classList.remove('active'));
+            const activeElement = document.querySelector(`[data-part="${current.part}"]`);
+            if (activeElement) activeElement.classList.add('active');
+
+            // Update progress
+            progressText.textContent = `Part ${currentPartIndex + 1} of ${bodyParts.length}`;
+            const progress = (currentPartIndex / bodyParts.length) * 100;
+            progressBar.style.width = progress + '%';
+
+            // Update tip
+            updateTip();
+
+            // Play chime
+            playChime();
+
+            // Start countdown
+            remainingSeconds = partDuration;
+            updateTimerDisplay();
+            countdownInterval = setInterval(() => {
+                if (!isPaused) {
+                    remainingSeconds--;
+                    updateTimerDisplay();
+
+                    if (remainingSeconds <= 0) {
+                        clearInterval(countdownInterval);
+                        nextBodyPart();
+                    }
+                }
+            }, 1000);
+        }
+
+        function nextBodyPart() {
+            if (countdownInterval) {
+                clearInterval(countdownInterval);
+            }
+            currentPartIndex++;
+            startBodyPart();
+        }
+
+        function pauseBodyScan() {
+            isPaused = true;
+            pauseBtn.textContent = 'Resume';
+        }
+
+        function resumeBodyScan() {
+            isPaused = false;
+            pauseBtn.textContent = 'Pause';
+        }
+
+        function resetBodyScan() {
+            isRunning = false;
+            isPaused = false;
+            currentPartIndex = 0;
+            totalTimeElapsed = 0;
+
+            if (countdownInterval) clearInterval(countdownInterval);
+            if (timerInterval) clearInterval(timerInterval);
+
+            bodyPartElements.forEach(el => el.classList.remove('active'));
+            progressBar.style.width = '0%';
+            pauseBtn.textContent = 'Pause';
+        }
+
+        function completeBodyScan() {
+            if (countdownInterval) clearInterval(countdownInterval);
+            if (timerInterval) clearInterval(timerInterval);
+
+            meditationArea.classList.remove('active');
+            completionMessage.classList.add('active');
+            bodyPartElements.forEach(el => el.classList.remove('active'));
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(remainingSeconds / 60);
+            const seconds = remainingSeconds % 60;
+            timerDisplay.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTotalTimer() {
+            timerInterval = setInterval(() => {
+                if (!isPaused && isRunning) {
+                    totalTimeElapsed++;
+                    const minutes = Math.floor(totalTimeElapsed / 60);
+                    const seconds = totalTimeElapsed % 60;
+                    totalTime.textContent = `Total: ${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+        }
+
+        function updateTip() {
+            const tips = [
+                "Simply notice sensations without judgment. There's no right or wrong way to feel.",
+                "If your mind wanders, that's completely normal. Gently guide it back to the body.",
+                "You might notice tingling, warmth, coolness, tension, or nothing at all. All are valid.",
+                "Breathing naturally into each area can help deepen your awareness.",
+                "Don't try to relax or change anything. Simply observe what's already there.",
+                "Notice the difference between thinking about a body part and actually feeling it.",
+                "Some areas may feel clear and alive, others dull or numb. Just notice.",
+                "Your attention itself is healing. Trust the process of awareness.",
+                "If you encounter pain, observe it with curiosity rather than resistance.",
+                "Remember: you're training your mind to pay attention. This is the practice."
+            ];
+            currentTip.textContent = tips[currentPartIndex % tips.length];
+        }
+
+        function playChime() {
+            if (chimeSound === 'none') return;
+
+            // Create a simple tone using Web Audio API
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+
+            // Different frequencies for different chime types
+            if (chimeSound === 'soft') {
+                oscillator.frequency.value = 528; // C note
+            } else if (chimeSound === 'singing-bowl') {
+                oscillator.frequency.value = 432; // A note
+            }
+
+            oscillator.type = 'sine';
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 1);
+        }
+
+        // Interactive body part clicking
+        bodyPartElements.forEach(element => {
+            element.addEventListener('click', () => {
+                if (!isRunning) {
+                    const partName = element.dataset.part;
+                    const bodyPart = bodyParts.find(p => p.part === partName);
+                    if (bodyPart) {
+                        bodyPartElements.forEach(el => el.classList.remove('active'));
+                        element.classList.add('active');
+                        alert(`${bodyPart.name}\n\n${bodyPart.standard}`);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
