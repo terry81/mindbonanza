@@ -3,6 +3,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Create .nojekyll file for GitHub Pages
   eleventyConfig.on('eleventy.after', async () => {
@@ -26,6 +27,11 @@ module.exports = function(eleventyConfig) {
       month: 'long',
       day: 'numeric'
     });
+  });
+
+  // Date filter for sitemap (ISO format)
+  eleventyConfig.addFilter("dateISO", function(date) {
+    return new Date(date).toISOString().split('T')[0];
   });
 
   // Excerpt filter
