@@ -907,6 +907,115 @@ footer {
     }
 }
 
+/* Affiliate Banner */
+.affiliate-banner {
+    margin: 3rem auto;
+    padding: 0 2rem;
+    max-width: 1200px;
+}
+
+.affiliate-banner a {
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.affiliate-banner a:hover {
+    transform: translateY(-5px);
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(107, 70, 193, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.affiliate-banner a:hover .banner-image {
+    box-shadow: 0 15px 40px rgba(107, 70, 193, 0.4);
+}
+
+/* Sidebar Affiliate Banner for Post Pages */
+.post-with-sidebar {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.post-main-content {
+    flex: 1;
+    max-width: 800px;
+}
+
+.post-sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 100px;
+}
+
+.sidebar-banner {
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.05) 0%, rgba(159, 122, 234, 0.05) 100%);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid rgba(107, 70, 193, 0.2);
+    margin-bottom: 2rem;
+}
+
+.sidebar-banner-title {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.sidebar-banner a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-banner a:hover {
+    transform: scale(1.05);
+}
+
+.sidebar-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(107, 70, 193, 0.2);
+}
+
+/* Inline Post Banner */
+.inline-affiliate-banner {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(107, 70, 193, 0.03) 0%, rgba(159, 122, 234, 0.03) 100%);
+    border-radius: 15px;
+    border: 2px solid rgba(107, 70, 193, 0.1);
+}
+
+.inline-affiliate-banner a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.inline-affiliate-banner a:hover {
+    transform: translateY(-3px);
+}
+
+.inline-affiliate-banner img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(107, 70, 193, 0.25);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero h1 {
@@ -985,6 +1094,28 @@ footer {
     .social-link {
         font-size: 0.9rem;
         padding: 0.75rem 1.5rem;
+    }
+
+    .post-with-sidebar {
+        flex-direction: column;
+    }
+
+    .post-sidebar {
+        width: 100%;
+    }
+
+    .sidebar-sticky {
+        position: static;
+    }
+
+    .affiliate-banner {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+
+    .inline-affiliate-banner {
+        padding: 1rem;
+        margin: 2rem 0;
     }
 }
 
