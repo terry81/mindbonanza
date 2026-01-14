@@ -17,6 +17,8 @@ permalink: /blog/
             <button class="filter-btn" data-category="Beginners">Beginners</button>
         </div>
 
+        {% include "affiliate-banner.njk" %}
+
         <div class="blog-grid" id="blog-grid">
             {% for post in collections.posts %}
             <article class="blog-card" data-category="{{ post.data.category }}">
@@ -70,4 +72,3 @@ permalink: /blog/
         });
     });
 </script>
-

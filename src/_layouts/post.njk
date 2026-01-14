@@ -26,12 +26,24 @@ layout: base.njk
         </div>
     </header>
 
-    <div class="post-content container">
-        {{ content | safe }}
-    </div>
+    <div class="post-with-sidebar">
+        <div class="post-main-content">
+            <div class="post-content">
+                {{ content | safe }}
+            </div>
 
-    <footer class="post-footer container">
-        <a href="/blog/" class="back-to-blog">← Back to Blog</a>
-    </footer>
+            <footer class="post-footer">
+                <a href="/blog/" class="back-to-blog">← Back to Blog</a>
+            </footer>
+        </div>
+
+        <aside class="post-sidebar">
+            <div class="sidebar-sticky">
+                {% include "sidebar-banner.njk" %}
+            </div>
+        </aside>
+    </div>
 </article>
 
+{# Full width banner at bottom of post #}
+{% include "affiliate-banner.njk" %}
