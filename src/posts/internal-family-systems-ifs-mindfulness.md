@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-15
 category: "Mental Health"
 tags: ["mindfulness", "IFS", "therapy", "self-compassion", "inner-healing", "psychology", "mental-health"]
-image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
 excerpt: "Discover how Internal Family Systems therapy combines with mindfulness to help you understand and heal the different parts of your psyche, fostering inner harmony and emotional well-being."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Travel"
 tags: ["mindfulness", "driving", "travel", "commute", "road-safety"]
-image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70"
 excerpt: "Transform your drives and trips into calmer, safer, and more present experiences with practical mindfulness techniques for drivers and travelers."
 ---
 

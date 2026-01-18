@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-01-15
 category: "Techniques"
 tags: ["mindfulness", "productivity", "work-life-balance"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Discover simple yet powerful mindfulness practices that fit into your hectic work schedule."
 ---
 

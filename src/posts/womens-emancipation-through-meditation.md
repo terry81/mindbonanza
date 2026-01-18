@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-01-25
 category: "Lifestyle"
 tags: ["mindfulness", "empowerment", "women", "self-discovery"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Discover how meditation becomes a powerful tool for women's liberation, self-discovery, and reclaiming autonomy in a demanding world."
 ---
 

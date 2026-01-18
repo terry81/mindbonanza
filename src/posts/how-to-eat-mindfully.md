@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Nutrition"
 tags: ["mindfulness", "eating", "nutrition", "habits", "wellbeing"]
-image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1506084868230-bb9d95c24759"
 excerpt: "Transform meals and snacks into moments of presence: practical, non-diet advice to slow down, taste fully, and notice hunger and fullness cues."
 ---
 

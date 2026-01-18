@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Lifestyle"
 tags: ["mindfulness", "digital-wellbeing", "social-media", "attention"]
-image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c"
 excerpt: "Learn how constant phone and social media use fragments attention, fuels anxiety, and undermines mindful presence — plus practical steps to reclaim your attention." 
 ---
 

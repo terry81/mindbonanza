@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Travel"
 tags: ["mindfulness", "travel", "vacation", "planning", "wellbeing"]
-image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
 excerpt: "Design vacations that restore: practical, mindful steps to plan trips that honor your energy, values, and relationships—without overscheduling or burnout."
 ---
 

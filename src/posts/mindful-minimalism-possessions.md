@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-14
 category: "Lifestyle & Practice"
 tags: ["mindfulness", "minimalism", "simplicity", "consumerism", "decluttering", "intentional-living"]
-image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6"
 excerpt: "Discover how limiting your purchases and possessions can free your attention, reduce mental clutter, and deepen your mindfulness practice through intentional simplicity."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Techniques"
 tags: ["mindfulness", "conflict-resolution", "communication", "relationships", "emotional-regulation"]
-image: "https://images.unsplash.com/photo-1509475826633-fed577a2c71b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1509475826633-fed577a2c71b"
 excerpt: "Learn mindful tools to de-escalate tension, communicate clearly, and repair relationships with compassion and presence."
 ---
 

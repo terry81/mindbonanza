@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Practice"
 tags: ["mindfulness", "beekeeping", "nature", "ritual", "habits"]
-image: "https://images.unsplash.com/photo-1590334280249-a8f0c9f46a1b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1590334280249-a8f0c9f46a1b"
 excerpt: "Working with bees teaches attention, patience, and a compassionate relationship with the natural world—here's how beekeeping can deepen your mindfulness practice."
 ---
 

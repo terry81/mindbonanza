@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Techniques"
 tags: ["mindfulness", "slow-living", "stress-reduction", "awareness"]
-image: "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1501139083538-0139583c060f"
 excerpt: "Discover why rushing through life is preventing you from experiencing true mindfulness and learn practical ways to slow down."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-22
 category: "Mental Health"
 tags: ["mindfulness", "schema-therapy", "therapy", "childhood-wounds", "emotional-healing", "mental-health", "schema-modes", "early-maladaptive-schemas"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Discover how Schema Therapy combines with mindfulness to identify and heal deep-rooted patterns from childhood—transforming the core beliefs and coping strategies that keep you stuck in painful relationship and life patterns."
 ---
 

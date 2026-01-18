@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Practice"
 tags: ["self-awareness", "projection", "creativity", "meditation", "psychology"]
-image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5"
 excerpt: "What do you see in the inkblot? The answer reveals more about your mind than the image itself. Discover how Rorschach-inspired practices can deepen mindfulness and self-awareness."
 ---
 

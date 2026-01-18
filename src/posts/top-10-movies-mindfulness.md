@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Resources"
 tags: ["movies", "meditation", "awareness", "consciousness", "inspiration"]
-image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba"
 excerpt: "Cinema has the power to awaken consciousness. These 10 films beautifully illustrate mindfulness principles and the journey to presence—without being preachy about it."
 ---
 

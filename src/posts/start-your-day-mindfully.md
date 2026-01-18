@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Techniques"
 tags: ["mindfulness", "morning", "routine", "wellbeing", "habits"]
-image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe"
 excerpt: "Small, repeatable morning practices that help you move from autopilot into a calm, purposeful day—no long meditations required."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-02
 category: "Practice"
 tags: ["meditation", "sensations", "techniques", "awareness", "concentration"]
-image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773"
 excerpt: "Some days meditation is rich with physical sensations. Other days, you feel almost nothing. Both are valuable—and knowing when to emphasize each can transform your practice."
 ---
 

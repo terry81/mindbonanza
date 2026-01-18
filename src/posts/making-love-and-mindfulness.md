@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Relationships"
 tags: ["mindfulness", "intimacy", "relationships", "consent", "communication"]
-image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
 excerpt: "Explore how mindfulness can deepen intimacy, strengthen communication, and make loving moments more present, safe, and connected."
 ---
 

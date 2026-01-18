@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Lifestyle"
 tags: ["mindfulness", "addiction", "harm-reduction", "recovery", "alcohol"]
-image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
 excerpt: "Explore how mindfulness can change our relationship with alcohol and drugs — from harm reduction and self-awareness to recovery and compassion."
 ---
 

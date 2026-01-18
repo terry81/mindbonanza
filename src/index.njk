@@ -17,7 +17,23 @@ title: Discover Your Inner Peace
             {%- set postCount = postCount + 1 -%}
             <article class="blog-card">
                 {% if post.data.image %}
-                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="blog-card-image">
+                <picture class="blog-card-image-wrapper">
+                    <source
+                        srcset="{{ post.data.image }}?auto=format&fit=crop&w=600&h=400&q=80&fm=webp"
+                        type="image/webp"
+                        media="(min-width: 768px)">
+                    <source
+                        srcset="{{ post.data.image }}?auto=format&fit=crop&w=400&h=300&q=75&fm=webp"
+                        type="image/webp">
+                    <img
+                        src="{{ post.data.image }}?auto=format&fit=crop&w=600&h=400&q=80"
+                        alt="{{ post.data.title }} - {{ post.data.excerpt | striptags | truncate(80) }}"
+                        width="600"
+                        height="400"
+                        loading="lazy"
+                        decoding="async"
+                        class="blog-card-image">
+                </picture>
                 {% endif %}
                 <div class="blog-card-content">
                     <span class="blog-category">{{ post.data.category }}</span>

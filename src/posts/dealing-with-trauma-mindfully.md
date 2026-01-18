@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Healing"
 tags: ["trauma", "healing", "safety", "mental-health", "therapy"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Mindfulness can support trauma healing when practiced safely and with professional guidance. This guide offers gentle, trauma-informed practices and essential safety principles."
 ---
 

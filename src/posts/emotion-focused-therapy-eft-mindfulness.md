@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-25
 category: "Mental Health"
 tags: ["mindfulness", "emotion-focused-therapy", "EFT", "emotions", "therapy", "mental-health", "emotional-healing", "primary-emotions"]
-image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc"
 excerpt: "Discover how Emotion-Focused Therapy uses mindfulness to access and transform primary emotions—moving beyond defensive reactions to the authentic feelings beneath, fostering deep healing and authentic connection."
 ---
 

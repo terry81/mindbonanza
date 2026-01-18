@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Practice"
 tags: ["music", "meditation", "sound", "practice", "environment"]
-image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1511379938547-c1f69419868d"
 excerpt: "Does music help or hinder meditation? Discover what types of sound support mindfulness practice, when silence is golden, and how to use music as a portal to presence."
 ---
 

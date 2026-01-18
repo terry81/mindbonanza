@@ -5,7 +5,7 @@ author: "Toli"
 date: 2025-01-10
 category: "Science"
 tags: ["neuroscience", "research", "health-benefits"]
-image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56"
 excerpt: "Explore the fascinating neuroscience and research that proves meditation's profound effects on the brain."
 ---
 

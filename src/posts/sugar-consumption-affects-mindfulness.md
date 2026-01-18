@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-02
 category: "Health"
 tags: ["diet", "nutrition", "awareness", "health", "energy"]
-image: "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1481349518771-20055b2a7b24"
 excerpt: "Sugar doesn't just affect your body—it hijacks your mind. Discover how sugar consumption impacts meditation, awareness, and emotional regulation, and what you can do about it."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Lifestyle"
 tags: ["mindfulness", "decluttering", "minimalism", "sustainability", "habits"]
-image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4"
 excerpt: "Letting go of things can feel heavy. This guide helps you discard, donate, and recycle with intention—reducing clutter without rush or guilt."
 ---
 

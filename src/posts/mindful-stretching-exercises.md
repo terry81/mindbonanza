@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Practice"
 tags: ["mindfulness", "stretching", "movement", "wellness"]
-image: "https://images.unsplash.com/photo-1758272421829-7028296dee8f?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1758272421829-7028296dee8f"
 excerpt: "Simple, mindful stretches you can do at your desk, in the morning, or before bed to increase presence, reduce tension, and invite ease into the body." 
 ---
 

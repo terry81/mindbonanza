@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Techniques"
 tags: ["mindfulness", "social-media", "digital-wellbeing", "habits"]
-image: "https://images.unsplash.com/photo-1573152143286-0c422b4d2175?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1573152143286-0c422b4d2175"
 excerpt: "Learn practical strategies to use social media more mindfully — reduce distraction, protect your wellbeing, and make your online time more intentional."
 ---
 

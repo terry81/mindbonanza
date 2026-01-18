@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-21
 category: "Mental Health"
 tags: ["mindfulness", "ACT", "therapy", "psychological-flexibility", "values", "acceptance", "defusion", "mental-health", "committed-action"]
-image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773"
 excerpt: "Discover how Acceptance and Commitment Therapy uses mindfulness to develop psychological flexibility—learning to accept what you can't control, clarify what matters most, and take committed action toward a rich, meaningful life."
 ---
 

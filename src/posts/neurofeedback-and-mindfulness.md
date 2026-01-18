@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-09
 category: "Science & Practice"
 tags: ["mindfulness", "neurofeedback", "brain-training", "meditation", "neuroscience", "technology"]
-image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063"
 excerpt: "Explore how neurofeedback technology can accelerate your mindfulness practice by providing real-time insights into your brain activity, helping you achieve deeper states of awareness and mental clarity."
 ---
 

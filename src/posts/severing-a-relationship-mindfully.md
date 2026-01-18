@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Relationships"
 tags: ["mindfulness", "breakup", "boundaries", "communication", "self-care"]
-image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1"
 excerpt: "Deciding to end a relationship is rarely simple. This guide offers a mindful, practical approach—reflection prompts, conversation scripts, safety planning, and aftercare—to help you choose and act with clarity and compassion."
 ---
 

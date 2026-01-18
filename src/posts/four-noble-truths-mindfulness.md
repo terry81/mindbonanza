@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-18
 category: "Spirituality"
 tags: ["mindfulness", "buddhism", "four-noble-truths", "suffering", "meditation", "spiritual-growth", "ancient-wisdom", "dukkha"]
-image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1508672019048-805c876b67e2"
 excerpt: "Explore the Four Noble Truths—Buddhism's foundational teaching on suffering and liberation—and discover how mindfulness practice provides the practical path to transform your relationship with life's difficulties."
 ---
 

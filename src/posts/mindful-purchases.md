@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Lifestyle"
 tags: ["mindfulness", "money", "consumption", "habits", "sustainability"]
-image: "https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1481437156560-3205f6a55735"
 excerpt: "Learn practical steps to make clearer, kinder purchasing choices—spend in line with your values, reduce impulse buys, and buy less that you love more."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-24
 category: "Mental Health"
 tags: ["mindfulness", "attachment-theory", "relationships", "childhood", "emotional-healing", "mental-health", "secure-attachment", "therapy"]
-image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74"
 excerpt: "Discover how your earliest relationships created attachment patterns that influence your mindfulness practice today—and learn how awareness of your attachment style can deepen your meditation and transform your relationships."
 ---
 
