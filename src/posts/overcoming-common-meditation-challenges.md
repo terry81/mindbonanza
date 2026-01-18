@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-01-01
 category: "Beginners"
 tags: ["challenges", "tips", "beginners"]
-image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773"
 excerpt: "Struggling with your meditation practice? Learn how to overcome the most common obstacles beginners face."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-14
 category: "Techniques"
 tags: ["mindfulness", "anxiety", "digital-wellbeing", "habits", "stress-relief"]
-image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1551434678-e076c223a692"
 excerpt: "Discover mindful techniques to break the cycle of compulsively checking stocks, messages, emails, and notifications — and reclaim your peace of mind."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Techniques"
 tags: ["mindfulness", "daily-practice", "habits", "wellbeing"]
-image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
 excerpt: "Ten simple, daily practices you can adopt to build consistent mindfulness and bring more presence into everyday life."
 ---
 

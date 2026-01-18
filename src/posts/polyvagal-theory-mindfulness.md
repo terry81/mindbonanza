@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-15
 category: "Mental Health"
 tags: ["mindfulness", "polyvagal-theory", "neuroscience", "nervous-system", "trauma", "CFT", "IFS", "therapy", "emotional-regulation"]
-image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1559757175-5700dde675bc"
 excerpt: "Discover how Polyvagal Theory explains the neuroscience of mindfulness, revealing why practices like CFT and IFS are so effective at healing trauma and regulating emotions through your nervous system."
 ---
 

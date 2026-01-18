@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-02
 category: "Relationships"
 tags: ["strangers", "compassion", "connection", "awareness", "kindness"]
-image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1542838132-92c53300491e"
 excerpt: "Every stranger is a brief opportunity for presence, kindness, and connection. Learn how mindfulness transforms encounters with people you don't know—and might never see again."
 ---
 

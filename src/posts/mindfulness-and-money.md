@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Lifestyle"
 tags: ["mindfulness", "money", "finance", "abundance", "budgeting"]
-image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf"
 excerpt: "Learn how bringing mindfulness to your money — spending, saving, earning, and giving — cultivates financial clarity, reduces stress, and aligns your finances with your values."
 ---
 

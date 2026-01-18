@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-12
 category: "Practice & Growth"
 tags: ["mindfulness", "courage", "rejection", "growth", "discomfort", "resilience"]
-image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b"
 excerpt: "Discover how deliberately seeking rejection and embracing daily challenges can transform your relationship with fear, strengthen mindfulness, and build emotional resilience through intentional discomfort."
 ---
 

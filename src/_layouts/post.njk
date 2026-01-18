@@ -6,7 +6,27 @@ layout: base.njk
     <header class="post-header">
         <div class="container">
             {% if image %}
-            <img src="{{ image }}" alt="{{ title }}" class="post-image">
+            <picture class="post-image-wrapper">
+                <source
+                    srcset="{{ image }}?auto=format&fit=crop&w=1200&h=630&q=80&fm=webp"
+                    type="image/webp"
+                    media="(min-width: 1024px)">
+                <source
+                    srcset="{{ image }}?auto=format&fit=crop&w=800&h=500&q=80&fm=webp"
+                    type="image/webp"
+                    media="(min-width: 768px)">
+                <source
+                    srcset="{{ image }}?auto=format&fit=crop&w=600&h=400&q=75&fm=webp"
+                    type="image/webp">
+                <img
+                    src="{{ image }}?auto=format&fit=crop&w=800&h=500&q=80"
+                    alt="{{ title }} - {{ excerpt | striptags | truncate(100) }}"
+                    width="800"
+                    height="500"
+                    loading="eager"
+                    decoding="async"
+                    class="post-image">
+            </picture>
             {% endif %}
             <h1>{{ title }}</h1>
             <div class="post-meta">

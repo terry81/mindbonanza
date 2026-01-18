@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-12
 category: "Spirituality"
 tags: ["mindfulness", "islam", "dhikr", "spirituality", "prayer", "meditation"]
-image: "https://images.unsplash.com/photo-1631432526080-5abd83dafc8a?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1631432526080-5abd83dafc8a"
 excerpt: "Explore how Islamic practices like dhikr, salah, and muraqaba embody mindfulness principles, offering a path to spiritual presence and connection with Allah."
 ---
 

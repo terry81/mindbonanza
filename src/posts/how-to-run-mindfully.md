@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Movement"
 tags: ["mindfulness", "running", "exercise", "wellbeing", "movement"]
-image: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf"
 excerpt: "Learn how to turn running into a mindful practice — safer, more enjoyable, and more connected running through attention, breath, and curiosity."
 ---
 

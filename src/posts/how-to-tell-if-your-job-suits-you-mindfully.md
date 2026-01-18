@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Career"
 tags: ["mindfulness", "career", "work-life-balance", "decision-making", "job-satisfaction"]
-image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
 excerpt: "A calm, practical guide to discovering whether your current job fits your values, strengths, and life—using mindful reflection, experiments, and compassionate decisions."
 ---
 

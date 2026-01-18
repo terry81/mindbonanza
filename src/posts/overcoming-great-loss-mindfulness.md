@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Healing"
 tags: ["grief", "loss", "healing", "acceptance", "compassion"]
-image: "https://images.unsplash.com/photo-1502139214982-d0ad755818d8?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1502139214982-d0ad755818d8"
 excerpt: "Loss breaks us open, but mindfulness can help us hold the pieces with compassion. Learn how to honor your grief while finding your way forward."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-01-20
 category: "Lifestyle"
 tags: ["mindfulness", "travel", "mental-clarity", "awareness"]
-image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828"
 excerpt: "Discover how to transform your travels into powerful mindfulness practices that clear mental clutter and restore inner peace."
 ---
 

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-04
 category: "Relationships"
 tags: ["mindfulness", "empathy", "compassion", "relationships", "emotional-intelligence"]
-image: "https://images.unsplash.com/photo-1529390079861-591de354faf5?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1529390079861-591de354faf5"
 excerpt: "Discover how mindfulness deepens empathy, transforms relationships, and helps you connect authentically with others while maintaining your own emotional wellbeing."
 ---
 

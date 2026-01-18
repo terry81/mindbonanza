@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-06
 category: "Techniques"
 tags: ["mindfulness", "trauma", "writing", "healing", "self-care"]
-image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1455390582262-044cdead277a"
 excerpt: "Discover how the scientifically-proven Pennebaker Protocol uses expressive writing to process trauma, reduce stress, and cultivate deeper mindfulness and emotional wellbeing."
 ---
 Writing about difficult experiences might seem too simple to be powerful, yet decades of research show that expressive writing—particularly using the Pennebaker Protocol—can significantly reduce trauma symptoms, improve physical health, and deepen mindfulness practice. This evidence-based technique transforms the act of writing into a tool for healing and self-awareness.

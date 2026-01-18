@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-07
 category: "Lifestyle"
 tags: ["mindfulness", "learning", "language", "focus", "cognitive-health"]
-image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d"
 excerpt: "Discover how the process of learning a new language naturally cultivates mindfulness through present-moment awareness, beginner's mind, and deep cognitive engagement."
 ---
 At first glance, learning a new language and practicing mindfulness might seem unrelated. Yet these two pursuits share profound commonalities. Both require sustained attention, patient observation, non-judgmental awareness, and comfortable engagement with uncertainty. Language learning, it turns out, is a powerful and often overlooked mindfulness practice.

@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-15
 category: "Mental Health"
 tags: ["mindfulness", "compassion", "CFT", "self-compassion", "therapy", "mental-health", "emotional-regulation"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Explore how Compassion-Focused Therapy uses mindfulness and evolutionary psychology to help you develop self-compassion, regulate difficult emotions, and heal from shame and self-criticism."
 ---
 

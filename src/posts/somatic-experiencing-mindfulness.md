@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-20
 category: "Mental Health"
 tags: ["mindfulness", "somatic-experiencing", "trauma", "body-awareness", "healing", "nervous-system", "PTSD", "embodiment"]
-image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"
 excerpt: "Discover how Somatic Experiencing uses mindful body awareness to heal trauma by completing the body's natural survival responses—offering a gentle, effective path for those who haven't found relief through talk therapy alone."
 ---
 

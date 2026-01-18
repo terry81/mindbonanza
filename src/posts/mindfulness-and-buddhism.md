@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-12
 category: "Spirituality"
 tags: ["mindfulness", "buddhism", "meditation", "spirituality", "ancient-wisdom", "eastern-philosophy"]
-image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1545389336-cf090694435e"
 excerpt: "Discover the profound Buddhist origins of mindfulness, explore ancient meditation practices, and learn how these timeless teachings can transform your modern life."
 ---
 

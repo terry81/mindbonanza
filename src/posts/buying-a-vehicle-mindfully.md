@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Transport"
 tags: ["mindfulness", "vehicle", "car", "transport", "purchase"]
-image: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1502877338535-766e1452684a"
 excerpt: "A vehicle is more than a machine — it shapes your time, money, and the places you visit. Buying mindfully helps you choose one that supports your life, values, and long-term well-being."
 ---
 

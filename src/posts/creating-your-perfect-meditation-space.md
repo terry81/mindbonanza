@@ -5,7 +5,7 @@ author: "Toli"
 date: 2025-01-05
 category: "Lifestyle"
 tags: ["home", "meditation-space", "setup"]
-image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1545389336-cf090694435e"
 excerpt: "Transform a corner of your home into a peaceful sanctuary for your daily meditation practice."
 ---
 

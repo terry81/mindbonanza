@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-12
 category: "Spirituality"
 tags: ["mindfulness", "christianity", "faith", "prayer", "spirituality", "contemplative-practice"]
-image: "https://images.unsplash.com/photo-1509803874385-db7c23652552?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1509803874385-db7c23652552"
 excerpt: "Explore how mindfulness practices align with Christian contemplative traditions, enriching prayer life and deepening your relationship with God through present-moment awareness."
 ---
 

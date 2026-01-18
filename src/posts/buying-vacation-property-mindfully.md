@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Home"
 tags: ["mindfulness", "vacation", "real-estate", "planning", "rental"]
-image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
 excerpt: "A vacation property can be a refuge—or a burden. Planning and buying with intention helps you choose a place that nourishes you and your community." 
 ---
 

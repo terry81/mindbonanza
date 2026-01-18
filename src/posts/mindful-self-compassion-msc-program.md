@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-23
 category: "Mental Health"
 tags: ["mindfulness", "self-compassion", "MSC", "kristin-neff", "self-kindness", "mental-health", "emotional-healing", "loving-kindness"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Discover the Mindful Self-Compassion program—a research-backed, structured approach to treating yourself with the same kindness you'd offer a good friend, reducing self-criticism and building emotional resilience."
 ---
 

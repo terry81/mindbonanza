@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Resources"
 tags: ["books", "meditation", "reading", "wisdom", "practice"]
-image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1512820790803-83ca734da794"
 excerpt: "From ancient wisdom to modern neuroscience, these 10 books offer profound insights into mindfulness practice. Whether you're a beginner or experienced practitioner, these texts will deepen your journey."
 ---
 

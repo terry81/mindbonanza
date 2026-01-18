@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Home"
 tags: ["mindfulness", "home", "real-estate", "planning", "purchase"]
-image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa"
 excerpt: "Buying a home is big — and often stressful. Approaching it mindfully can reduce regret, improve decisions, and help you create a home that truly supports your life."
 ---
 

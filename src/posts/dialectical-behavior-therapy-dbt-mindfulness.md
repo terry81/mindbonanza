@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-19
 category: "Mental Health"
 tags: ["mindfulness", "DBT", "therapy", "emotional-regulation", "dialectics", "mental-health", "borderline-personality", "distress-tolerance"]
-image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88"
 excerpt: "Discover how Dialectical Behavior Therapy places mindfulness at the core of emotional regulation, distress tolerance, and interpersonal effectiveness—offering powerful tools for anyone struggling with intense emotions."
 ---
 

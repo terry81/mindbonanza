@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Healing"
 tags: ["regret", "self-forgiveness", "past", "healing", "acceptance"]
-image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1518837695005-2083093ee35b"
 excerpt: "Regret can hold us hostage to the past, but mindfulness offers a path to freedom. Learn how to process, learn from, and release the weight of past mistakes."
 ---
 

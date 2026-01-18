@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Relationships"
 tags: ["mindfulness", "friendship", "boundaries", "communication", "self-care"]
-image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91"
 excerpt: "Deciding to end a friendship can be painful. This guide offers a mindful, compassionate process—reflection prompts, scripts, safety and boundary advice, and aftercare—to help you choose and act with clarity."
 ---
 

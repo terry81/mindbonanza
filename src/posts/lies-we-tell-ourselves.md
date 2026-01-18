@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Self-Awareness"
 tags: ["self-deception", "awareness", "truth", "suffering", "cognitive-distortions"]
-image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
 excerpt: "The most profound suffering often comes not from external circumstances, but from the stories we tell ourselves. Learn to recognize and dismantle the lies that keep you trapped."
 ---
 

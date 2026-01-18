@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-01
 category: "Self-Awareness"
 tags: ["ego", "self-awareness", "compassion", "psychology", "growth"]
-image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1519834785169-98be25ec3f84"
 excerpt: "Before you protest, hear this: narcissism isn't just a personality disorder. It's the human condition. Mindfulness can help us see through the illusion of self-importance and find genuine connection."
 ---
 

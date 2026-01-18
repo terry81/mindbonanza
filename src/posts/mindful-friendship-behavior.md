@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-02
 category: "Relationships"
 tags: ["friendship", "relationships", "communication", "connection", "awareness"]
-image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac"
 excerpt: "True friendship isn't just about being there—it's about how you're there. Learn to bring mindfulness to your friendships for deeper connection, less conflict, and more authentic relating."
 ---
 

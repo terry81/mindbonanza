@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Travel"
 tags: ["mindfulness", "travel", "vacation", "planning", "digital-detox"]
-image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=600&fit=crop"
+image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
 excerpt: "A mindful vacation is planned with intention, simplicity, and respect—for your energy, relationships, and the places you visit. Here's a practical guide to planning travel that restores." 
 ---
 

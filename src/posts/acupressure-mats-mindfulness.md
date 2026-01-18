@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-10
 category: "Practice & Tools"
 tags: ["mindfulness", "acupressure", "meditation", "body-awareness", "pain-management", "wellness-tools"]
-image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"
 excerpt: "Discover how acupressure mats can deepen your mindfulness practice by teaching you to observe discomfort without resistance, cultivating present-moment awareness, and releasing both physical and mental tension."
 ---
 

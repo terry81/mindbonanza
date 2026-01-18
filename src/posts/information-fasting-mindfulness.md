@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-13
 category: "Digital Mindfulness"
 tags: ["mindfulness", "information-overload", "digital-minimalism", "focus", "simplicity", "attention"]
-image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773"
 excerpt: "Learn how to reclaim your attention and deepen your mindfulness practice by intentionally limiting exposure to unnecessary information in our hyper-connected world."
 ---
 

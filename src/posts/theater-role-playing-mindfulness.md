@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-11
 category: "Creative Practice"
 tags: ["mindfulness", "theater", "acting", "creativity", "self-awareness", "presence"]
-image: "https://images.unsplash.com/photo-1507924538820-ede94a04019d?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1507924538820-ede94a04019d"
 excerpt: "Discover how the ancient art of theater and role-playing can become a powerful mindfulness practice, teaching presence, self-awareness, and the fluidity of identity while unlocking creative expression."
 ---
 

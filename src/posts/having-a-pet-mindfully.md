@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-31
 category: "Lifestyle"
 tags: ["mindfulness", "pets", "responsibility", "compassion", "wellbeing"]
-image: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9"
 excerpt: "Thinking about a pet? This guide helps you decide mindfully and offers practical ways to care for animals with presence, compassion, and responsibility."
 ---
 

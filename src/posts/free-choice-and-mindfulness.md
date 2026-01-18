@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-04
 category: "Philosophy"
 tags: ["mindfulness", "free-choice", "autonomy", "awareness", "decision-making"]
-image: "https://images.unsplash.com/photo-1529539795054-3c162aab037a?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1529539795054-3c162aab037a"
 excerpt: "Explore the profound relationship between mindfulness and free choice, and learn how awareness can help you reclaim genuine agency over your decisions and life direction."
 ---
 

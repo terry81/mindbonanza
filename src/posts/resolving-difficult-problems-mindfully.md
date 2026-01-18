@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2025-12-29
 category: "Techniques"
 tags: ["mindfulness", "problem-solving", "decision-making", "productivity", "creativity"]
-image: "https://images.unsplash.com/photo-1603205430911-4add4dd5fce7?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1603205430911-4add4dd5fce7"
 excerpt: "Approach hard problems with clarity, calm, and creativity: a mindful workflow for defining, exploring, deciding, and learning from challenges."
 ---
 

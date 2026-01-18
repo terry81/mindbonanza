@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-26
 category: "Mental Health"
 tags: ["mindfulness", "hakomi", "somatic-therapy", "body-centered", "psychotherapy", "mental-health", "trauma-healing", "present-moment"]
-image: "https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&h=500&fit=crop"
+image: "https://images.unsplash.com/photo-1545389336-cf090694435e"
 excerpt: "Discover the Hakomi Method—a gentle, body-centered approach that uses mindfulness to access and transform core beliefs held in your body, offering a compassionate path to healing unconscious patterns and wounded parts of yourself."
 ---
 
