@@ -1,0 +1,28 @@
+# Cloudflare Workers configuration for advanced caching
+# This is a placeholder for custom Cloudflare Workers if needed
+
+# Cache Everything setting
+# Cloudflare will cache HTML by default when Cache-Control headers are present
+
+# Page Rules recommended settings (configure in Cloudflare dashboard):
+# 1. Pattern: *mindbonanza.com/css/*
+#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
+#
+# 2. Pattern: *mindbonanza.com/js/*
+#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
+#
+# 3. Pattern: *mindbonanza.com/assets/*
+#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
+#
+# 4. Pattern: *mindbonanza.com/*.html
+#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 hour
+#
+# 5. Pattern: *mindbonanza.com/
+#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 5 minutes
+
+# Cloudflare caching best practices:
+# - Enable Auto Minify for HTML, CSS, JavaScript
+# - Enable Brotli compression
+# - Enable HTTP/2 and HTTP/3
+# - Enable Early Hints
+# - Set Browser Cache TTL to "Respect Existing Headers"

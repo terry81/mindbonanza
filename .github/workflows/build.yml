@@ -36,4 +36,23 @@ jobs:
           publish_dir: ./_site
           cname: mindbonanza.com  # Your custom domain
 
+      - name: Purge Cloudflare Cache
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        continue-on-error: true
+        env:
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$CLOUDFLARE_ZONE_ID" ] && [ -n "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "Purging Cloudflare cache..."
+            curl -X POST "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+              -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+              -H "Content-Type: application/json" \
+              --data '{"purge_everything":true}' \
+              --silent --show-error
+            echo "Cache purge completed!"
+          else
+            echo "Cloudflare credentials not configured. Skipping cache purge."
+            echo "To enable: Add CLOUDFLARE_ZONE_ID and CLOUDFLARE_API_TOKEN to GitHub Secrets"
+          fi
 
