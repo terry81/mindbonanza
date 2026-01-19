@@ -19,6 +19,17 @@
     <meta property="twitter:title" content="The Mindful Stranger: Bringing Presence to Brief Encounters | Mind Bonanza">
     <meta property="twitter:description" content="Mind Bonanza - Your journey to mindfulness and inner peace begins here">
 
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin>
+
+    <!-- DNS Prefetch for external domains -->
+    <link rel="dns-prefetch" href="https://www.facebook.com">
+
+    <!-- Preload critical CSS -->
+    <link rel="preload" href="/css/main.css?v=2.0.0" as="style">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP45H8LNWJ"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -28,7 +39,7 @@
     </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9036157436023559"
          crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css?v=2.0.0">
 </head>
 <body>
     <header class="site-header">
@@ -795,7 +806,34 @@ Practice distinguishing genuine boundary needs from avoidance.</p>
         </a>
     </div>
 
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js?v=2.0.0" defer></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('Service Worker registered successfully:', registration.scope);
+
+              // Check for updates
+              registration.addEventListener('updatefound', () => {
+                const newWorker = registration.installing;
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New service worker available, reload to activate
+                    if (confirm('A new version of Mind Bonanza is available. Reload to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                });
+              });
+            })
+            .catch(err => console.log('Service Worker registration failed:', err));
+        });
+      }
+    </script>
 </body>
 </html>
 
