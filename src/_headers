@@ -1,21 +1,50 @@
 # Cloudflare Pages Headers Configuration
 # This file sets cache headers and optimizations for all assets
 
-# HTML pages - short cache with revalidation
+# HTML pages - no caching at edge, browser can cache briefly
 /*.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Main index page
+# Main index page - no edge caching
 /index.html
-  Cache-Control: public, max-age=0, must-revalidate
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
+
+# Root path (handles both / and /index.html)
+/
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+
+# Blog index
+/blog/
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
+
+/blog/*
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
+
+# Tools page
+/tools/
+  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
+  CDN-Cache-Control: max-age=0
+  Cloudflare-CDN-Cache-Control: max-age=0
 
 # CSS files - long cache with immutable flag
 /css/*.css
@@ -69,15 +98,25 @@
   Cache-Control: public, max-age=31536000, immutable
   X-Content-Type-Options: nosniff
 
-# HTML files in assets directory
+# HTML files in assets directory (tools) - short edge cache
 /assets/*.html
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
+  CDN-Cache-Control: max-age=300
+  Cloudflare-CDN-Cache-Control: max-age=300
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
 
-# Blog posts - cache for 1 hour with revalidation
+# Assets subdirectories (tool pages) - short edge cache
+/assets/*/
+  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
+  CDN-Cache-Control: max-age=300
+  Cloudflare-CDN-Cache-Control: max-age=300
+
+# Blog posts - short edge cache (5 minutes)
 /posts/*
-  Cache-Control: public, max-age=3600, must-revalidate
+  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
+  CDN-Cache-Control: max-age=300
+  Cloudflare-CDN-Cache-Control: max-age=300
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
 

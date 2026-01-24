@@ -1,5 +1,21 @@
 User-agent: *
 Allow: /
 
+# Allow important crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Sitemap location
 Sitemap: https://www.mindbonanza.com/sitemap.xml
 
+# Host preference
+Host: https://www.mindbonanza.com
