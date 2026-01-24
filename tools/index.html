@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mind Bonanza - Your journey to mindfulness and inner peace begins here">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="author" content="Mind Bonanza Team">
+    <meta name="theme-color" content="#6B46C1">
     <title>Mindfulness Practice Tools | Mind Bonanza</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mindbonanza.com/tools/">
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
@@ -12,12 +18,54 @@
     <meta property="og:title" content="Mindfulness Practice Tools | Mind Bonanza">
     <meta property="og:description" content="Mind Bonanza - Your journey to mindfulness and inner peace begins here">
     <meta property="og:site_name" content="Mind Bonanza">
+    <meta property="og:locale" content="en_US">
+    
+    <meta property="og:image" content="https://www.mindbonanza.com/assets/og-default.png">
+    
     <meta property="fb:page_id" content="mymindbonanza">
+    
 
     <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Mindfulness Practice Tools | Mind Bonanza">
-    <meta property="twitter:description" content="Mind Bonanza - Your journey to mindfulness and inner peace begins here">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mindbonanza">
+    <meta name="twitter:creator" content="@mindbonanza">
+    <meta name="twitter:title" content="Mindfulness Practice Tools | Mind Bonanza">
+    <meta name="twitter:description" content="Mind Bonanza - Your journey to mindfulness and inner peace begins here">
+    
+    <meta name="twitter:image" content="https://www.mindbonanza.com/assets/og-default.png">
+    
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Mind Bonanza",
+        "url": "https://www.mindbonanza.com",
+        "logo": "https://www.mindbonanza.com/assets/logo.png",
+        "sameAs": [
+            "https://www.facebook.com/mymindbonanza"
+        ],
+        "description": "Your journey to mindfulness and inner peace begins here"
+    }
+    </script>
+
+    <!-- Structured Data - WebSite with Search -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Mind Bonanza",
+        "url": "https://www.mindbonanza.com",
+        "description": "Mindfulness, meditation techniques, and mental wellness resources",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mind Bonanza"
+        }
+    }
+    </script>
+
+    
 
     <!-- Preconnect to external domains for faster loading -->
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
@@ -42,15 +90,24 @@
     <link rel="stylesheet" href="/css/main.css?v=2.0.0">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header">
     <nav>
-        <div class="logo">🧘 Mind Bonanza</div>
+        <a href="/" class="logo-link" aria-label="Mind Bonanza Home">
+            <div class="logo">🧘 Mind Bonanza</div>
+        </a>
+        <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
         <ul class="nav-links">
             <li><a href="/">Home</a></li>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/tools/">Tools</a></li>
+            <li><a href="/assets/meditation-timer/">Meditate</a></li>
             <li><a href="/#features">Features</a></li>
-            <li><a href="/#meditation">Meditate</a></li>
             <li><a href="/#benefits">Benefits</a></li>
         </ul>
     </nav>
@@ -58,7 +115,7 @@
 
 
 
-    <main>
+    <main id="main-content">
         
 <section class="tools-hero">
     <div class="container">
@@ -79,6 +136,38 @@
 <section class="tools-grid-section">
     <div class="container">
         <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">🧘</div>
+                <h2>Meditation Timer</h2>
+                <p class="tool-description">A beautiful, customizable timer with ambient sounds and gentle notifications to support your meditation practice. Features breathing animation and session tracking.</p>
+
+                <div class="tool-features">
+                    <h4>Features:</h4>
+                    <ul>
+                        <li>Preset durations (5, 10, 15, 20, 30, 45 minutes)</li>
+                        <li>Custom time setting up to 2 hours</li>
+                        <li>Breathing animation for visual guidance</li>
+                        <li>Start, end, and interval bells</li>
+                        <li>Adjustable volume control</li>
+                        <li>Keyboard shortcuts (Space, Escape)</li>
+                    </ul>
+                </div>
+
+                <div class="tool-benefits">
+                    <h4>Best for:</h4>
+                    <ul>
+                        <li>Timed meditation sessions</li>
+                        <li>Building a consistent practice</li>
+                        <li>Focus and concentration training</li>
+                        <li>Breath awareness meditation</li>
+                    </ul>
+                </div>
+
+                <div class="tool-actions">
+                    <a href="/assets/meditation-timer/" class="btn-primary">Start Meditating →</a>
+                </div>
+            </div>
+
             <div class="tool-card">
                 <div class="tool-icon">👁️</div>
                 <h2>EMDR Practice</h2>
@@ -469,8 +558,8 @@
             <a href="/">Home</a>
             <a href="/blog/">Blog</a>
             <a href="/tools/">Tools</a>
+            <a href="/assets/meditation-timer/">Meditate</a>
             <a href="/#features">Features</a>
-            <a href="/#meditation">Meditate</a>
             <a href="/#benefits">Benefits</a>
         </div>
         <div class="footer-social">
@@ -482,7 +571,7 @@
                 <span>Follow us on Facebook</span>
             </a>
         </div>
-        <p>&copy; 2025 Mind Bonanza. All rights reserved. Find your peace, every day.</p>
+        <p>&copy; 2026 Mind Bonanza. All rights reserved. Find your peace, every day.</p>
     </div>
 </footer>
 

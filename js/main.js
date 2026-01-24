@@ -28,7 +28,8 @@ function startTimer() {
             updateTimerDisplay();
         } else {
             pauseTimer();
-            alert('Meditation session complete! 🧘‍♀️');
+            playCompletionSound();
+            showNotification('Meditation Complete', 'Your meditation session is complete. 🧘‍♀️');
         }
     }, 1000);
 }
@@ -44,8 +45,103 @@ function resetTimer() {
     updateTimerDisplay();
 }
 
+// Play a gentle completion sound
+function playCompletionSound() {
+    try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.value = 528; // Healing frequency
+        oscillator.type = 'sine';
+
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 2);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 2);
+    } catch (e) {
+        console.log('Audio not supported');
+    }
+}
+
+// Show browser notification if permitted
+function showNotification(title, body) {
+    if ('Notification' in window && Notification.permission === 'granted') {
+        new Notification(title, { body, icon: '/assets/logo.png' });
+    } else {
+        alert(body);
+    }
+}
+
+// Request notification permission
+function requestNotificationPermission() {
+    if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+    }
+}
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Request notification permission when timer section is visible
+    const meditationSection = document.getElementById('meditation');
+    if (meditationSection) {
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                requestNotificationPermission();
+                observer.disconnect();
+            }
+        });
+        observer.observe(meditationSection);
+    }
+
+    // Mobile Menu Toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenuToggle && navLinks) {
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'mobile-menu-overlay';
+        document.body.appendChild(overlay);
+
+        function toggleMobileMenu() {
+            const isOpen = navLinks.classList.contains('active');
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+            overlay.classList.toggle('active');
+            mobileMenuToggle.setAttribute('aria-expanded', !isOpen);
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        function closeMobileMenu() {
+            navLinks.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
+            overlay.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+        overlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -77,12 +173,177 @@ document.addEventListener('DOMContentLoaded', function() {
         function rotateQuote() {
             currentQuoteIndex = (currentQuoteIndex + 1) % quotes.length;
             const quote = quotes[currentQuoteIndex];
-            quoteTextElement.textContent = `"${quote.text}"`;
-            quoteAuthorElement.textContent = `— ${quote.author}`;
+
+            // Fade out
+            quoteTextElement.style.opacity = '0';
+            quoteAuthorElement.style.opacity = '0';
+
+            setTimeout(() => {
+                quoteTextElement.textContent = `"${quote.text}"`;
+                quoteAuthorElement.textContent = `— ${quote.author}`;
+                // Fade in
+                quoteTextElement.style.opacity = '1';
+                quoteAuthorElement.style.opacity = '1';
+            }, 300);
         }
+
+        // Add transition for fade effect
+        quoteTextElement.style.transition = 'opacity 0.3s ease';
+        quoteAuthorElement.style.transition = 'opacity 0.3s ease';
 
         setInterval(rotateQuote, 10000); // Change quote every 10 seconds
     }
+
+    // Scroll to top button
+    createScrollToTopButton();
+
+    // Reading progress indicator for blog posts
+    createReadingProgressIndicator();
+
+    // Lazy load images with IntersectionObserver
+    setupLazyLoading();
 });
+
+// Scroll to top button
+function createScrollToTopButton() {
+    const scrollBtn = document.createElement('button');
+    scrollBtn.className = 'scroll-to-top';
+    scrollBtn.setAttribute('aria-label', 'Scroll to top');
+    scrollBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18,15 12,9 6,15"></polyline>
+        </svg>
+    `;
+    document.body.appendChild(scrollBtn);
+
+    // Add styles dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 997;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-to-top:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .scroll-to-top {
+                bottom: 85px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Show/hide based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 500) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// Reading progress indicator for blog posts
+function createReadingProgressIndicator() {
+    const postContent = document.querySelector('.post-content');
+    if (!postContent) return;
+
+    const progressBar = document.createElement('div');
+    progressBar.className = 'reading-progress';
+    document.body.appendChild(progressBar);
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            width: 0%;
+            z-index: 1001;
+            transition: width 0.1s ease-out;
+        }
+    `;
+    document.head.appendChild(style);
+
+    window.addEventListener('scroll', () => {
+        const postRect = postContent.getBoundingClientRect();
+        const postTop = window.scrollY + postRect.top;
+        const postHeight = postContent.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollY = window.scrollY;
+
+        // Calculate progress
+        const scrollDistance = scrollY - postTop + windowHeight;
+        const totalDistance = postHeight + windowHeight;
+        const progress = Math.min(Math.max((scrollDistance / totalDistance) * 100, 0), 100);
+
+        progressBar.style.width = `${progress}%`;
+    }, { passive: true });
+}
+
+// Enhanced lazy loading for images
+function setupLazyLoading() {
+    if ('loading' in HTMLImageElement.prototype) {
+        // Browser supports native lazy loading
+        return;
+    }
+
+    // Fallback for older browsers
+    const images = document.querySelectorAll('img[loading="lazy"]');
+
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                    }
+                    observer.unobserve(img);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px'
+        });
+
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
 
 
