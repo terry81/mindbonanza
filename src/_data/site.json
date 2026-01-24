@@ -1,3 +1,14 @@
 {
-  "baseUrl": "/"
+  "baseUrl": "/",
+  "url": "https://www.mindbonanza.com",
+  "name": "Mind Bonanza",
+  "title": "Mind Bonanza - Mindfulness & Meditation",
+  "description": "Your journey to mindfulness and inner peace begins here. Discover meditation techniques, mindfulness practices, and mental wellness tools.",
+  "author": "Mind Bonanza Team",
+  "email": "contact@mindbonanza.com",
+  "defaultImage": "https://www.mindbonanza.com/assets/og-default.png",
+  "twitterHandle": "@mindbonanza",
+  "facebookPage": "mymindbonanza",
+  "language": "en",
+  "locale": "en_US"
 }

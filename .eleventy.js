@@ -44,6 +44,29 @@ module.exports = function(eleventyConfig) {
     return excerpt + (content.length > 200 ? "..." : "");
   });
 
+  // Reading time filter (average 200 words per minute)
+  eleventyConfig.addFilter("readingTime", function(content) {
+    if (!content) return "1 min read";
+    const text = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    const wordCount = text.split(' ').length;
+    const readingTime = Math.ceil(wordCount / 200);
+    return `${readingTime} min read`;
+  });
+
+  // Word count filter
+  eleventyConfig.addFilter("wordCount", function(content) {
+    if (!content) return 0;
+    const text = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    return text.split(' ').length;
+  });
+
+  // Truncate filter for safer truncation
+  eleventyConfig.addFilter("truncate", function(str, length) {
+    if (!str) return '';
+    if (str.length <= length) return str;
+    return str.substring(0, length) + '...';
+  });
+
   return {
     dir: {
       input: "src",

@@ -3,22 +3,23 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://www.mindbonanza.com/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/blog/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/tools/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -28,41 +29,54 @@ eleventyExcludeFromCollections: true
         <lastmod>{{ post.date | dateISO }}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        {%- if post.data.image %}
+        <image:image>
+            <image:loc>{{ post.data.image }}?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>{{ post.data.title | escape }}</image:title>
+            <image:caption>{{ post.data.excerpt | striptags | truncate(100) | escape }}</image:caption>
+        </image:image>
+        {%- endif %}
     </url>
     {%- endfor %}
     <url>
+        <loc>https://www.mindbonanza.com/assets/meditation-timer/</loc>
+        <lastmod>2026-01-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.mindbonanza.com/assets/emdr-practice/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/assets/cbt-practice/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/assets/printable-journal/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/assets/breathing-exercise/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/assets/body-scan-meditation/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.mindbonanza.com/assets/mindfulness-assessment/</loc>
-        <lastmod>2026-01-12</lastmod>
+        <lastmod>2026-01-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

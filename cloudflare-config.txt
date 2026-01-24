@@ -1,28 +1,54 @@
-# Cloudflare Workers configuration for advanced caching
-# This is a placeholder for custom Cloudflare Workers if needed
+# Cloudflare Configuration for mindbonanza.com
+# =============================================
 
-# Cache Everything setting
-# Cloudflare will cache HTML by default when Cache-Control headers are present
+# IMPORTANT: The _headers file controls caching. Make sure Cloudflare respects these headers.
 
-# Page Rules recommended settings (configure in Cloudflare dashboard):
-# 1. Pattern: *mindbonanza.com/css/*
+# ===========================================
+# CLOUDFLARE DASHBOARD SETTINGS (Required)
+# ===========================================
+
+# 1. Caching > Configuration:
+#    - Browser Cache TTL: "Respect Existing Headers"
+#    - This is CRITICAL - ensures Cloudflare uses our _headers file
+
+# 2. Delete or Disable Aggressive Page Rules:
+#    - Remove any Page Rules that set "Edge Cache TTL" for HTML pages
+#    - Page Rules override the _headers file!
+
+# 3. If using Page Rules, use these LESS aggressive settings:
+#
+#    Pattern: *mindbonanza.com/css/*
 #    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
 #
-# 2. Pattern: *mindbonanza.com/js/*
+#    Pattern: *mindbonanza.com/js/*
 #    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
 #
-# 3. Pattern: *mindbonanza.com/assets/*
+#    Pattern: *mindbonanza.com/assets/*.png
 #    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
 #
-# 4. Pattern: *mindbonanza.com/*.html
-#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 hour
-#
-# 5. Pattern: *mindbonanza.com/
-#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 5 minutes
+#    DO NOT set Edge Cache TTL for HTML pages - let _headers control it
 
-# Cloudflare caching best practices:
+# 4. Caching > Tiered Cache:
+#    - Enable "Tiered Cache" for better cache hit rates on static assets
+
+# ===========================================
+# PURGE CACHE AFTER DEPLOYMENT
+# ===========================================
+# After deploying new content, purge the Cloudflare cache:
+# - Go to Caching > Configuration > Purge Cache
+# - Choose "Purge Everything" or specific URLs
+#
+# Or use the API:
+# curl -X POST "https://api.cloudflare.com/client/v4/zones/YOUR_ZONE_ID/purge_cache" \
+#      -H "Authorization: Bearer YOUR_API_TOKEN" \
+#      -H "Content-Type: application/json" \
+#      --data '{"purge_everything":true}'
+
+# ===========================================
+# RECOMMENDED SETTINGS
+# ===========================================
 # - Enable Auto Minify for HTML, CSS, JavaScript
 # - Enable Brotli compression
 # - Enable HTTP/2 and HTTP/3
 # - Enable Early Hints
-# - Set Browser Cache TTL to "Respect Existing Headers"
+# - Speed > Optimization > Enable "Rocket Loader" (optional, test first)
