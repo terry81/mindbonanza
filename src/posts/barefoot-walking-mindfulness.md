@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-27
 category: "Practice"
 tags: ["mindfulness", "grounding", "nature", "walking", "earthing", "presence", "body-awareness", "senses", "outdoor-practice"]
-image: "https://images.unsplash.com/photo-1499002238440-d264b5aa2529"
+image: "https://images.unsplash.com/photo-1643895007994-725c738501b6"
 excerpt: "Discover how removing your shoes transforms ordinary walking into a powerful mindfulness practice. Learn the art of barefoot awareness and how direct contact with the earth deepens presence."
 ---
 
