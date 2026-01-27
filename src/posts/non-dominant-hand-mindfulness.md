@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-01-27
 category: "Practice"
 tags: ["mindfulness", "brain-training", "habits", "presence", "neuroplasticity", "beginner-friendly", "daily-practice", "awareness", "attention"]
-image: "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806"
+image: "https://images.unsplash.com/photo-1574676122993-cd7fcf7f9030"
 excerpt: "Discover how switching to your non-dominant hand for everyday tasks can dramatically increase present-moment awareness. Learn why this simple practice is one of the most accessible mindfulness techniques available."
 ---
 

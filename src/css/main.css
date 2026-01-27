@@ -506,14 +506,20 @@ button:focus-visible {
     backdrop-filter: none;
 }
 
+.post-header .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 .post-image {
-    max-width: 800px;
+    max-width: 100%;
     width: 100%;
-    height: 250px;
+    height: 400px;
     object-fit: cover;
     border-radius: 15px;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .post-header h1 {
@@ -569,7 +575,7 @@ button:focus-visible {
 
 
 .post-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 1.5rem auto;
     padding: 0 2rem;
 }
@@ -1260,26 +1266,40 @@ footer {
 
 /* Sidebar Affiliate Banner for Post Pages */
 .post-with-sidebar {
-    display: flex;
-    gap: 2rem;
-    max-width: 1200px;
+    position: relative;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 2rem;
 }
 
 .post-main-content {
-    flex: 1;
-    max-width: 800px;
+    width: 100%;
 }
 
 .post-sidebar {
-    width: 300px;
-    flex-shrink: 0;
+    position: absolute;
+    right: -320px;
+    top: 0;
+    width: 280px;
 }
 
 .sidebar-sticky {
     position: sticky;
     top: 100px;
+}
+
+/* Hide sidebar on screens where it would overlap content */
+@media (max-width: 1300px) {
+    .post-sidebar {
+        position: static;
+        width: 100%;
+        max-width: 400px;
+        margin: 2rem auto 0;
+    }
+
+    .sidebar-sticky {
+        position: static;
+    }
 }
 
 .sidebar-banner {
@@ -1471,17 +1491,6 @@ footer {
         padding: 0.75rem 1.5rem;
     }
 
-    .post-with-sidebar {
-        flex-direction: column;
-    }
-
-    .post-sidebar {
-        width: 100%;
-    }
-
-    .sidebar-sticky {
-        position: static;
-    }
 
     .affiliate-banner {
         padding: 0 1rem;
