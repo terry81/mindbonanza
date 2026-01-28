@@ -1,3 +1,49 @@
+// Dark Mode Theme Toggle
+function initThemeToggle() {
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Apply saved theme or system preference
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    } else if (systemPrefersDark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+
+    // Toggle theme on button click
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Announce theme change for screen readers
+            const announcement = document.createElement('div');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.setAttribute('aria-atomic', 'true');
+            announcement.className = 'sr-only';
+            announcement.textContent = `Theme changed to ${newTheme} mode`;
+            document.body.appendChild(announcement);
+            setTimeout(() => announcement.remove(), 1000);
+        });
+    });
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+}
+
+// Initialize theme toggle as early as possible
+initThemeToggle();
+
 // Meditation Timer
 let timerInterval;
 let timeLeft = 300; // 5 minutes in seconds
@@ -345,5 +391,143 @@ function setupLazyLoading() {
         images.forEach(img => imageObserver.observe(img));
     }
 }
+
+// Search functionality
+let searchIndex = null;
+
+async function loadSearchIndex() {
+    if (searchIndex) return searchIndex;
+
+    try {
+        const response = await fetch('/search-index.json');
+        searchIndex = await response.json();
+        return searchIndex;
+    } catch (error) {
+        console.error('Failed to load search index:', error);
+        return [];
+    }
+}
+
+function initSearch() {
+    const searchToggles = document.querySelectorAll('.search-toggle');
+    const searchModal = document.getElementById('search-modal');
+    const searchClose = document.querySelector('.search-close');
+    const searchOverlay = document.querySelector('.search-modal-overlay');
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    if (!searchToggles.length || !searchModal) return;
+
+    function openSearch() {
+        searchModal.classList.add('active');
+        searchModal.setAttribute('aria-hidden', 'false');
+        searchToggles.forEach(btn => btn.setAttribute('aria-expanded', 'true'));
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => searchInput.focus(), 100);
+        loadSearchIndex(); // Preload index
+    }
+
+    function closeSearch() {
+        searchModal.classList.remove('active');
+        searchModal.setAttribute('aria-hidden', 'true');
+        searchToggles.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+        document.body.style.overflow = '';
+        searchInput.value = '';
+        searchResults.innerHTML = '<p class="search-hint">Start typing to search...</p>';
+    }
+
+    searchToggles.forEach(btn => btn.addEventListener('click', openSearch));
+    searchClose.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', closeSearch);
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+            closeSearch();
+        }
+        // Ctrl/Cmd + K to open search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            if (searchModal.classList.contains('active')) {
+                closeSearch();
+            } else {
+                openSearch();
+            }
+        }
+    });
+
+    // Debounce search input
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => performSearch(e.target.value), 150);
+    });
+}
+
+async function performSearch(query) {
+    const searchResults = document.getElementById('search-results');
+
+    if (!query || query.trim().length < 2) {
+        searchResults.innerHTML = '<p class="search-hint">Start typing to search...</p>';
+        return;
+    }
+
+    const index = await loadSearchIndex();
+    const searchTerm = query.toLowerCase().trim();
+
+    const results = index.filter(item => {
+        const titleMatch = item.title.toLowerCase().includes(searchTerm);
+        const excerptMatch = item.excerpt.toLowerCase().includes(searchTerm);
+        const categoryMatch = item.category && item.category.toLowerCase().includes(searchTerm);
+        const tagsMatch = item.tags && item.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+        return titleMatch || excerptMatch || categoryMatch || tagsMatch;
+    });
+
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-no-results">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <p>No articles found for "<strong>${escapeHtml(query)}</strong>"</p>
+                <p style="font-size: 0.875rem; margin-top: 0.5rem;">Try different keywords or browse our <a href="/blog/" style="color: var(--primary-color);">blog</a></p>
+            </div>
+        `;
+        return;
+    }
+
+    const resultsHTML = results.slice(0, 10).map(item => `
+        <a href="${item.url}" class="search-result-item">
+            <h4>${highlightMatch(item.title, searchTerm)}</h4>
+            <p>${highlightMatch(item.excerpt.substring(0, 150) + '...', searchTerm)}</p>
+            <div class="search-result-meta">
+                ${item.category ? `<span class="search-result-category">${item.category}</span>` : ''}
+                <span>${item.date}</span>
+            </div>
+        </a>
+    `).join('');
+
+    searchResults.innerHTML = resultsHTML;
+}
+
+function highlightMatch(text, term) {
+    if (!term) return escapeHtml(text);
+    const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
+    return escapeHtml(text).replace(regex, '<mark style="background: rgba(107, 70, 193, 0.2); padding: 0 2px; border-radius: 2px;">$1</mark>');
+}
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Initialize search when DOM is ready
+document.addEventListener('DOMContentLoaded', initSearch);
 
 
