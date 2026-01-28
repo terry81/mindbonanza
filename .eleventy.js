@@ -67,6 +67,11 @@ module.exports = function(eleventyConfig) {
     return str.substring(0, length) + '...';
   });
 
+  // JSON stringify filter for search index
+  eleventyConfig.addFilter("jsonify", function(value) {
+    return JSON.stringify(value);
+  });
+
   return {
     dir: {
       input: "src",

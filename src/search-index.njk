@@ -1,0 +1,16 @@
+---
+permalink: /search-index.json
+eleventyExcludeFromCollections: true
+---
+[
+    {% for post in collections.posts %}
+    {
+        "title": {{ post.data.title | jsonify | safe }},
+        "excerpt": {{ post.data.excerpt | striptags | jsonify | safe }},
+        "url": "{{ post.url }}",
+        "category": {{ post.data.category | jsonify | safe }},
+        "tags": {{ post.data.tags | jsonify | safe }},
+        "date": "{{ post.data.date | dateDisplay }}"
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+]
