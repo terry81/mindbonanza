@@ -20,6 +20,28 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://www.mindbonanza.com/posts/gluckschmerz_and_mindfulness/</loc>
+        <lastmod>2026-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>Glückschmerz and Mindfulness: Understanding the Pain in Others&#39; Joy</image:title>
+            <image:caption>Why does others&#39; success sometimes hurt? Explore the hidden emotion of glückschmerz and learn how mi...</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.mindbonanza.com/posts/schadenfreude_and_mindfulness/</loc>
+        <lastmod>2026-01-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>Schadenfreude and Mindfulness: Understanding the Pleasure in Others&#39; Pain</image:title>
+            <image:caption>Why do we feel pleasure when others fail? Explore the psychology of schadenfreude and discover how m...</image:caption>
+        </image:image>
+    </url>
+    <url>
         <loc>https://www.mindbonanza.com/posts/barefoot-walking-mindfulness/</loc>
         <lastmod>2026-01-27</lastmod>
         <changefreq>monthly</changefreq>
