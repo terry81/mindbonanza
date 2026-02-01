@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Bonanza Focus Blocker - Chrome Extension | Mind Bonanza</title>
+    <meta name="description" content="A Chrome extension that blocks distracting websites like Facebook, Twitter, and social media to help you stay focused and mindful throughout your day.">
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --accent: #F6AD55;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--gradient-1);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+        }
+
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 120px);
+        }
+
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .extension-hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .extension-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .extension-description {
+            color: var(--text-dark);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+        }
+
+        .cta-button:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(107, 70, 193, 0.4);
+        }
+
+        .cta-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .features-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .features-section h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card h3 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .how-it-works {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .mindfulness-note {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f0e6ff 0%, #e6f0ff 100%);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .mindfulness-note h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .mindfulness-note p {
+            color: var(--text-dark);
+            line-height: 1.8;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                padding: 25px;
+            }
+
+            .extension-icon {
+                font-size: 4rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="/" class="logo-link" aria-label="Mind Bonanza Home">
+                <div class="logo">🧘 Mind Bonanza</div>
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/tools/" class="active">Tools</a></li>
+                <li><a href="/assets/meditation-timer/">Meditate</a></li>
+                <li><a href="/#benefits">Benefits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-wrapper">
+        <div class="container">
+            <header>
+                <h1>🛡️ Mind Bonanza Focus Blocker</h1>
+                <p class="subtitle">Chrome Extension for Distraction-Free Focus</p>
+            </header>
+
+            <div class="extension-hero">
+                <div class="extension-icon">🚫📱</div>
+                <p class="extension-description">
+                    Take control of your digital wellbeing with the Mind Bonanza Focus Blocker.
+                    This Chrome extension helps you block distracting websites like Facebook, Twitter,
+                    Instagram, and other time-draining sites so you can stay focused and present.
+                </p>
+                <a href="https://chromewebstore.google.com/detail/mind-bonanza/epccnnomejkgcicichmoncaoipdaijhh"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="cta-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.18c5.421 0 9.82 4.399 9.82 9.82s-4.399 9.82-9.82 9.82-9.82-4.399-9.82-9.82 4.399-9.82 9.82-9.82zM12 5.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zm0 2a4.5 4.5 0 110 9 4.5 4.5 0 010-9z"/>
+                    </svg>
+                    Add to Chrome - It's Free
+                </a>
+            </div>
+
+            <section class="features-section">
+                <h2>✨ Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Custom Block List</h3>
+                        <p>Add any websites you find distracting to your personal block list</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Instant Blocking</h3>
+                        <p>Sites are blocked immediately - no workarounds or delays</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Privacy First</h3>
+                        <p>All your data stays local - we never collect browsing data</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Mindful Reminders</h3>
+                        <p>Gentle prompts when you try to visit blocked sites</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2>📋 How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Install the Extension</h4>
+                            <p>Click "Add to Chrome" and confirm the installation</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Add Distracting Sites</h4>
+                            <p>Enter the URLs of websites you want to block (e.g., facebook.com, twitter.com)</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Stay Focused</h4>
+                            <p>Enjoy distraction-free browsing and reclaim your attention</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="mindfulness-note">
+                <h3>🧘 Why Block Distracting Sites?</h3>
+                <p>
+                    Constant notifications, social media scrolling, and digital interruptions fragment our attention
+                    and pull us away from the present moment. By intentionally limiting access to distracting sites,
+                    you create space for deeper focus, meaningful work, and genuine mindfulness in your daily life.
+                </p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="/tools/" class="back-link">← Back to All Tools</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
