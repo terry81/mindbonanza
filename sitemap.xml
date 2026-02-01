@@ -20,6 +20,28 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://www.mindbonanza.com/posts/cosmic-perspective-mindfulness/</loc>
+        <lastmod>2026-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>The Cosmic Perspective: How the Vastness of the Universe Deepens Mindfulness</image:title>
+            <image:caption>Discover how contemplating the immense scale of the universe can transform your mindfulness practice...</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.mindbonanza.com/posts/excess-wealth-mindfulness-trap/</loc>
+        <lastmod>2026-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>The Wealth Paradox: How Earning More Than You Need Can Make You Less Mindful</image:title>
+            <image:caption>Discover the hidden costs of pursuing wealth beyond your needs. Learn how excess money can fragment ...</image:caption>
+        </image:image>
+    </url>
+    <url>
         <loc>https://www.mindbonanza.com/posts/gluckschmerz_and_mindfulness/</loc>
         <lastmod>2026-01-31</lastmod>
         <changefreq>monthly</changefreq>
