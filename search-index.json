@@ -1,6 +1,42 @@
 [
     
     {
+        "title": "Mindful Investing: How to Own Stocks Without Losing Your Peace of Mind",
+        "excerpt": "Learn how to invest in stocks without becoming enslaved to market movements. Discover mindful strategies for checking your portfolio, managing financial anxiety, and building wealth while preserving inner peace.",
+        "url": "/posts/mindful-stock-investing/",
+        "category": "Lifestyle",
+        "tags": ["mindfulness","investing","stocks","financial wellness","anxiety","money","compulsive checking","emotional regulation","long-term thinking","wealth"],
+        "date": "February 8, 2026"
+    },
+    
+    {
+        "title": "The Negativity Bias in News: A Mindful Approach to Media Consumption",
+        "excerpt": "Discover how the negativity bias in news media affects your mental health and learn mindful strategies to consume information without losing peace of mind. Inspired by Hans Rosling's Factfulness.",
+        "url": "/posts/negativity-bias-news-mindfulness/",
+        "category": "Mental Wellness",
+        "tags": ["mindfulness","negativity bias","news consumption","media literacy","mental health","factfulness","Hans Rosling","cognitive bias","anxiety","awareness"],
+        "date": "February 8, 2026"
+    },
+    
+    {
+        "title": "Noise: Why Our Judgments Are Less Consistent Than We Think and What Mindfulness Can Do About It",
+        "excerpt": "Daniel Kahneman's final masterwork reveals a hidden flaw in human judgment: noise. Discover how random variability undermines our decisions and how mindfulness practices can help create more consistent, reliable thinking.",
+        "url": "/posts/noise-kahneman-mindfulness/",
+        "category": "Book Reviews",
+        "tags": ["mindfulness","book review","Daniel Kahneman","noise","decision making","psychology","variability","judgment","awareness","consistency"],
+        "date": "February 8, 2026"
+    },
+    
+    {
+        "title": "Thinking, Fast and Slow: What Daniel Kahneman's Masterwork Teaches Us About Mindfulness",
+        "excerpt": "Daniel Kahneman's Nobel Prize-winning insights into how we think reveal why mindfulness matters more than ever. Discover how understanding System 1 and System 2 thinking can transform your meditation practice and daily awareness.",
+        "url": "/posts/thinking-fast-slow-kahneman-mindfulness/",
+        "category": "Book Reviews",
+        "tags": ["mindfulness","book review","Daniel Kahneman","cognitive bias","System 1","System 2","psychology","decision making","awareness","behavioral economics"],
+        "date": "February 8, 2026"
+    },
+    
+    {
         "title": "How to Find Your Life Purpose Mindfully: A Journey of Inner Discovery",
         "excerpt": "Discover how mindfulness can guide you to your authentic life purpose. Learn practical techniques to uncover what truly matters, align with your values, and create a life of meaning and fulfillment.",
         "url": "/posts/finding-purpose-mindfully/",

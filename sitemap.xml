@@ -20,6 +20,50 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://www.mindbonanza.com/posts/mindful-stock-investing/</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>Mindful Investing: How to Own Stocks Without Losing Your Peace of Mind</image:title>
+            <image:caption>Learn how to invest in stocks without becoming enslaved to market movements. Discover mindful strate...</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.mindbonanza.com/posts/negativity-bias-news-mindfulness/</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>The Negativity Bias in News: A Mindful Approach to Media Consumption</image:title>
+            <image:caption>Discover how the negativity bias in news media affects your mental health and learn mindful strategi...</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.mindbonanza.com/posts/noise-kahneman-mindfulness/</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1516534775068-ba3e7458af70?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>Noise: Why Our Judgments Are Less Consistent Than We Think and What Mindfulness Can Do About It</image:title>
+            <image:caption>Daniel Kahneman&#39;s final masterwork reveals a hidden flaw in human judgment: noise. Discover how rand...</image:caption>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://www.mindbonanza.com/posts/thinking-fast-slow-kahneman-mindfulness/</loc>
+        <lastmod>2026-02-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+            <image:title>Thinking, Fast and Slow: What Daniel Kahneman&#39;s Masterwork Teaches Us About Mindfulness</image:title>
+            <image:caption>Daniel Kahneman&#39;s Nobel Prize-winning insights into how we think reveal why mindfulness matters more...</image:caption>
+        </image:image>
+    </url>
+    <url>
         <loc>https://www.mindbonanza.com/posts/finding-purpose-mindfully/</loc>
         <lastmod>2026-02-05</lastmod>
         <changefreq>monthly</changefreq>
