@@ -1,6 +1,33 @@
 [
     
     {
+        "title": "Gardening and Mindfulness: Growing Presence with Every Seed",
+        "excerpt": "Gardening turns ordinary care into mindful practice, teaching patience, presence, and a deeper connection with the rhythms of life.",
+        "url": "/posts/gardening-and-mindfulness/",
+        "category": "Practices",
+        "tags": ["mindfulness","gardening","nature","awareness","patience","grounding","wellbeing"],
+        "date": "February 12, 2026"
+    },
+    
+    {
+        "title": "Hiking and Mindfulness: Presence with Every Step",
+        "excerpt": "Explore how hiking turns ordinary movement into a mindfulness practice, helping you cultivate presence, calm, and a deeper relationship with the natural world.",
+        "url": "/posts/hiking-and-mindfulness/",
+        "category": "Practices",
+        "tags": ["mindfulness","hiking","nature","awareness","focus","meditation","grounding"],
+        "date": "February 12, 2026"
+    },
+    
+    {
+        "title": "Sailing and Mindfulness: Finding Stillness on the Water",
+        "excerpt": "Discover how the ancient art of sailing can be a powerful mindfulness practice, helping you cultivate presence, focus, and a deep connection with the elements.",
+        "url": "/posts/sailing-and-mindfulness/",
+        "category": "Practices",
+        "tags": ["mindfulness","sailing","nature","awareness","focus","meditation","flow state"],
+        "date": "February 12, 2026"
+    },
+    
+    {
         "title": "Mindful Investing: How to Own Stocks Without Losing Your Peace of Mind",
         "excerpt": "Learn how to invest in stocks without becoming enslaved to market movements. Discover mindful strategies for checking your portfolio, managing financial anxiety, and building wealth while preserving inner peace.",
         "url": "/posts/mindful-stock-investing/",
