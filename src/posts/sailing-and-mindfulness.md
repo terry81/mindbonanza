@@ -5,7 +5,7 @@ author: "Mind Bonanza Team"
 date: 2026-02-12
 category: "Practices"
 tags: ["mindfulness", "sailing", "nature", "awareness", "focus", "meditation", "flow state"]
-image: "https://images.unsplash.com/photo-1593453806519-58b8aeb4c2a4"
+image: "https://images.unsplash.com/photo-1526761122248-c31c93f8b2b9"
 excerpt: "Discover how the ancient art of sailing can be a powerful mindfulness practice, helping you cultivate presence, focus, and a deep connection with the elements."
 ---
 
