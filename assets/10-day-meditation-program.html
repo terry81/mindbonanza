@@ -1,0 +1,698 @@
+---
+layout: base.njk
+title: 10-Day Meditation Program - Mind Bonanza
+eleventyExcludeFromCollections: true
+---
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+    }
+
+    .program-container {
+        max-width: 900px;
+        margin: 100px auto 50px;
+        padding: 20px;
+    }
+
+    .program-header {
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        text-align: center;
+    }
+
+    .program-header h1 {
+        color: #6B46C1;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .program-intro {
+        color: #4a5568;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+    }
+
+    .program-benefits {
+        background: #f7fafc;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .program-benefits h3 {
+        color: #6B46C1;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+    }
+
+    .benefits-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .benefits-list li {
+        color: #4a5568;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .benefits-list li:before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #48BB78;
+        font-weight: bold;
+    }
+
+    .day-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .day-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .day-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 3px solid #6B46C1;
+    }
+
+    .day-number {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .day-title-group h2 {
+        color: #6B46C1;
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    .day-theme {
+        color: #718096;
+        font-size: 1rem;
+        font-style: italic;
+        margin: 0.3rem 0 0 0;
+    }
+
+    .day-content {
+        color: #4a5568;
+        line-height: 1.8;
+    }
+
+    .day-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .day-section h3 {
+        color: #6B46C1;
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .day-section p {
+        margin-bottom: 1rem;
+    }
+
+    .meditation-steps {
+        background: #f7fafc;
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .meditation-steps ol {
+        margin: 0;
+        padding-left: 1.5rem;
+        color: #4a5568;
+    }
+
+    .meditation-steps li {
+        margin-bottom: 0.75rem;
+        line-height: 1.7;
+    }
+
+    .practice-tips {
+        background: #EDF2F7;
+        border-left: 4px solid #48BB78;
+        padding: 1.25rem;
+        border-radius: 8px;
+        margin: 1rem 0;
+    }
+
+    .practice-tips strong {
+        color: #2d3748;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .duration-badge {
+        display: inline-block;
+        background: #9F7AEA;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 0.5rem;
+    }
+
+    .completion-card {
+        background: linear-gradient(135deg, #48BB78 0%, #38A169 100%);
+        color: white;
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        margin-top: 2rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    }
+
+    .completion-card h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .completion-card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.95;
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .back-link a {
+        display: inline-block;
+        background: white;
+        color: #6B46C1;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .back-link a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+        .program-container {
+            margin-top: 80px;
+            padding: 15px;
+        }
+
+        .program-header h1 {
+            font-size: 2rem;
+        }
+
+        .day-header {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .day-title-group h2 {
+            font-size: 1.5rem;
+        }
+
+        .benefits-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="program-container">
+    <div class="program-header">
+        <h1>🧘‍♀️ 10-Day Meditation Program</h1>
+        <p class="program-intro">
+            Welcome to your transformative 10-day meditation journey. This carefully designed program will guide you from the basics of meditation to more advanced practices, helping you build a sustainable daily meditation habit. Each day builds upon the previous one, gradually deepening your practice and understanding.
+        </p>
+        <div class="program-benefits">
+            <h3>What You'll Gain:</h3>
+            <ul class="benefits-list">
+                <li>Reduced stress and anxiety</li>
+                <li>Improved focus and clarity</li>
+                <li>Better emotional regulation</li>
+                <li>Enhanced self-awareness</li>
+                <li>Greater sense of calm</li>
+                <li>Improved sleep quality</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Day 1 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">1</div>
+            <div class="day-title-group">
+                <h2>Foundation: Breath Awareness</h2>
+                <p class="day-theme">Learning to anchor in the present moment</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Welcome to Day 1! Today, you'll learn the most fundamental meditation technique: breath awareness. The breath is always with you, making it the perfect anchor to the present moment. This simple yet powerful practice forms the foundation of all meditation.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 5-10 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Find a comfortable position:</strong> Sit on a chair or cushion with your back straight but not rigid. Place your hands on your lap or knees. You can also lie down if sitting is uncomfortable.</li>
+                        <li><strong>Close your eyes:</strong> Gently close your eyes or maintain a soft downward gaze.</li>
+                        <li><strong>Notice your natural breath:</strong> Don't try to change your breathing. Simply observe the sensation of air moving in and out of your nose or the rise and fall of your chest or belly.</li>
+                        <li><strong>Count your breaths:</strong> Count each exhale from 1 to 10, then start over. This gives your mind a simple task.</li>
+                        <li><strong>When your mind wanders:</strong> This is completely normal! Gently acknowledge the thought without judgment and return your attention to counting breaths.</li>
+                        <li><strong>End mindfully:</strong> When ready, take a deep breath, wiggle your fingers and toes, and slowly open your eyes.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Beginner Tips:</strong>
+                Don't worry if you lose count frequently - this happens to everyone! The practice is in noticing when your mind wanders and gently bringing it back. Each time you return to the breath, you're strengthening your meditation muscle.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">2</div>
+            <div class="day-title-group">
+                <h2>Deepening Breath Awareness</h2>
+                <p class="day-theme">Exploring the full breath cycle</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Building on yesterday's practice, today you'll explore your breath in greater detail. Instead of just counting, you'll notice the subtle qualities and sensations of each breath, developing deeper concentration.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 10 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Begin as yesterday:</strong> Settle into your meditation posture with a few deep breaths.</li>
+                        <li><strong>Notice the inhale:</strong> Feel where the breath enters - the nostrils, throat, chest. Notice its temperature, depth, and quality.</li>
+                        <li><strong>Notice the pause:</strong> There's a brief moment between inhale and exhale. Observe this natural pause.</li>
+                        <li><strong>Notice the exhale:</strong> Feel the air leaving, the body releasing. Is it warm? Smooth? Longer than the inhale?</li>
+                        <li><strong>Notice the bottom pause:</strong> Another brief pause before the next inhale begins.</li>
+                        <li><strong>Continue cycling:</strong> Move through these four phases: inhale, pause, exhale, pause. When thoughts arise, return to sensing the breath.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Practice Insight:</strong>
+                You might notice your breath naturally changing - becoming slower, deeper, or more subtle. This is fine! Don't force anything. Just observe what's naturally happening.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">3</div>
+            <div class="day-title-group">
+                <h2>Body Awareness</h2>
+                <p class="day-theme">Connecting with physical sensations</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today introduces body awareness meditation. Many of us live primarily in our heads, disconnected from our bodies. This practice helps you reconnect with physical sensations and release stored tension.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 12 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Settle in:</strong> Get comfortable and take three deep breaths.</li>
+                        <li><strong>Scan your feet:</strong> Bring attention to your feet. Notice any sensations - warmth, tingling, pressure, or nothing at all. Spend 30 seconds here.</li>
+                        <li><strong>Move to legs:</strong> Shift awareness to your legs, knees, and thighs. Notice sensations without trying to change anything.</li>
+                        <li><strong>Scan your torso:</strong> Notice your hips, belly, lower back, chest, and upper back. Feel your breath moving through this area.</li>
+                        <li><strong>Arms and hands:</strong> Bring attention to your shoulders, arms, and hands. Are they tense or relaxed?</li>
+                        <li><strong>Neck and head:</strong> Notice your neck, jaw, face, and scalp. Many people hold tension in the jaw - if you notice this, let it soften.</li>
+                        <li><strong>Whole body:</strong> Expand awareness to your entire body at once. Feel yourself as a complete, unified presence.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Working with Tension:</strong>
+                When you notice tension, don't force it to relax. Simply bring curious, gentle awareness to it. Often, tension releases naturally when we stop resisting it.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">4</div>
+            <div class="day-title-group">
+                <h2>Thought Observation</h2>
+                <p class="day-theme">Watching the mind without attachment</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today's practice develops a crucial skill: observing thoughts without getting caught up in them. You'll learn to create space between awareness and thinking, discovering that you are not your thoughts - you are the awareness observing them.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 12 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Begin with breath:</strong> Start by anchoring attention in your breath for 2-3 minutes.</li>
+                        <li><strong>Expand awareness:</strong> Now, instead of focusing only on breath, open your awareness to include thoughts.</li>
+                        <li><strong>Label thoughts:</strong> When a thought arises, mentally note it: "thinking," "planning," "remembering," "worrying." Then return to breath.</li>
+                        <li><strong>Watch thoughts like clouds:</strong> Imagine thoughts as clouds passing through the sky of your mind. You're the sky - vast, unchanging, simply witnessing.</li>
+                        <li><strong>Notice the space:</strong> Pay attention to the brief gaps between thoughts. This is your natural awareness.</li>
+                        <li><strong>Stay curious:</strong> Approach each thought with curiosity rather than judgment. What is the mind doing right now?</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Key Insight:</strong>
+                Getting lost in thoughts isn't failure - catching yourself and returning to awareness IS the meditation. Each return strengthens your ability to stay present.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">5</div>
+            <div class="day-title-group">
+                <h2>Emotion Awareness</h2>
+                <p class="day-theme">Meeting feelings with compassion</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today you'll learn to work skillfully with emotions during meditation. Rather than suppressing or indulging in feelings, you'll practice meeting them with gentle awareness and acceptance. This develops emotional intelligence and resilience.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 15 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Establish presence:</strong> Begin with breath awareness for 3-4 minutes to settle.</li>
+                        <li><strong>Scan for emotions:</strong> Gently check in with yourself. What emotions are present? Calm? Restless? Anxious? Content?</li>
+                        <li><strong>Name the emotion:</strong> Softly label what you feel: "frustration," "joy," "sadness," "excitement."</li>
+                        <li><strong>Feel it in your body:</strong> Where do you experience this emotion physically? Chest? Stomach? Shoulders? Jaw?</li>
+                        <li><strong>Allow it to be:</strong> Don't try to push the emotion away or make it stronger. Simply let it exist as it is.</li>
+                        <li><strong>Breathe with it:</strong> Imagine breathing into the body area where you feel the emotion, bringing gentle acceptance with each breath.</li>
+                        <li><strong>Notice changes:</strong> Emotions are fluid. Observe if the feeling shifts, intensifies, or dissolves.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Working with Difficult Emotions:</strong>
+                If emotions feel overwhelming, return to breath awareness or open your eyes. You can always come back. Building emotional tolerance is gradual.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 6 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">6</div>
+            <div class="day-title-group">
+                <h2>Loving-Kindness Meditation</h2>
+                <p class="day-theme">Cultivating compassion and warmth</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today introduces metta (loving-kindness) meditation, a practice that cultivates warmth, compassion, and goodwill toward yourself and others. This practice counteracts self-criticism and helps you develop a kinder relationship with yourself.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 15 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Center yourself:</strong> Begin with a few minutes of breath awareness.</li>
+                        <li><strong>Start with yourself:</strong> Place a hand on your heart. Silently repeat: "May I be safe. May I be healthy. May I be happy. May I live with ease."</li>
+                        <li><strong>Feel the intention:</strong> Don't worry if you don't "feel" it immediately. The intention of kindness matters most. Repeat the phrases 5-6 times.</li>
+                        <li><strong>Extend to a loved one:</strong> Picture someone you care about. Repeat: "May you be safe. May you be healthy. May you be happy. May you live with ease."</li>
+                        <li><strong>Include a neutral person:</strong> Think of someone you see regularly but don't know well (a cashier, neighbor). Extend the same wishes.</li>
+                        <li><strong>Expand to all beings:</strong> Finally, extend loving-kindness outward: "May all beings be safe, healthy, happy, and live with ease."</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Adaptation:</strong>
+                You can change the phrases to whatever resonates with you. Some alternatives: "May I be at peace," "May I be free from suffering," or "May I accept myself as I am."
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 7 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">7</div>
+            <div class="day-title-group">
+                <h2>Open Awareness Meditation</h2>
+                <p class="day-theme">Resting in spacious awareness</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today moves into a more advanced practice: open awareness or choiceless awareness. Instead of focusing on one object (like breath), you'll allow your attention to rest openly, noticing whatever arises in experience without preference.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 15-20 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Ground with breath:</strong> Start with 5 minutes of breath awareness to establish stability.</li>
+                        <li><strong>Release the focus:</strong> Let go of focusing on the breath. Rest in open, receptive awareness.</li>
+                        <li><strong>Notice what's most prominent:</strong> Whatever is strongest in your experience - a sound, sensation, thought, emotion - let awareness rest there naturally.</li>
+                        <li><strong>Don't chase or grasp:</strong> When that experience fades, don't hold onto it. Rest in awareness until something else becomes prominent.</li>
+                        <li><strong>Stay spacious:</strong> Think of yourself as the sky, and all experiences as weather passing through - sounds, sensations, thoughts, emotions.</li>
+                        <li><strong>Return to breath if needed:</strong> If you feel lost or overwhelmed, you can always return to breath as an anchor.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 This is Advanced:</strong>
+                Open awareness can feel destabilizing at first. It's perfectly fine to alternate between this and breath awareness during your session. Build up gradually.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 8 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">8</div>
+            <div class="day-title-group">
+                <h2>Walking Meditation</h2>
+                <p class="day-theme">Bringing mindfulness to movement</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today takes meditation off the cushion. Walking meditation helps you bring mindful awareness into everyday movement and serves as a bridge between formal practice and daily life. It's also great for people who find sitting meditation difficult.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 15-20 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Choose a path:</strong> Find a quiet space where you can walk back and forth for 10-20 steps (inside or outside).</li>
+                        <li><strong>Stand and center:</strong> Begin by standing still. Feel your feet on the ground, your body's weight, your breath.</li>
+                        <li><strong>Start walking slowly:</strong> Walk at about half your normal pace. This isn't about getting anywhere.</li>
+                        <li><strong>Feel each step:</strong> Notice the lifting of the heel, the movement through air, the placement of the foot, the shift of weight. Break it down: "lifting, moving, placing."</li>
+                        <li><strong>Stay present:</strong> When your mind wanders, gently bring attention back to the physical sensations of walking.</li>
+                        <li><strong>Turn mindfully:</strong> When you reach the end of your path, pause, then slowly turn around with full awareness.</li>
+                        <li><strong>Integrate awareness:</strong> Notice your surroundings peripherally - sounds, air temperature, light - while maintaining primary focus on the walking.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Variations:</strong>
+                You can practice walking meditation anywhere - from your car to the office, while shopping, during a nature walk. Start slow to learn, then integrate into daily movement.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 9 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">9</div>
+            <div class="day-title-group">
+                <h2>Integrating All Practices</h2>
+                <p class="day-theme">Creating your personal practice</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Today you'll create your own meditation session by combining elements from the past eight days. This helps you discover what resonates most and develop a sustainable personal practice that fits your needs and preferences.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 20 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Minutes 1-5: Breath awareness</strong> - Ground yourself with basic breath meditation. Count breaths or simply observe the natural rhythm.</li>
+                        <li><strong>Minutes 6-10: Body scan</strong> - Quickly scan through your body, releasing any tension you notice.</li>
+                        <li><strong>Minutes 11-13: Thought observation</strong> - Watch thoughts arise and pass without engaging with them.</li>
+                        <li><strong>Minutes 14-16: Emotion check-in</strong> - Notice any emotions present and where you feel them in your body.</li>
+                        <li><strong>Minutes 17-19: Choose your focus</strong> - Spend these minutes with whichever practice felt most beneficial: loving-kindness, open awareness, or return to breath.</li>
+                        <li><strong>Minute 20: Dedication</strong> - End by dedicating the benefits of your practice to your own wellbeing and that of others.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Designing Your Practice:</strong>
+                Notice which techniques feel most natural and beneficial. There's no "best" meditation - the best practice is the one you'll actually do consistently.
+            </div>
+        </div>
+    </div>
+
+    <!-- Day 10 -->
+    <div class="day-card">
+        <div class="day-header">
+            <div class="day-number">10</div>
+            <div class="day-title-group">
+                <h2>Establishing Your Daily Practice</h2>
+                <p class="day-theme">Committing to lifelong mindfulness</p>
+            </div>
+        </div>
+        <div class="day-content">
+            <div class="day-section">
+                <h3>Today's Focus</h3>
+                <p>
+                    Congratulations on reaching Day 10! Today is about cementing your practice and creating a sustainable meditation habit. You'll reflect on your journey and set intentions for continuing your practice beyond this program.
+                </p>
+                <span class="duration-badge">⏱️ Duration: 20-25 minutes</span>
+            </div>
+
+            <div class="day-section">
+                <h3>Practice Instructions</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Settle in deeply:</strong> Take your time getting comfortable. This is your graduation session.</li>
+                        <li><strong>Minutes 1-7: Your anchor practice</strong> - Begin with whichever foundational practice feels most grounding (usually breath awareness).</li>
+                        <li><strong>Minutes 8-15: Free-form meditation</strong> - Allow your meditation to unfold naturally, moving between practices as you feel called.</li>
+                        <li><strong>Minutes 16-20: Loving-kindness</strong> - Extend gratitude and loving-kindness to yourself for completing this journey, and to all beings.</li>
+                        <li><strong>Minutes 21-25: Reflection</strong> - Sit with these questions: What have I learned? What changes have I noticed? How do I want to continue?</li>
+                        <li><strong>Set your intention:</strong> Commit to when and how you'll practice going forward. Be specific: "I'll meditate for 10 minutes each morning after breakfast."</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="practice-tips">
+                <strong>💡 Maintaining Momentum:</strong>
+                Research shows it takes 66 days on average to form a habit. You've completed 10 - keep going! Start with just 5-10 minutes daily. Consistency matters more than duration.
+            </div>
+
+            <div class="day-section">
+                <h3>Going Forward: Tips for Lifelong Practice</h3>
+                <div class="meditation-steps">
+                    <ol>
+                        <li><strong>Same time, same place:</strong> Meditate at the same time daily. Morning often works best before distractions arise.</li>
+                        <li><strong>Start small:</strong> 5-10 minutes daily is better than 30 minutes sporadically.</li>
+                        <li><strong>Be flexible:</strong> Some days will feel easy, others difficult. Both are valuable.</li>
+                        <li><strong>Join a community:</strong> Consider meditation groups, apps, or online communities for support.</li>
+                        <li><strong>Keep learning:</strong> Explore books, teachers, and different meditation styles to deepen your practice.</li>
+                        <li><strong>Be patient:</strong> Meditation benefits are cumulative. Trust the process.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="completion-card">
+        <h2>🎉 Congratulations!</h2>
+        <p>
+            You've completed the 10-Day Meditation Program! You now have a strong foundation in multiple meditation techniques. Remember, meditation is not about perfection - it's about practice. Each time you sit, you're investing in your mental, emotional, and physical wellbeing.
+        </p>
+        <p style="margin-top: 1.5rem;">
+            <strong>The journey doesn't end here - it's just beginning.</strong> May your practice continue to grow and support you through all of life's experiences.
+        </p>
+    </div>
+
+    <div class="back-link">
+        <a href="/tools.njk">← Back to All Tools</a>
+    </div>
+</div>
