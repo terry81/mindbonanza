@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Style Quiz - MindBonanza</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .quiz-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .question-container {
+            display: none;
+        }
+
+        .question-container.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .question {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .option-text {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .option-description {
+            font-size: 0.9em;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+        }
+
+        .results.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .result-title {
+            font-size: 2em;
+            color: #667eea;
+            margin: 20px 0;
+        }
+
+        .result-description {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.8;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .result-recommendations {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .result-recommendations h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .result-recommendations ul {
+            list-style-position: inside;
+            line-height: 2;
+            color: #555;
+        }
+
+        .restart-btn {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .quiz-container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .question {
+                font-size: 1.1em;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>🧘 Discover Your Mindfulness Style</h1>
+        <p class="intro">Everyone approaches mindfulness differently. This quiz will help you understand your natural style and recommend practices that resonate with you.</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <div id="quizQuestions">
+            <!-- Questions will be inserted here -->
+        </div>
+
+        <div class="button-container">
+            <button id="prevBtn" onclick="previousQuestion()" style="display: none;">← Previous</button>
+            <button id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+        </div>
+
+        <div class="results" id="results">
+            <h2 class="result-title" id="resultTitle"></h2>
+            <p class="result-description" id="resultDescription"></p>
+            <div class="result-recommendations">
+                <h3>Best Practices for You:</h3>
+                <ul id="recommendedPractices"></ul>
+            </div>
+            <div class="result-recommendations">
+                <h3>Recommended Courses:</h3>
+                <ul id="recommendedCourses"></ul>
+            </div>
+            <button class="restart-btn" onclick="restartQuiz()">Take Quiz Again</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                question: "When you're stressed, what's your first instinct?",
+                options: [
+                    { text: "Move my body", description: "Exercise, walk, stretch", value: "kinesthetic" },
+                    { text: "Process mentally", description: "Think it through, analyze", value: "cognitive" },
+                    { text: "Feel into it", description: "Sit with emotions, journal", value: "emotional" },
+                    { text: "Seek peace", description: "Find quiet, stillness", value: "contemplative" }
+                ]
+            },
+            {
+                question: "What type of meditation sounds most appealing?",
+                options: [
+                    { text: "Body scan", description: "Awareness of physical sensations", value: "kinesthetic" },
+                    { text: "Noting thoughts", description: "Observing and labeling thoughts", value: "cognitive" },
+                    { text: "Loving-kindness", description: "Cultivating compassion", value: "emotional" },
+                    { text: "Breath focus", description: "Simple attention to breathing", value: "contemplative" }
+                ]
+            },
+            {
+                question: "How do you prefer to learn new things?",
+                options: [
+                    { text: "By doing", description: "Hands-on practice", value: "kinesthetic" },
+                    { text: "By understanding", description: "Reading, studying concepts", value: "cognitive" },
+                    { text: "By feeling", description: "Intuition, emotional resonance", value: "emotional" },
+                    { text: "By experiencing", description: "Direct experience, silence", value: "contemplative" }
+                ]
+            },
+            {
+                question: "What's your biggest mindfulness challenge?",
+                options: [
+                    { text: "Sitting still", description: "Hard to stay in one position", value: "kinesthetic" },
+                    { text: "Racing thoughts", description: "Mind won't stop analyzing", value: "cognitive" },
+                    { text: "Difficult emotions", description: "Feelings feel overwhelming", value: "emotional" },
+                    { text: "Finding time", description: "Hard to prioritize practice", value: "contemplative" }
+                ]
+            },
+            {
+                question: "In meditation, you tend to notice:",
+                options: [
+                    { text: "Body sensations", description: "Tension, temperature, movement", value: "kinesthetic" },
+                    { text: "Thoughts", description: "Mental chatter, ideas, plans", value: "cognitive" },
+                    { text: "Emotions", description: "Feelings, moods, energy", value: "emotional" },
+                    { text: "Silence", description: "Gaps, space, stillness", value: "contemplative" }
+                ]
+            },
+            {
+                question: "What draws you to mindfulness?",
+                options: [
+                    { text: "Physical benefits", description: "Relaxation, health, body awareness", value: "kinesthetic" },
+                    { text: "Mental clarity", description: "Focus, understanding, insight", value: "cognitive" },
+                    { text: "Emotional healing", description: "Peace, compassion, connection", value: "emotional" },
+                    { text: "Spiritual growth", description: "Presence, awakening, transcendence", value: "contemplative" }
+                ]
+            },
+            {
+                question: "Your ideal practice environment:",
+                options: [
+                    { text: "Outdoors/moving", description: "Nature, walking, yoga", value: "kinesthetic" },
+                    { text: "Structured space", description: "Designated area, consistent routine", value: "cognitive" },
+                    { text: "Comfortable & safe", description: "Cozy, warm, nurturing", value: "emotional" },
+                    { text: "Simple & minimal", description: "Quiet, uncluttered, peaceful", value: "contemplative" }
+                ]
+            },
+            {
+                question: "How long can you currently sit still?",
+                options: [
+                    { text: "5 minutes", description: "Need to move frequently", value: "kinesthetic" },
+                    { text: "10-15 minutes", description: "With effort and technique", value: "cognitive" },
+                    { text: "15-20 minutes", description: "When emotionally engaged", value: "emotional" },
+                    { text: "20+ minutes", description: "Stillness feels natural", value: "contemplative" }
+                ]
+            }
+        ];
+
+        const profiles = {
+            kinesthetic: {
+                title: "The Embodied Practitioner",
+                description: "You're naturally body-oriented and learn through physical experience. Traditional sitting meditation might feel challenging—and that's okay! Your mindfulness path is through the body. Movement, sensation, and physical awareness are your gateways to presence. You thrive with practices that honor the body as the doorway to mindfulness.",
+                practices: [
+                    "Walking meditation - your ideal starting point",
+                    "Body scan meditation - building physical awareness",
+                    "Mindful yoga or stretching",
+                    "Progressive muscle relaxation",
+                    "Mindful movement (tai chi, qigong)",
+                    "Shorter sitting sessions combined with movement"
+                ],
+                courses: [
+                    "Start with our Body Scan tool to build awareness",
+                    "Try the Stress Management program (includes physical techniques)",
+                    "Explore mindful movement practices",
+                    "Gradually build to the 30-Day Challenge with adapted practices"
+                ]
+            },
+            cognitive: {
+                title: "The Analytical Meditator",
+                description: "You have a strong, active mind that loves to understand, analyze, and make sense of things. Your challenge and your gift is the same—your thinking mind. You need practices that work with your mind, not against it. Structure, understanding, and clear techniques help you thrive. You'll benefit from noting practices, cognitive-based mindfulness, and understanding the 'why' behind each practice.",
+                practices: [
+                    "Noting practice - labeling thoughts as they arise",
+                    "Breath counting - giving your mind a job",
+                    "Insight meditation - investigating experience",
+                    "Mindfulness-based cognitive therapy techniques",
+                    "Studying mindfulness philosophy and science",
+                    "Working with thought patterns directly"
+                ],
+                courses: [
+                    "Start with Mindfulness 101 - you'll love the structured approach",
+                    "The 30-Day Challenge offers progressive learning",
+                    "Stress Management program teaches cognitive techniques",
+                    "Read articles about the neuroscience of meditation"
+                ]
+            },
+            emotional: {
+                title: "The Heart-Centered Practitioner",
+                description: "You're emotionally attuned and value connection, compassion, and feeling. Your emotions are your superpower and your challenge—you feel deeply. Your mindfulness path involves befriending your emotions rather than bypassing them. Practices that cultivate self-compassion, loving-kindness, and emotional awareness will resonate deeply with you.",
+                practices: [
+                    "Loving-kindness meditation (metta)",
+                    "Self-compassion practices",
+                    "RAIN technique for difficult emotions",
+                    "Heart-centered breathing",
+                    "Gratitude meditation",
+                    "Compassion-focused practices"
+                ],
+                courses: [
+                    "Mindfulness 101 (especially Days 5-7 on emotions)",
+                    "Stress Management includes RAIN and self-compassion",
+                    "Better Sleep if emotions disrupt rest",
+                    "30-Day Challenge includes loving-kindness days"
+                ]
+            },
+            contemplative: {
+                title: "The Natural Meditator",
+                description: "You're drawn to stillness, simplicity, and direct experience. Traditional meditation practices probably feel natural to you. You may have less resistance to sitting still and more curiosity about deeper states of consciousness. Your path is about consistency and depth—showing up daily and allowing your practice to mature over time. You're ready for longer sits and exploring advanced practices.",
+                practices: [
+                    "Silent sitting meditation",
+                    "Open awareness practice",
+                    "Extended breath meditation",
+                    "Zazen (just sitting)",
+                    "Longer meditation sessions (20-45 min)",
+                    "Eventually, meditation retreats"
+                ],
+                courses: [
+                    "The 30-Day Challenge is perfect for building consistency",
+                    "Mindfulness 101 will be easy—use it to establish routine",
+                    "Explore all themed programs to round out your practice",
+                    "Consider finding a teacher or sangha for deeper practice"
+                ]
+            }
+        };
+
+        let currentQuestion = 0;
+        let answers = { kinesthetic: 0, cognitive: 0, emotional: 0, contemplative: 0 };
+
+        function loadQuestion(questionIndex) {
+            const questionContainer = document.getElementById('quizQuestions');
+            const question = questions[questionIndex];
+
+            questionContainer.innerHTML = `
+                <div class="question-container active">
+                    <div class="question">
+                        <span class="question-number">Question ${questionIndex + 1}/${questions.length}</span><br>
+                        ${question.question}
+                    </div>
+                    <div class="options">
+                        ${question.options.map((option, index) => `
+                            <div class="option" onclick="selectOption(${index}, '${option.value}')">
+                                <div class="option-text">${option.text}</div>
+                                <div class="option-description">${option.description}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            updateProgress();
+            updateButtons();
+        }
+
+        function selectOption(index, value) {
+            const options = document.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            options[index].classList.add('selected');
+
+            // Store answer
+            const question = questions[currentQuestion];
+            if (!question.selectedValue) {
+                answers[value]++;
+            } else {
+                answers[question.selectedValue]--;
+                answers[value]++;
+            }
+            question.selectedValue = value;
+
+            document.getElementById('nextBtn').disabled = false;
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function updateButtons() {
+            document.getElementById('prevBtn').style.display = currentQuestion > 0 ? 'block' : 'none';
+            document.getElementById('nextBtn').textContent = currentQuestion === questions.length - 1 ? 'See Results →' : 'Next →';
+            document.getElementById('nextBtn').disabled = !questions[currentQuestion].selectedValue;
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion(currentQuestion);
+            } else {
+                showResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion(currentQuestion);
+            }
+        }
+
+        function showResults() {
+            const maxScore = Math.max(...Object.values(answers));
+            const primaryType = Object.keys(answers).find(key => answers[key] === maxScore);
+            const profile = profiles[primaryType];
+
+            document.getElementById('quizQuestions').style.display = 'none';
+            document.querySelector('.button-container').style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+
+            const results = document.getElementById('results');
+            document.getElementById('resultTitle').textContent = profile.title;
+            document.getElementById('resultDescription').textContent = profile.description;
+
+            const practicesList = document.getElementById('recommendedPractices');
+            practicesList.innerHTML = profile.practices.map(p => `<li>${p}</li>`).join('');
+
+            const coursesList = document.getElementById('recommendedCourses');
+            coursesList.innerHTML = profile.courses.map(c => `<li>${c}</li>`).join('');
+
+            results.classList.add('active');
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            answers = { kinesthetic: 0, cognitive: 0, emotional: 0, contemplative: 0 };
+            questions.forEach(q => delete q.selectedValue);
+
+            document.getElementById('results').classList.remove('active');
+            document.getElementById('quizQuestions').style.display = 'block';
+            document.querySelector('.button-container').style.display = 'flex';
+            document.querySelector('.progress-bar').style.display = 'block';
+
+            loadQuestion(0);
+        }
+
+        // Initialize quiz
+        loadQuestion(0);
+    </script>
+</body>
+</html>
