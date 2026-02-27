@@ -1,0 +1,173 @@
+---
+layout: base.njk
+title: Sleep Better with Mindfulness
+---
+
+{% set courseData = courses['better-sleep'] %}
+
+<section class="course-header">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href="/courses/">← All Courses</a>
+        </div>
+        <h1>{{ courseData.title }}</h1>
+        <p class="course-intro">{{ courseData.description }}</p>
+        <div class="course-meta-bar">
+            <span>📅 {{ courseData.duration }}</span>
+            <span>🎓 {{ courseData.level }}</span>
+            <span>⏱️ 20-30 min/day</span>
+        </div>
+    </div>
+</section>
+
+{% if lesson.isOverview %}
+<!-- Course Overview Page -->
+<section class="course-overview">
+    <div class="container">
+        <div class="overview-content">
+            <h2>About This Program</h2>
+            <p>This 5-day program teaches you mindfulness techniques specifically designed to improve sleep quality. You'll learn to calm your mind, relax your body, and create conditions for restful sleep.</p>
+
+            <div class="lessons-overview">
+                <h3>📖 5-Day Program</h3>
+                <div class="lessons-grid">
+                    {% for dayLesson in courseData.lessons %}
+                    <div class="lesson-card">
+                        <div class="lesson-number">Day {{ dayLesson.day }}</div>
+                        <h4>{{ dayLesson.title }}</h4>
+                        <p>{{ dayLesson.duration }}</p>
+                        {% if dayLesson.day == 1 %}
+                        <a href="/courses/better-sleep/day-{{ dayLesson.day }}/" class="start-btn">Start Here →</a>
+                        {% else %}
+                        <a href="/courses/better-sleep/day-{{ dayLesson.day }}/" class="lesson-link">View Lesson</a>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="ready-section">
+                <h3>Ready for Better Sleep?</h3>
+                <p>In just 5 days, you'll have a complete toolkit for falling asleep faster and sleeping more deeply.</p>
+                <a href="/courses/better-sleep/day-1/" class="btn-primary btn-large">Begin Day 1 →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% else %}
+<!-- Individual Lesson Page -->
+<section class="lesson-content">
+    <div class="container">
+        <div class="lesson-container">
+
+            <div class="lesson-nav-top">
+                {% if lesson.day > 1 %}
+                <a href="/courses/better-sleep/day-{{ lesson.day - 1 }}/" class="nav-btn">← Day {{ lesson.day - 1 }}</a>
+                {% endif %}
+                <span class="lesson-progress">Day {{ lesson.day }} of 5</span>
+                {% if lesson.day < 5 %}
+                <a href="/courses/better-sleep/day-{{ lesson.day + 1 }}/" class="nav-btn">Day {{ lesson.day + 1 }} →</a>
+                {% endif %}
+            </div>
+
+            <div class="lesson-header">
+                <span class="day-badge">Day {{ lesson.day }}</span>
+                <h2>{{ lesson.title }}</h2>
+                <div class="lesson-meta">
+                    <span>{{ lesson.duration }}</span>
+                </div>
+            </div>
+
+            {% if lesson.content.teaching %}
+            <div class="lesson-section teaching">
+                <h3>📚 Teaching</h3>
+                <div class="teaching-content">
+                    {{ lesson.content.teaching | safe | replace('\n\n', '</p><p>') | replace('\n', '<br>') }}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if lesson.content.practice %}
+            <div class="lesson-section practice-section">
+                <h3>🧘 Tonight's Practice: {{ lesson.content.practice.name }}</h3>
+                <p class="practice-duration">Duration: {{ lesson.content.practice.duration }}</p>
+
+                <div class="practice-instructions">
+                    <h4>Instructions:</h4>
+                    <ol>
+                        {% for instruction in lesson.content.practice.instructions %}
+                        <li>{{ instruction }}</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+
+                {% if lesson.content.practice.tips %}
+                <div class="practice-tips">
+                    <h4>💡 Tips:</h4>
+                    <ul>
+                        {% for tip in lesson.content.practice.tips %}
+                        <li>{{ tip }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+            {% if lesson.content.action %}
+            <div class="lesson-section action-section">
+                <h3>✅ {{ lesson.content.action.title }}</h3>
+                <p>{{ lesson.content.action.description }}</p>
+            </div>
+            {% endif %}
+
+            {% if lesson.content.completion %}
+            <div class="lesson-section completion-section">
+                <div class="completion-badge">🎉 Program Complete!</div>
+                <h3>{{ lesson.content.completion.message }}</h3>
+
+                {% if lesson.content.completion.keyTakeaways %}
+                <div class="takeaways">
+                    <h4>Key Takeaways:</h4>
+                    <ul>
+                        {% for takeaway in lesson.content.completion.keyTakeaways %}
+                        <li>{{ takeaway }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                {% if lesson.content.completion.nextSteps %}
+                <div class="next-steps">
+                    <h4>Next Steps:</h4>
+                    <ul>
+                        {% for step in lesson.content.completion.nextSteps %}
+                        <li>{{ step }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+
+                <div class="completion-actions">
+                    <a href="/courses/" class="btn-primary">Explore More Courses</a>
+                    <a href="/courses/stress-management/" class="btn-secondary">Try Stress Management</a>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="lesson-nav-bottom">
+                {% if lesson.day > 1 %}
+                <a href="/courses/better-sleep/day-{{ lesson.day - 1 }}/" class="nav-btn-large prev">← Previous: Day {{ lesson.day - 1 }}</a>
+                {% endif %}
+                {% if lesson.day < 5 %}
+                <a href="/courses/better-sleep/day-{{ lesson.day + 1 }}/" class="nav-btn-large next">Next: Day {{ lesson.day + 1 }} →</a>
+                {% else %}
+                <a href="/courses/" class="nav-btn-large">Back to All Courses</a>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,124 @@
+{
+  "courses": [
+    {
+      "id": "mindfulness-101",
+      "title": "Mindfulness 101: Your Journey Begins",
+      "slug": "mindfulness-101",
+      "description": "A comprehensive 7-day introduction to mindfulness meditation. Perfect for complete beginners who want to build a solid foundation.",
+      "level": "Beginner",
+      "duration": "7 days",
+      "lessonsCount": 7,
+      "category": "Foundations",
+      "image": "https://images.unsplash.com/photo-1506126613408-eca07ce68773",
+      "tags": ["beginner", "foundations", "meditation", "awareness"],
+      "benefits": [
+        "Understand core mindfulness principles",
+        "Learn basic meditation techniques",
+        "Develop daily practice habits",
+        "Reduce stress and anxiety",
+        "Improve focus and clarity"
+      ],
+      "featured": true
+    },
+    {
+      "id": "30-day-challenge",
+      "title": "30-Day Meditation Challenge",
+      "slug": "30-day-meditation-challenge",
+      "description": "Transform your life in one month with progressive daily meditation practices. Build consistency and deepen your practice.",
+      "level": "All Levels",
+      "duration": "30 days",
+      "lessonsCount": 30,
+      "category": "Challenge",
+      "image": "https://images.unsplash.com/photo-1499209974431-9dddcece7f88",
+      "tags": ["challenge", "progressive", "habit-building", "transformation"],
+      "benefits": [
+        "Establish a consistent meditation habit",
+        "Progressive skill development",
+        "Explore multiple meditation styles",
+        "Track your transformation",
+        "Join a community challenge"
+      ],
+      "featured": true
+    },
+    {
+      "id": "stress-management",
+      "title": "Mindful Stress Management",
+      "slug": "stress-management",
+      "description": "A targeted 5-day program to manage and reduce stress through proven mindfulness techniques.",
+      "level": "All Levels",
+      "duration": "5 days",
+      "lessonsCount": 5,
+      "category": "Wellness",
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+      "tags": ["stress", "anxiety", "coping", "relaxation"],
+      "benefits": [
+        "Identify stress triggers",
+        "Learn quick stress-relief techniques",
+        "Build resilience",
+        "Improve emotional regulation",
+        "Create a personal stress management plan"
+      ],
+      "featured": true
+    },
+    {
+      "id": "better-sleep",
+      "title": "Sleep Better with Mindfulness",
+      "slug": "better-sleep",
+      "description": "A 5-day program designed to help you fall asleep faster, sleep deeper, and wake refreshed using mindfulness practices.",
+      "level": "All Levels",
+      "duration": "5 days",
+      "lessonsCount": 5,
+      "category": "Wellness",
+      "image": "https://images.unsplash.com/photo-1511295742362-92c96b1cf484",
+      "tags": ["sleep", "insomnia", "relaxation", "evening-practice"],
+      "benefits": [
+        "Fall asleep faster",
+        "Reduce nighttime anxiety",
+        "Establish bedtime routines",
+        "Improve sleep quality",
+        "Wake feeling refreshed"
+      ],
+      "featured": true
+    },
+    {
+      "id": "focus-concentration",
+      "title": "Enhanced Focus & Concentration",
+      "slug": "focus-concentration",
+      "description": "A 6-day intensive program to sharpen your focus, eliminate distractions, and boost productivity through mindfulness.",
+      "level": "Intermediate",
+      "duration": "6 days",
+      "lessonsCount": 6,
+      "category": "Performance",
+      "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
+      "tags": ["focus", "productivity", "concentration", "performance"],
+      "benefits": [
+        "Improve attention span",
+        "Reduce mental clutter",
+        "Enhance work performance",
+        "Master single-tasking",
+        "Develop laser focus"
+      ],
+      "featured": false
+    },
+    {
+      "id": "mindful-relationships",
+      "title": "Mindful Relationships",
+      "slug": "mindful-relationships",
+      "description": "A 7-day journey to cultivate deeper, more meaningful connections through mindful communication and empathy.",
+      "level": "All Levels",
+      "duration": "7 days",
+      "lessonsCount": 7,
+      "category": "Relationships",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac",
+      "tags": ["relationships", "communication", "empathy", "connection"],
+      "benefits": [
+        "Improve communication skills",
+        "Deepen emotional connections",
+        "Practice empathetic listening",
+        "Resolve conflicts mindfully",
+        "Cultivate loving-kindness"
+      ],
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,373 @@
+{
+  "id": "mindfulness-101",
+  "title": "Mindfulness 101: Your Journey Begins",
+  "description": "A comprehensive 7-day introduction to mindfulness meditation. Perfect for complete beginners who want to build a solid foundation.",
+  "level": "Beginner",
+  "duration": "7 days",
+  "lessons": [
+    {
+      "day": 1,
+      "title": "What is Mindfulness?",
+      "duration": "15 min",
+      "type": "Foundation",
+      "content": {
+        "introduction": "Welcome to your mindfulness journey! Today, you'll discover what mindfulness really means and why it's one of the most powerful practices for modern life.",
+        "keyPoints": [
+          "Mindfulness is paying attention to the present moment with curiosity and without judgment",
+          "It's not about stopping thoughts, but noticing them",
+          "You can practice mindfulness anytime, anywhere",
+          "Scientific research shows real benefits for mental and physical health"
+        ],
+        "teaching": "Mindfulness is often misunderstood as 'clearing your mind' or 'never having negative thoughts.' In reality, it's much simpler and more practical. Mindfulness is about awareness—noticing what's happening right now in your body, mind, and environment without trying to change it.\n\nImagine you're eating an orange. Most of the time, we eat while watching TV, scrolling phones, or planning our day. Mindful eating means noticing the color of the orange, feeling its texture, smelling its scent, tasting each bite fully. That's mindfulness—being fully present with whatever you're doing.\n\nJon Kabat-Zinn, who brought mindfulness to mainstream medicine, defines it as 'paying attention in a particular way: on purpose, in the present moment, and non-judgmentally.' Let's break that down:\n\n**On Purpose**: You deliberately choose to pay attention rather than operating on autopilot.\n\n**Present Moment**: Not dwelling on the past or worrying about the future, but engaging with what's actually happening now.\n\n**Non-judgmentally**: Observing without labeling experiences as 'good' or 'bad,' just noticing what is.",
+        "practice": {
+          "name": "Mindful Breathing (5 minutes)",
+          "instructions": [
+            "Find a comfortable seated position. You can sit on a chair with feet flat on the floor or cross-legged on a cushion.",
+            "Close your eyes or lower your gaze.",
+            "Take three deep breaths, then let your breathing return to its natural rhythm.",
+            "Notice where you feel your breath most clearly—maybe the coolness at your nostrils, the rise and fall of your chest, or the expansion of your belly.",
+            "Simply observe each breath without trying to change it.",
+            "When your mind wanders (and it will!), gently bring your attention back to your breath. This is not failure—this IS the practice.",
+            "Continue for 5 minutes."
+          ],
+          "tips": [
+            "Don't worry about doing it 'right'—there's no perfect meditation",
+            "Mind wandering is normal. You might redirect your attention 100 times—that's 100 successful practices!",
+            "Set a gentle timer so you're not watching the clock"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "What did you notice during the practice?",
+            "How many times did your mind wander? (Remember, this is normal!)",
+            "What were your thoughts wandering to?",
+            "How do you feel now compared to before the practice?"
+          ]
+        },
+        "dailyIntegration": "Today, choose one routine activity (brushing teeth, washing dishes, walking to your car) and do it mindfully. Notice all the sensations involved.",
+        "resources": [
+          "Article: 'The Science of Mindfulness' - How it changes your brain",
+          "Video: 'What is Mindfulness?' by Jon Kabat-Zinn"
+        ]
+      }
+    },
+    {
+      "day": 2,
+      "title": "The Breath as Your Anchor",
+      "duration": "20 min",
+      "type": "Practice",
+      "content": {
+        "introduction": "Yesterday you learned what mindfulness is. Today, you'll discover why the breath is the perfect tool for cultivating present-moment awareness.",
+        "keyPoints": [
+          "Your breath is always available as an anchor to the present moment",
+          "You don't need to breathe in a special way—natural breathing is perfect",
+          "The breath connects your body and mind",
+          "Returning to the breath trains your 'attention muscle'"
+        ],
+        "teaching": "Why do mindfulness teachers always talk about the breath? Because it's the perfect anchor for several reasons:\n\n**Always Available**: Unlike a meditation app or candle, your breath is with you 24/7. In a stressful meeting? Return to your breath. Feeling anxious at night? Your breath is there.\n\n**Present-Tense Only**: You can't breathe yesterday's breath or tomorrow's breath—only this one, right now. This makes the breath an automatic gateway to the present moment.\n\n**Body-Mind Bridge**: Your breath connects your physical body to your mental state. Notice how your breathing changes when you're stressed (shallow, rapid) versus relaxed (deep, slow). By observing your breath, you can access information about your internal state.\n\n**Non-Judgmental**: Unlike thoughts (which can be 'good' or 'bad'), breath is neutral. It just is.\n\nThink of your breath as an anchor for a boat. When you're anchored, you might drift a bit with the current, but you don't float away. Your breath works the same way—your mind will wander, but you can always come back to your anchor.",
+        "practice": {
+          "name": "Extended Breath Awareness (10 minutes)",
+          "instructions": [
+            "Settle into a comfortable position with your spine naturally upright.",
+            "Close your eyes and take three intentional deep breaths.",
+            "Let your breathing return to its natural rhythm—no need to control it.",
+            "Count your breaths: 'Breathing in, one. Breathing out, one. Breathing in, two. Breathing out, two.' Continue to ten, then start over.",
+            "If you lose count (totally normal!), simply start again at one.",
+            "Notice the full journey of each breath: the beginning, middle, and end of the inhale; the pause; the beginning, middle, and end of the exhale.",
+            "When thoughts arise, acknowledge them ('thinking') and return to counting.",
+            "Continue for 10 minutes."
+          ],
+          "tips": [
+            "If counting feels distracting, you can simply label: 'in' and 'out'",
+            "Notice the quality of each breath—is it shallow or deep? Fast or slow? No need to change it, just notice.",
+            "The pause between breaths is also part of the practice"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "Did you notice any patterns in when your mind wandered?",
+            "What was the highest number you reached before losing count?",
+            "Did you notice any differences between the inhale and exhale?",
+            "How did your breathing change during the practice?"
+          ]
+        },
+        "dailyIntegration": "Set 3 reminders on your phone today. When they go off, stop whatever you're doing and take three mindful breaths.",
+        "resources": [
+          "Guided Audio: '10-Minute Breath Meditation'",
+          "Article: 'The Vagus Nerve and Why Breathing Matters'"
+        ]
+      }
+    },
+    {
+      "day": 3,
+      "title": "Body Awareness & Sensation",
+      "duration": "25 min",
+      "type": "Practice",
+      "content": {
+        "introduction": "Today you'll expand your awareness beyond the breath to include your entire body. This is where mindfulness becomes a full-body experience.",
+        "keyPoints": [
+          "Your body is constantly sending you information",
+          "Physical sensations are always in the present moment",
+          "Body awareness helps you recognize stress early",
+          "The body scan is a powerful relaxation and awareness tool"
+        ],
+        "teaching": "We live so much in our heads that we often forget we have bodies. We ignore hunger until we're starving, tension until our shoulders are rocks, and fatigue until we're exhausted. Body awareness changes this.\n\nYour body is like a sophisticated early-warning system. That knot in your stomach during a difficult conversation? Information. The tension in your jaw when you're stressed? A signal. Butterflies before a presentation? Your body preparing you.\n\nWhen you practice body awareness, you learn to:\n\n**Recognize Stress Earlier**: Instead of realizing you're stressed when you're overwhelmed, you notice the early signs—slight tension, faster breathing, restlessness.\n\n**Release Chronic Tension**: Many of us hold tension in our shoulders, jaw, or face without realizing it. Awareness allows release.\n\n**Ground Yourself**: When your mind is racing with worries, bringing attention to physical sensations immediately grounds you in the present.\n\n**Understand Your Emotions**: Emotions aren't just mental—they live in your body. Anxiety tightens the chest, sadness weighs down the shoulders, joy expands the heart. By noticing physical sensations, you understand your emotions better.\n\nThe body scan meditation is a systematic way to develop this awareness. You'll move your attention through your body, region by region, simply noticing what's there without trying to change it.",
+        "practice": {
+          "name": "Mini Body Scan (12 minutes)",
+          "instructions": [
+            "Lie down on your back or sit comfortably. If lying down, let your arms rest at your sides, palms up.",
+            "Close your eyes and take a few deep breaths.",
+            "Start by noticing your whole body—its weight, temperature, points of contact with the surface beneath you.",
+            "Bring attention to your left foot. Notice any sensations—tingling, warmth, pressure, or even no sensation. All are okay.",
+            "Move attention to your left lower leg, then upper leg. Simply observe.",
+            "Shift to your right foot, lower leg, upper leg.",
+            "Notice your hips and pelvis—weight, contact, any sensation.",
+            "Move to your lower back and belly—notice the movement of breath here.",
+            "Bring attention to your upper back and chest.",
+            "Notice your left hand and arm, from fingertips to shoulder.",
+            "Notice your right hand and arm.",
+            "Bring awareness to your neck and throat.",
+            "Notice your face—jaw, mouth, nose, eyes, forehead. Many people hold tension here.",
+            "Finally, notice your whole body again—awareness of the entire body breathing.",
+            "Take a few deeper breaths and gently open your eyes."
+          ],
+          "tips": [
+            "If you fall asleep, that's okay! Your body might need rest. Try sitting up next time.",
+            "You might not feel sensations everywhere—that's normal.",
+            "If you notice tension, you don't have to fix it. Simply noticing often allows natural release.",
+            "Go slowly—this isn't a race to finish scanning your body"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "Which parts of your body were easy to feel? Which were harder to sense?",
+            "Did you notice any areas of tension you weren't aware of before?",
+            "What surprised you during this practice?",
+            "How does your body feel now compared to before?"
+          ]
+        },
+        "dailyIntegration": "Three times today, pause and do a 30-second body check. Simply notice: Where am I holding tension? Where do I feel relaxed?",
+        "resources": [
+          "Guided Audio: '15-Minute Body Scan'",
+          "Article: 'Body Awareness: The Missing Link in Stress Management'"
+        ]
+      }
+    },
+    {
+      "day": 4,
+      "title": "Working with Thoughts",
+      "duration": "25 min",
+      "type": "Understanding",
+      "content": {
+        "introduction": "Today's lesson addresses the biggest mindfulness myth: that meditation means 'stopping thoughts.' You'll learn how to observe thoughts without getting caught up in them.",
+        "keyPoints": [
+          "You can't stop thoughts—and you don't need to",
+          "Thoughts are mental events, not facts",
+          "The goal is to observe thoughts rather than be absorbed by them",
+          "Labeling thoughts creates healthy distance"
+        ],
+        "teaching": "Here's the truth: During meditation, you'll have thoughts. Lots of them. This doesn't mean you're 'bad at meditation'—it means you're human.\n\nThe game-changer is understanding this: **You are not your thoughts.**\n\nImagine you're sitting by a river, watching leaves float by. Each leaf is a thought. Some leaves are pleasant (memories of a great vacation), some unpleasant (worries about tomorrow), some neutral (remembering you need milk). The mindfulness skill isn't stopping the river—it's watching the leaves float by without jumping in and floating away with them.\n\nMost of the time, we're completely absorbed in our thoughts. A worry pops up, and suddenly we're five minutes into an anxiety spiral. A pleasant memory arises, and we're lost in nostalgia. We don't realize we've been thinking—we believe we're directly experiencing reality.\n\nMindfulness creates space. You notice: 'Ah, there's a thought about my presentation tomorrow.' Just by naming it, you've created distance. You're no longer lost in the thought—you're aware of it.\n\nThis matters because:\n\n**Thoughts Aren't Facts**: Just because you think 'I'm going to fail' doesn't make it true. It's a thought, not a prediction.\n\n**You Have Choices**: When you notice a thought, you can choose whether to engage with it or let it pass.\n\n**Freedom from Rumination**: Recognizing thoughts as thoughts breaks the cycle of repetitive worry.\n\n**Reduced Emotional Reactivity**: When you see 'I'm having the thought that this is terrible' rather than 'This is terrible,' emotions are less overwhelming.",
+        "practice": {
+          "name": "Noting Practice (10 minutes)",
+          "instructions": [
+            "Sit comfortably and close your eyes.",
+            "Start by noticing your breath for a minute or two.",
+            "Now, expand your awareness to include whatever arises—sounds, sensations, and especially thoughts.",
+            "When a thought appears, mentally note it with a simple label: 'thinking,' 'planning,' 'worrying,' 'remembering,' or just 'thought.'",
+            "Don't analyze or engage with the thought. Just note it and return to open awareness.",
+            "Some thoughts will pull you in—you'll find yourself lost in a story. When you realize this (and you will), that's a moment of mindfulness! Simply note 'lost in thought' and return.",
+            "Continue noting whatever arises for 10 minutes.",
+            "Notice if there are patterns—do certain types of thoughts come up repeatedly?"
+          ],
+          "tips": [
+            "Use a gentle, kind tone when noting. You're not scolding yourself.",
+            "It's okay if you get lost in thought many times. Each time you notice, you're succeeding.",
+            "Some thoughts are 'stickier' than others—worries and plans especially. Be patient.",
+            "You don't need to catch every thought—just notice when you're aware of thinking"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "What types of thoughts came up most often? (worries, plans, memories, judgments?)",
+            "Were some thoughts harder to let go of than others?",
+            "What was it like to label thoughts without engaging with them?",
+            "Did you notice any space between thoughts?"
+          ]
+        },
+        "dailyIntegration": "When you notice yourself worrying or ruminating today, pause and say: 'I'm having the thought that...' This simple phrase creates distance.",
+        "resources": [
+          "Article: 'Cognitive Defusion: The Art of Unhooking from Thoughts'",
+          "Video: 'Thoughts Are Not Facts'"
+        ]
+      }
+    },
+    {
+      "day": 5,
+      "title": "Emotions with Kindness",
+      "duration": "25 min",
+      "type": "Practice",
+      "content": {
+        "introduction": "Today you'll learn to work with emotions mindfully—neither suppressing them nor being overwhelmed by them. This is where mindfulness becomes truly transformative.",
+        "keyPoints": [
+          "All emotions are valid and provide useful information",
+          "Resisting emotions often makes them stronger",
+          "You can feel an emotion without acting on it",
+          "Self-compassion is essential when working with difficult emotions"
+        ],
+        "teaching": "Our culture has a complicated relationship with emotions. We're told to 'be positive,' 'don't be so sensitive,' 'calm down.' The message is clear: some emotions are acceptable, others aren't.\n\nMindfulness offers a radically different approach: **All emotions are welcome.**\n\nThis doesn't mean you should act on every emotion. It means you acknowledge what you're feeling without judgment. Think about it: resisting an emotion is exhausting. It's like holding a beach ball underwater—it takes constant effort, and the moment you relax, it pops up with more force.\n\nWhen you allow yourself to feel what you feel, something remarkable happens: the emotion can move through you. Emotions are temporary by nature—they arise, peak, and fade. But only if you let them.\n\n**The RAIN Technique**\n\nRAIN is a powerful four-step process for working with difficult emotions:\n\n**R - Recognize**: Notice what you're feeling. Name it: 'This is anger,' 'This is sadness,' 'This is anxiety.'\n\n**A - Allow**: Let the emotion be there. Don't push it away. You might say internally, 'This feeling is okay. I can make space for this.'\n\n**I - Investigate**: Get curious about the emotion. Where do you feel it in your body? What thoughts accompany it? What does it need?\n\n**N - Nurture**: Offer yourself compassion. Place a hand on your heart. Speak to yourself like you would to a good friend: 'This is really hard. I'm here for you.'\n\nImportantly, feeling an emotion doesn't mean you must act on it. You can feel angry without yelling. You can feel sad without collapsing. You can feel anxious without avoiding. Mindfulness creates space between feeling and action.",
+        "practice": {
+          "name": "RAIN Practice (12 minutes)",
+          "instructions": [
+            "Settle into a comfortable position and close your eyes.",
+            "Think of a mildly difficult situation (not the most overwhelming thing—save that for when you're more experienced).",
+            "Notice what emotions arise when you think of this situation.",
+            "**Recognize**: Name the emotion(s). 'I'm feeling frustrated and sad.'",
+            "**Allow**: Make room for the feeling. You might imagine opening a door and inviting it in. Say internally, 'It's okay to feel this.'",
+            "**Investigate**: Where is this emotion in your body? What does it feel like? (Tight? Heavy? Hot? Fluttery?) What does this emotion want you to know?",
+            "**Nurture**: Place your hand(s) over your heart or another comforting place. Offer yourself kind words: 'I'm sorry you're hurting. I'm here with you. May I be kind to myself.'",
+            "Sit with this for a few minutes, breathing with the emotion.",
+            "Notice if anything shifts—the emotion might soften, or you might just feel more accepting of it.",
+            "When ready, take a few deep breaths and open your eyes."
+          ],
+          "tips": [
+            "Start with smaller emotions—you're building your capacity",
+            "Self-compassion can feel awkward at first. That's normal. Keep practicing.",
+            "Sometimes emotions intensify briefly when you turn toward them—that's okay. They'll pass.",
+            "If an emotion feels too overwhelming, return to your breath or open your eyes"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "What emotion(s) did you work with?",
+            "What did you notice in your body when you investigated the emotion?",
+            "Was it easy or difficult to offer yourself compassion? Why?",
+            "Did anything change about the emotion during the practice?"
+          ]
+        },
+        "dailyIntegration": "When a difficult emotion arises today, pause and do a quick RAIN check (even 60 seconds helps): Recognize, Allow, Investigate briefly, Nurture with one kind phrase.",
+        "resources": [
+          "Guided Audio: 'RAIN Practice for Difficult Emotions'",
+          "Article: 'The Neuroscience of Self-Compassion'"
+        ]
+      }
+    },
+    {
+      "day": 6,
+      "title": "Mindfulness in Daily Life",
+      "duration": "20 min",
+      "type": "Integration",
+      "content": {
+        "introduction": "Formal meditation is just the beginning. Today you'll learn how to bring mindfulness into every moment of your day—where its true power lies.",
+        "keyPoints": [
+          "Mindfulness isn't just for meditation—it's a way of living",
+          "Routine activities are perfect opportunities for practice",
+          "Mindful moments throughout the day are as valuable as formal meditation",
+          "Transition moments are especially powerful for practice"
+        ],
+        "teaching": "Here's a secret: The ten minutes you spend in formal meditation aren't the most important part of mindfulness. What matters most is how you live the other 23 hours and 50 minutes.\n\nMindfulness is meant to be lived. It's washing dishes and actually washing dishes—feeling the warm water, smelling the soap, seeing the bubbles—instead of mentally rehearsing an argument. It's eating lunch and tasting your food instead of scrolling your phone. It's listening to a friend without planning what you'll say next.\n\nEvery single activity is an opportunity for mindfulness:\n\n**Morning**: Feel the water in your shower, taste your coffee, notice the sensation of brushing your teeth.\n\n**Commute**: If walking, feel your feet touching the ground. If driving, notice your hands on the wheel, your body in the seat.\n\n**Work**: Take three mindful breaths before checking email. Notice your posture during meetings. Take a one-minute breathing break between tasks.\n\n**Evening**: Taste your dinner. Notice the transition from work mode to home mode. Feel the water washing your face.\n\n**Transition Moments**: The spaces between activities are golden opportunities. Before you pick up your phone, take one breath. Before you get out of your car, pause for three breaths. Before you start a new task, take a moment to arrive.\n\n**The Three-Breath Reset**: Whenever you notice you're stressed, scattered, or overwhelmed, pause for three mindful breaths. This simple practice can be done dozens of times a day and dramatically changes your experience.",
+        "practice": {
+          "name": "Mindful Activity Practice (15 minutes)",
+          "instructions": [
+            "Choose a simple activity you'll do today: making tea/coffee, taking a shower, walking somewhere, washing dishes, getting dressed.",
+            "Before you begin, set an intention: 'I will do this activity with full presence.'",
+            "As you perform the activity, engage all your senses:",
+            "**Sight**: What do you see? Colors, shapes, movements, light.",
+            "**Sound**: What do you hear? Near and far sounds.",
+            "**Touch**: What physical sensations are present? Temperature, texture, pressure.",
+            "**Smell**: Are there any scents?",
+            "**Taste**: If applicable, what flavors are present?",
+            "When your mind wanders to past or future, gently return to the sensory experience of this moment.",
+            "Notice the impulse to rush or to think about the next thing. Can you stay with this activity?",
+            "When finished, pause for a moment. How was that experience different from usual?"
+          ],
+          "tips": [
+            "Choose an activity you do daily—this becomes ongoing practice",
+            "Start with activities that naturally slow you down (shower, tea, walking)",
+            "You can turn almost anything into mindfulness practice—even waiting in line!",
+            "The key is engaging your senses—this pulls you into present experience"
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "What activity did you choose to do mindfully?",
+            "What did you notice that you usually miss?",
+            "How many times did your mind jump to past or future?",
+            "How did doing this activity mindfully feel different from usual?"
+          ]
+        },
+        "dailyIntegration": "Create three 'mindfulness anchors' in your day—moments when you always practice. Examples: first sip of morning coffee, washing hands, walking through a doorway. Every time you do these, be fully present.",
+        "resources": [
+          "Article: 'Informal Mindfulness Practice: The Secret to Transformation'",
+          "List: '50 Ways to Practice Mindfulness in Daily Life'"
+        ]
+      }
+    },
+    {
+      "day": 7,
+      "title": "Building Your Practice",
+      "duration": "30 min",
+      "type": "Integration",
+      "content": {
+        "introduction": "Congratulations on completing this foundation course! Today you'll create a sustainable mindfulness practice that fits your life and supports your ongoing growth.",
+        "keyPoints": [
+          "Consistency matters more than duration",
+          "Create a realistic practice you can maintain",
+          "Obstacles are normal—plan for them",
+          "Mindfulness is a lifelong journey, not a destination"
+        ],
+        "teaching": "You've learned the fundamentals of mindfulness over the past week. Now comes the most important part: sustaining your practice.\n\nHere's what research shows: People who meditate for 5-10 minutes daily get more benefits than those who meditate for an hour once a week. Consistency is king.\n\n**Designing Your Personal Practice**\n\n**1. Choose Your Time**\nWhen will you practice? The best time is one you can realistically do daily. Morning works for many people (before the day gets busy), but if you're not a morning person, that's fine! Some prefer lunch breaks or evenings. What matters is consistency.\n\n**2. Start Small, Stay Consistent**\nDon't commit to an hour a day if you're new. Start with 5-10 minutes. You can always expand later. It's better to meditate 5 minutes daily than 30 minutes occasionally.\n\n**3. Create a Trigger**\nLink your practice to an existing habit: 'After I make my morning coffee, I'll meditate.' This makes it automatic.\n\n**4. Designate a Space**\nYou don't need a meditation room, but having a consistent spot helps. A corner of your bedroom, a favorite chair—somewhere you associate with practice.\n\n**5. Remove Friction**\nPrepare everything the night before. Set out your meditation cushion. Have your timer ready. Make it easier to meditate than not to.\n\n**Common Obstacles and Solutions**\n\n**'I don't have time.'** You have time for what you prioritize. Even 5 minutes is valuable. Try this reframe: 'I'm too important not to take 5 minutes for my well-being.'\n\n**'I keep forgetting.'** Use reminders. Set a daily phone alert. Put a sticky note on your mirror.\n\n**'I'm too busy/stressed to meditate.'** That's exactly when you need it most. Even one minute helps.\n\n**'I'm not good at it.'** There's no 'good' or 'bad' at mindfulness. Showing up is the success.\n\n**'I get bored/restless.'** Normal! This is part of the practice—learning to be with discomfort.\n\n**'I skipped a few days and feel like I failed.'** You didn't fail! Just begin again. Every moment is a fresh start.\n\n**Expanding Your Practice**\n\nAs you continue, consider:\n- Lengthening your sessions gradually\n- Exploring different practices (loving-kindness, walking meditation, etc.)\n- Joining a meditation group or taking a course\n- Going on a retreat\n- Working with a teacher\n\nRemember: Mindfulness isn't about perfection. It's about presence.",
+        "practice": {
+          "name": "Personal Practice Design + Meditation (15 minutes)",
+          "instructions": [
+            "Take a few minutes to design your ongoing practice. Write down:",
+            "1. When will I meditate? (specific time)",
+            "2. Where will I meditate? (specific place)",
+            "3. How long will I commit to? (be realistic—5-10 minutes is great)",
+            "4. What trigger will remind me? (after coffee, before bed, etc.)",
+            "5. What obstacles might arise? How will I handle them?",
+            "Now, practice using any technique from this week that resonated with you:",
+            "- Breath awareness and counting",
+            "- Body scan",
+            "- Noting thoughts",
+            "- RAIN for emotions",
+            "Or simply sit in open awareness, noticing whatever arises.",
+            "Meditate for 10-15 minutes.",
+            "When finished, acknowledge yourself for showing up."
+          ],
+          "tips": [
+            "Your practice plan isn't set in stone—adjust as needed",
+            "Track your practice (journal, app, or simple checkmarks on a calendar)",
+            "Find an accountability partner—someone also practicing",
+            "Be kind to yourself when you miss days. Just begin again."
+          ]
+        },
+        "reflection": {
+          "questions": [
+            "Looking back at this week, what was most valuable for you?",
+            "Which practices resonated most?",
+            "What insights did you gain about yourself?",
+            "What's your biggest obstacle to maintaining practice? How will you address it?",
+            "What are you committing to going forward?"
+          ]
+        },
+        "dailyIntegration": "Implement your practice plan starting today. Set up your space, set your reminders, and meditate at your chosen time. Mark it in your calendar for the next 30 days.",
+        "resources": [
+          "Article: 'How to Maintain a Meditation Practice: Science-Based Strategies'",
+          "Community: 'Join our 30-Day Meditation Challenge'",
+          "Recommended Books: 'Wherever You Go, There You Are' by Jon Kabat-Zinn",
+          "Next Steps: 'Explore our other courses: 30-Day Challenge, Stress Management, Better Sleep'"
+        ],
+        "completion": {
+          "certificate": true,
+          "message": "Congratulations on completing Mindfulness 101! You've built a strong foundation in mindfulness practice. Remember: this isn't the end—it's the beginning of a lifelong journey. Every moment is an opportunity to practice presence. Be patient and kind with yourself as you continue. You've got this!",
+          "nextSteps": [
+            "Continue your daily practice using what you've learned",
+            "Join our 30-Day Meditation Challenge to deepen your practice",
+            "Explore our themed programs: Stress Management, Better Sleep, Enhanced Focus",
+            "Consider joining our community for support and shared practice"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+{
+  "id": "better-sleep",
+  "title": "Sleep Better with Mindfulness",
+  "description": "A 5-day program designed to help you fall asleep faster, sleep deeper, and wake refreshed using mindfulness practices.",
+  "level": "All Levels",
+  "duration": "5 days",
+  "lessons": [
+    {
+      "day": 1,
+      "title": "Understanding Your Sleep",
+      "duration": "20 min",
+      "content": {
+        "teaching": "Poor sleep is epidemic, and mindfulness offers powerful solutions. Today you'll understand what's keeping you awake and how mindfulness helps.\n\n**Why We Can't Sleep**:\n- **Racing Mind**: Thoughts about tomorrow, rumination about today\n- **Physical Tension**: Body holding stress, unable to relax\n- **Hyperarousal**: Nervous system stuck in 'on' mode\n- **Sleep Anxiety**: Worrying about not sleeping, which keeps you awake\n\n**How Mindfulness Helps**:\n- Calms the nervous system\n- Interrupts thought spirals\n- Releases physical tension\n- Creates acceptance rather than sleep anxiety\n\n**Sleep Hygiene Basics**: While mindfulness is powerful, combine it with good sleep habits: consistent schedule, cool dark room, no screens 1 hour before bed, no caffeine after 2pm, regular exercise (not before bed).",
+        "practice": {
+          "name": "Sleep Assessment & Evening Body Scan",
+          "duration": "12 minutes",
+          "instructions": [
+            "Tonight, 30-60 minutes before sleep, lie down.",
+            "Rate your current state: How tired? (1-10) How tense? (1-10) How busy is your mind? (1-10)",
+            "Do a gentle body scan:",
+            "- Notice your feet. Invite them to relax.",
+            "- Notice your legs. Let them get heavy.",
+            "- Notice your hips and belly. Soften.",
+            "- Notice your chest. Let your breathing be easy.",
+            "- Notice your arms and hands. Release any holding.",
+            "- Notice your shoulders. Let them drop.",
+            "- Notice your neck and face. Soften your jaw, tongue, eyes.",
+            "- Feel your whole body resting, supported by the surface beneath you.",
+            "Breathe gently for a few minutes.",
+            "Notice how you feel now. Any changes?"
+          ]
+        },
+        "action": {
+          "title": "Sleep Journal",
+          "description": "For the next 5 days, track: (1) Bedtime, (2) Estimated time to fall asleep, (3) Wake time, (4) Sleep quality (1-10), (5) Evening practices done. This builds awareness of patterns."
+        }
+      }
+    },
+    {
+      "day": 2,
+      "title": "Calming the Racing Mind",
+      "duration": "25 min",
+      "content": {
+        "teaching": "The #1 sleep complaint: 'I can't turn off my mind.' Tonight you'll learn specific techniques to quiet mental chatter.\n\n**Why the Mind Races at Night**: During the day, you're distracted. At night, in the quiet, all the unprocessed thoughts surface. Your mind is trying to solve problems, remember things, plan for tomorrow.\n\n**The Worry Dump**: Before bed, spend 10 minutes writing down everything on your mind—worries, to-dos, thoughts. This signals your brain: 'We've captured this. You can let go now.'\n\n**Counting and Imagery**: These techniques give your mind something gentle to focus on, crowding out rumination.\n\n**The Paradox of Sleep**: Trying hard to sleep keeps you awake. The goal is to become so relaxed and present that sleep happens naturally. Let go of trying.",
+        "practice": {
+          "name": "Sleep Breath Counting",
+          "duration": "15 minutes (do in bed)",
+          "instructions": [
+            "When you're in bed ready to sleep, lie on your back or side (whatever's comfortable).",
+            "Close your eyes.",
+            "**Counted Breathing**: Inhale for 4 counts, hold for 2, exhale for 6 counts. The longer exhale activates relaxation. Repeat 8 times.",
+            "**Breath Counting**: Now count backward from 100, one number per exhale. 'Breathing in... 100. Breathing in... 99. Breathing in... 98...'",
+            "If you lose count (or fall asleep!), that's perfect. Just start over.",
+            "Let your attention rest fully on the counting. When thoughts arise, gently return.",
+            "If you reach zero, start again at 100.",
+            "The goal isn't to finish—it's to be so absorbed in counting that thinking stops."
+          ]
+        },
+        "action": {
+          "title": "Evening Worry Dump",
+          "description": "Tonight, 30-60 min before bed, write for 10 minutes: all worries, to-dos, thoughts swirling in your mind. Get them out. Then close the notebook and symbolically 'put them away' until tomorrow."
+        }
+      }
+    },
+    {
+      "day": 3,
+      "title": "Releasing Physical Tension",
+      "duration": "25 min",
+      "content": {
+        "teaching": "You can't sleep when your body is tense. Tonight you'll learn deep physical relaxation techniques.\n\n**Sleep and the Body**: Your body needs to feel safe to sleep. If you're holding tension—tight shoulders, clenched jaw, curled hands—your nervous system stays alert.\n\n**Progressive Muscle Relaxation (PMR)**: By systematically tensing then releasing each muscle group, you trigger deep relaxation. It also builds awareness of where you hold tension.\n\n**Body Scan for Sleep**: Unlike a regular body scan, the sleep version is slower, heavier, with the explicit intention of releasing into sleep.\n\n**The Yoga Nidra Approach**: This ancient practice guides you to total body and mind relaxation. Many people fall asleep before it's finished—that's success!",
+        "practice": {
+          "name": "PMR for Sleep",
+          "duration": "20 minutes (in bed)",
+          "instructions": [
+            "Lie comfortably in bed, ready for sleep.",
+            "Take three slow, deep breaths.",
+            "Starting with your feet: Curl your toes tightly for 5 seconds. Notice the tension. Then release completely. Feel the difference. Notice the relaxation. Let your feet get heavy.",
+            "Flex your feet (point toes toward face) for 5 seconds. Release. Let legs get heavy.",
+            "Tense your calves. Release. Heavy.",
+            "Tense your thighs. Release. Heavy.",
+            "Tense your buttocks. Release. Heavy.",
+            "Tense your belly (pull in). Release. Let it be soft.",
+            "Make fists. Hold. Release. Hands open and soft.",
+            "Tense your arms. Release. Heavy.",
+            "Shrug shoulders to ears. Hold. Drop and release completely.",
+            "Scrunch your whole face. Hold. Release. Let your jaw hang slightly open. Tongue soft. Eyes soft.",
+            "Scan your whole body. If you find any remaining tension, breathe into it and let it release.",
+            "Imagine your body is so heavy and relaxed that you're sinking into the bed.",
+            "Stay with this heavy, relaxed feeling. Let yourself drift toward sleep."
+          ]
+        },
+        "action": {
+          "title": "Evening Wind-Down Ritual",
+          "description": "Create a 30-minute wind-down routine before bed. Dim lights, no screens, gentle activities (reading, stretching, journaling). This signals your body: sleep is coming."
+        }
+      }
+    },
+    {
+      "day": 4,
+      "title": "Working with Sleep Anxiety",
+      "duration": "25 min",
+      "content": {
+        "teaching": "Anxiety about sleep creates sleep problems. 'I need to fall asleep!' keeps you awake. Tonight you'll learn acceptance-based approaches.\n\n**The Sleep Anxiety Cycle**: Can't sleep → Worry about not sleeping → Body tenses → More awake → More worry. This cycle is vicious but breakable.\n\n**Breaking the Cycle**: The solution is counterintuitive—stop trying to sleep. Instead, focus on rest and relaxation. Sleep will come when your body is ready.\n\n**Acceptance**: 'I may or may not sleep tonight, and that's okay. Right now, I'm just resting.' This attitude paradoxically helps sleep arrive.\n\n**The 20-Minute Rule**: If you're awake for more than 20 minutes with rising frustration, get up. Do something calm and boring in dim light. Return to bed when sleepy. Don't let your bed become associated with frustration.",
+        "practice": {
+          "name": "Sleep Visualization & Acceptance",
+          "duration": "15 minutes (in bed)",
+          "instructions": [
+            "Settle into bed comfortably.",
+            "Say to yourself: 'I'm here to rest. Sleep will come if it comes. Either way, I'm taking care of myself.'",
+            "**Peaceful Place Visualization**: Imagine a place where you feel completely safe and peaceful. Make it vivid:",
+            "- What do you see? (colors, light, details)",
+            "- What do you hear? (gentle sounds)",
+            "- What do you feel? (temperature, textures)",
+            "- What do you smell?",
+            "Spend several minutes building this place in detail.",
+            "Imagine yourself there, completely relaxed and at peace.",
+            "As you rest in this place, notice your body becoming heavier, more relaxed.",
+            "Your breathing is slow and easy.",
+            "You're safe. You're comfortable. You're at peace.",
+            "Let yourself drift in this peaceful place, making no effort.",
+            "If sleep comes, welcome it. If it doesn't, you're still resting peacefully."
+          ]
+        },
+        "action": {
+          "title": "Reframe Sleep Thoughts",
+          "description": "When sleep anxiety arises tonight, practice these reframes: 'I need to sleep!' → 'I'm resting my body.' 'What if I don't sleep?' → 'I've survived sleepless nights before. I'll be okay.' 'I'll be exhausted tomorrow!' → 'I'm doing what I can right now.'"
+        }
+      }
+    },
+    {
+      "day": 5,
+      "title": "Your Sleep Routine",
+      "duration": "30 min",
+      "content": {
+        "teaching": "Tonight you'll create a personalized sleep routine using the techniques that worked best for you this week.\n\n**Consistency is Key**: Your body loves routines. When you do the same calming activities before bed each night, your body learns: these activities = sleep is coming.\n\n**Layer Your Practices**: Combine techniques. For example: worry dump (10 min) → evening body scan (10 min) → in bed: breath counting → if needed: visualization.\n\n**Daytime Matters**: Sleep problems are often 24-hour problems. Exercise (not late), sunlight exposure, stress management, and limiting naps all affect night sleep.\n\n**When to Seek Help**: If you've tried these techniques consistently for a month with no improvement, consider seeing a sleep specialist. Conditions like sleep apnea, restless leg syndrome, or chronic insomnia may need professional treatment.",
+        "practice": {
+          "name": "Personal Sleep Sequence",
+          "duration": "20+ minutes",
+          "instructions": [
+            "Tonight, create your personalized sleep routine using what worked this week.",
+            "**Example routine**:",
+            "1. One hour before bed: dim lights, no screens",
+            "2. 30 min before: worry dump (if needed)",
+            "3. 20 min before: gentle stretching or shower",
+            "4. In bed: body scan or PMR (10-15 min)",
+            "5. Settling to sleep: breath counting or visualization",
+            "6. If awake 20+ min: acceptance practice or get up briefly",
+            "Customize based on what resonated most for you.",
+            "Tonight, implement your full routine.",
+            "Note what works—this is your ongoing sleep practice."
+          ]
+        },
+        "action": {
+          "title": "Design Your Sleep Protocol",
+          "description": "Write your personal sleep protocol:\n1. **Sleep schedule**: Consistent bed & wake times (even weekends)\n2. **Evening wind-down** (1 hour before): activities\n3. **Pre-bed practice** (30-20 min before): which technique\n4. **In bed practice**: which technique\n5. **If awake too long**: what I'll do\n6. **Daytime habits**: exercise, sunlight, caffeine cutoff\n\nCommit to following this for 2 weeks. Track results."
+        },
+        "completion": {
+          "message": "You've completed the Better Sleep program! You now have a toolkit of evidence-based practices to improve your sleep. Remember: change takes time. Be patient and consistent. Most people see improvement within 2-3 weeks of nightly practice. Sleep well!",
+          "keyTakeaways": [
+            "Mindfulness calms the nervous system for better sleep",
+            "A racing mind can be quieted with breath counting and visualization",
+            "Physical relaxation (PMR, body scan) prepares the body for sleep",
+            "Accepting rather than fighting sleeplessness reduces sleep anxiety",
+            "A consistent evening routine trains your body to sleep"
+          ],
+          "nextSteps": [
+            "Follow your personal sleep protocol for 2 weeks minimum",
+            "Track your progress in your sleep journal",
+            "If stress affects your sleep, try our Stress Management program",
+            "Deepen your practice with the 30-Day Meditation Challenge",
+            "Join our community for support and accountability"
+          ]
+        }
+      }
+    }
+  ]
+}
