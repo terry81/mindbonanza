@@ -1,0 +1,163 @@
+{
+  "id": "stress-management",
+  "title": "Mindful Stress Management",
+  "description": "A targeted 5-day program to manage and reduce stress through proven mindfulness techniques.",
+  "level": "All Levels",
+  "duration": "5 days",
+  "lessons": [
+    {
+      "day": 1,
+      "title": "Understanding Your Stress",
+      "duration": "20 min",
+      "content": {
+        "teaching": "Stress isn't the enemy—chronic, unmanaged stress is. Today you'll learn to recognize your stress signals early, before overwhelm sets in.\n\n**The Stress Response**: When you perceive a threat, your body activates the stress response—heart rate increases, breathing quickens, muscles tense. This is useful for real danger but exhausting when triggered constantly by work emails, traffic, and worries.\n\n**Your Stress Signature**: Everyone experiences stress differently. Some feel it in their stomach, others in tight shoulders or a racing mind. Today you'll identify your personal stress signature.\n\n**Stress Triggers**: What activates your stress response? Deadlines? Conflict? Uncertainty? Being late? Awareness of triggers allows you to respond proactively.",
+        "practice": {
+          "name": "Stress Awareness Meditation",
+          "duration": "12 minutes",
+          "instructions": [
+            "Settle into a comfortable seated position.",
+            "Take three deep breaths.",
+            "Scan your body for any signs of stress or tension.",
+            "Bring to mind a mildly stressful situation (not your worst—something manageable).",
+            "Notice what happens in your body: Where do you feel it? What are the sensations?",
+            "Notice what happens in your mind: What thoughts arise? What's the tone?",
+            "Notice your breath: Has it changed?",
+            "Now, breathe into the areas of tension for a few minutes.",
+            "Let the stressful thought go and return to neutral breathing.",
+            "Reflect on what you learned about your stress response."
+          ]
+        },
+        "action": {
+          "title": "Stress Trigger Journal",
+          "description": "Today, each time you notice stress arising, pause and note: What triggered it? Where do I feel it in my body? What's my stress level (1-10)? This builds awareness."
+        }
+      }
+    },
+    {
+      "day": 2,
+      "title": "The Relaxation Response",
+      "duration": "25 min",
+      "content": {
+        "teaching": "If there's a stress response, there's also a relaxation response—and you can activate it on demand.\n\n**The Relaxation Response**: Discovered by Dr. Herbert Benson, this is your body's natural antidote to stress. Heart rate slows, breathing deepens, muscles relax. You activate it through breath, body awareness, and present-moment focus.\n\n**Diaphragmatic Breathing**: Most stressed people breathe shallowly from their chest. Deep belly breathing activates the vagus nerve, signaling safety to your nervous system.\n\n**Progressive Muscle Relaxation**: By deliberately tensing then releasing muscles, you trigger deep relaxation and become aware of where you hold tension.",
+        "practice": {
+          "name": "Relaxation Response Practice",
+          "duration": "15 minutes",
+          "instructions": [
+            "Lie down or sit comfortably.",
+            "**Diaphragmatic Breathing** (5 min): Place one hand on your chest, one on your belly. Breathe so only the belly hand rises. Inhale for 4 counts, exhale for 6 counts. Repeat.",
+            "**Progressive Muscle Relaxation** (10 min):",
+            "- Tense your feet tightly for 5 seconds, then release completely. Notice the difference.",
+            "- Tense your calves, then release.",
+            "- Tense your thighs, then release.",
+            "- Tense your buttocks and belly, then release.",
+            "- Tense your hands (make fists), then release.",
+            "- Tense your arms, then release.",
+            "- Shrug shoulders to ears, hold, then drop and release.",
+            "- Scrunch your face, then release.",
+            "- Scan your whole body, noticing the relaxation."
+          ]
+        },
+        "action": {
+          "title": "3-Breath Reset",
+          "description": "Today, every time you notice stress, take three slow, deep belly breaths. Just three. Do this 10+ times throughout the day. You're training your relaxation response."
+        }
+      }
+    },
+    {
+      "day": 3,
+      "title": "Changing Your Stress Story",
+      "duration": "25 min",
+      "content": {
+        "teaching": "Much stress comes not from situations themselves, but from how we interpret them. Today you'll learn to work with stress-inducing thoughts.\n\n**Stress Thoughts**: 'I can't handle this.' 'This is terrible.' 'I'm going to fail.' These thoughts amplify stress. The situation might be challenging, but the thought makes it unbearable.\n\n**Cognitive Defusion**: This technique creates distance from thoughts. Instead of 'I'm going to fail' (which feels like truth), you notice 'I'm having the thought that I'm going to fail' (which is just a thought).\n\n**Reframing**: Not toxic positivity, but realistic reappraisal. 'This is impossible' becomes 'This is challenging, and I've handled challenges before.' You're not denying difficulty—you're adding perspective.",
+        "practice": {
+          "name": "Thought Defusion Practice",
+          "duration": "15 minutes",
+          "instructions": [
+            "Sit comfortably and close your eyes.",
+            "Think of a current stressor.",
+            "Notice what thoughts arise. What are you telling yourself about this situation?",
+            "Write down the main stress thought (mentally or actually write it).",
+            "Now, add the prefix: 'I notice I'm having the thought that...'",
+            "Repeat this a few times: 'I notice I'm having the thought that this is too much.'",
+            "Notice how this creates distance. The thought loses some power.",
+            "Now, ask: 'Is this thought 100% true? Is there another perspective?'",
+            "Generate 2-3 alternative, realistic thoughts.",
+            "Sit with these more balanced perspectives.",
+            "Return to breathing, releasing all thoughts."
+          ]
+        },
+        "action": {
+          "title": "Thought Record",
+          "description": "When stressed today, write: (1) Situation, (2) Automatic thought, (3) How true does it feel? (%), (4) Alternative thought, (5) How true now? (%). Watch the power shift."
+        }
+      }
+    },
+    {
+      "day": 4,
+      "title": "Building Resilience",
+      "duration": "25 min",
+      "content": {
+        "teaching": "Resilience isn't about avoiding stress—it's about recovering quickly and learning from challenges. Today you'll build practices that strengthen your resilience.\n\n**Resilience Factors**:\n- **Self-Compassion**: Treating yourself kindly during difficulty (not self-criticism)\n- **Perspective**: Seeing challenges as temporary and specific (not permanent and global)\n- **Connection**: Reaching out for support rather than isolating\n- **Meaning**: Finding purpose in challenges—what can you learn?\n- **Self-Care**: Maintaining basics: sleep, nutrition, movement, rest\n\n**STOP Practice**: A quick resilience tool for stressful moments:\n- **S**top - Pause whatever you're doing\n- **T**ake a breath - Ground yourself\n- **O**bserve - What's happening? What am I feeling?\n- **P**roceed - Choose your next action mindfully",
+        "practice": {
+          "name": "Resilience Meditation",
+          "duration": "15 minutes",
+          "instructions": [
+            "Sit comfortably and breathe naturally.",
+            "Bring to mind a past challenge you successfully overcame.",
+            "Remember how it felt during the difficulty.",
+            "Remember what helped you get through it.",
+            "Notice the strength that got you through. Feel it in your body.",
+            "Acknowledge: 'I've survived 100% of my worst days so far.'",
+            "Now, think of a current challenge.",
+            "Bring to it the same resilience. Imagine handling it with your full capacity.",
+            "Place a hand on your heart. Offer yourself compassion: 'May I be kind to myself in difficulty. May I remember my own strength.'",
+            "Sit with a sense of your own resilience for a few minutes.",
+            "Take three deep breaths and open your eyes."
+          ]
+        },
+        "action": {
+          "title": "STOP Practice",
+          "description": "Today, use the STOP practice every time you feel stress rising. Stop, Take a breath, Observe, Proceed. Do this at least 5 times. You're building a new neural pathway."
+        }
+      }
+    },
+    {
+      "day": 5,
+      "title": "Your Stress Management Plan",
+      "duration": "30 min",
+      "content": {
+        "teaching": "Today you'll create a personalized stress management plan that you can use ongoing.\n\n**Prevention**: Regular mindfulness practice, good sleep, exercise, healthy eating, and boundaries all prevent stress from accumulating.\n\n**Early Intervention**: Catching stress early—when it's 3/10 rather than 9/10—makes it much easier to manage. Use your stress signature from Day 1.\n\n**Acute Tools**: When stress spikes, you need quick interventions: breathing exercises, brief body scan, STOP practice, walking, talking to someone.\n\n**Recovery**: After stressful periods, you need restoration: longer meditation, nature time, creative activities, social connection, rest.\n\n**Your Personal Plan**: What works for you? What's realistic? What will you actually do?",
+        "practice": {
+          "name": "Integration Practice",
+          "duration": "15 minutes",
+          "instructions": [
+            "Choose any stress-relief practice from this week that resonated most.",
+            "Maybe it's the relaxation response, the 3-breath reset, thought defusion, or STOP.",
+            "Practice it for 15 minutes.",
+            "Then, spend time creating your stress management plan (see action below)."
+          ]
+        },
+        "action": {
+          "title": "Create Your Stress Management Plan",
+          "description": "Write down:\n1. **My Stress Triggers**: (top 3-5)\n2. **My Stress Signature**: (how I know I'm stressed)\n3. **Daily Prevention**: (what I'll do daily to manage stress baseline)\n4. **Quick Tools**: (3 techniques I can use when stress spikes)\n5. **Weekly Recovery**: (how I'll restore myself)\n6. **Support System**: (who I can reach out to)\n\nKeep this somewhere visible. Review it weekly. Adjust as needed."
+        },
+        "completion": {
+          "message": "You've completed the Stress Management program! You now have awareness of your stress patterns and concrete tools to manage them. Remember: stress is inevitable, but suffering is optional. You have the power to respond differently. Keep practicing these tools—they get stronger with use.",
+          "keyTakeaways": [
+            "Know your stress signature and triggers",
+            "Use breath to activate the relaxation response",
+            "Defuse from stress-inducing thoughts",
+            "Build resilience through self-compassion and perspective",
+            "Have a plan—prevention, intervention, and recovery"
+          ],
+          "nextSteps": [
+            "Practice your stress management plan for 30 days",
+            "Consider the 30-Day Meditation Challenge to deepen your practice",
+            "Explore the Better Sleep program if stress affects your sleep",
+            "Join our community for ongoing support"
+          ]
+        }
+      }
+    }
+  ]
+}
