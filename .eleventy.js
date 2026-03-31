@@ -47,8 +47,14 @@ module.exports = function(eleventyConfig) {
   // Reading time filter (average 200 words per minute)
   eleventyConfig.addFilter("readingTime", function(content) {
     if (!content) return "1 min read";
-    // Strip HTML tags, then remove any remaining < or > to prevent incomplete tag injection
-    const text = content.replace(/<[^>]*>/g, '').replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
+    // Repeatedly strip HTML tags until none remain, to handle nested/malformed tags
+    let text = content;
+    let prev;
+    do {
+      prev = text;
+      text = text.replace(/<[^>]*>/g, '');
+    } while (text !== prev);
+    text = text.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
     const wordCount = text.split(' ').length;
     const readingTime = Math.ceil(wordCount / 200);
     return `${readingTime} min read`;
@@ -57,8 +63,14 @@ module.exports = function(eleventyConfig) {
   // Word count filter
   eleventyConfig.addFilter("wordCount", function(content) {
     if (!content) return 0;
-    // Strip HTML tags, then remove any remaining < or > to prevent incomplete tag injection
-    const text = content.replace(/<[^>]*>/g, '').replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
+    // Repeatedly strip HTML tags until none remain, to handle nested/malformed tags
+    let text = content;
+    let prev;
+    do {
+      prev = text;
+      text = text.replace(/<[^>]*>/g, '');
+    } while (text !== prev);
+    text = text.replace(/[<>]/g, '').replace(/\s+/g, ' ').trim();
     return text.split(' ').length;
   });
 
