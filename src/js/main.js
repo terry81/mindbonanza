@@ -484,31 +484,64 @@ async function performSearch(query) {
     });
 
     if (results.length === 0) {
-        searchResults.innerHTML = `
-            <div class="search-no-results">
+        searchResults.innerHTML = '';
+        const noResults = document.createElement('div');
+        noResults.className = 'search-no-results';
+        noResults.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <path d="m21 21-4.35-4.35"></path>
                 </svg>
-                <p>No articles found for "<strong>${escapeHtml(query)}</strong>"</p>
-                <p style="font-size: 0.875rem; margin-top: 0.5rem;">Try different keywords or browse our <a href="/blog/" style="color: var(--primary-color);">blog</a></p>
-            </div>
         `;
+        const msg = document.createElement('p');
+        const strong = document.createElement('strong');
+        strong.textContent = query;
+        msg.append('No articles found for "', strong, '"');
+        noResults.appendChild(msg);
+
+        const hint = document.createElement('p');
+        hint.style.cssText = 'font-size: 0.875rem; margin-top: 0.5rem;';
+        hint.append('Try different keywords or browse our ');
+        const blogLink = document.createElement('a');
+        blogLink.href = '/blog/';
+        blogLink.style.color = 'var(--primary-color)';
+        blogLink.textContent = 'blog';
+        hint.appendChild(blogLink);
+        noResults.appendChild(hint);
+
+        searchResults.appendChild(noResults);
         return;
     }
 
-    const resultsHTML = results.slice(0, 10).map(item => `
-        <a href="${item.url}" class="search-result-item">
-            <h4>${highlightMatch(item.title, searchTerm)}</h4>
-            <p>${highlightMatch(item.excerpt.substring(0, 150) + '...', searchTerm)}</p>
-            <div class="search-result-meta">
-                ${item.category ? `<span class="search-result-category">${item.category}</span>` : ''}
-                <span>${item.date}</span>
-            </div>
-        </a>
-    `).join('');
+    searchResults.innerHTML = '';
+    results.slice(0, 10).forEach(item => {
+        const link = document.createElement('a');
+        link.href = item.url;
+        link.className = 'search-result-item';
 
-    searchResults.innerHTML = resultsHTML;
+        const heading = document.createElement('h4');
+        heading.innerHTML = highlightMatch(item.title, searchTerm);
+        link.appendChild(heading);
+
+        const excerpt = document.createElement('p');
+        excerpt.innerHTML = highlightMatch(item.excerpt.substring(0, 150) + '...', searchTerm);
+        link.appendChild(excerpt);
+
+        const meta = document.createElement('div');
+        meta.className = 'search-result-meta';
+        if (item.category) {
+            const cat = document.createElement('span');
+            cat.className = 'search-result-category';
+            cat.textContent = item.category;
+            meta.appendChild(cat);
+        }
+        const dateSpan = document.createElement('span');
+        dateSpan.textContent = item.date;
+        meta.appendChild(dateSpan);
+
+        link.appendChild(meta);
+        searchResults.appendChild(link);
+    });
 }
 
 function highlightMatch(text, term) {
