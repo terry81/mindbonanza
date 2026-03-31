@@ -1,6 +1,60 @@
 [
     
     {
+        "title": "The Power of Silence: Why Intentional Quiet Is the Ultimate Mindfulness Practice",
+        "excerpt": "In a world that never stops talking, silence has become radical. Discover why intentional periods of silence are one of the most transformative mindfulness practices—and how to bring more quiet into your daily life.",
+        "url": "/posts/power-of-silence-mindfulness/",
+        "category": "Practice",
+        "tags": ["mindfulness","silence","solitude","meditation","noise","retreat","inner-peace","attention","stillness","awareness"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Mindful Swimming: How Water Becomes Your Meditation Teacher",
+        "excerpt": "Discover how swimming can become one of the most immersive mindfulness practices available. Learn to transform laps in the pool—or strokes in open water—into a moving meditation that connects breath, body, and present-moment awareness.",
+        "url": "/posts/mindful-swimming-water-meditation/",
+        "category": "Practice",
+        "tags": ["mindfulness","swimming","water","exercise","meditation","body-awareness","breath","flow","nature","presence"],
+        "date": "April 2, 2026"
+    },
+    
+    {
+        "title": "Mindful Photography: Learning to See the World with Fresh Eyes",
+        "excerpt": "Discover how photography can become a powerful mindfulness practice. Learn to slow down, truly observe the world around you, and transform the act of taking pictures into a meditation on seeing.",
+        "url": "/posts/mindful-photography-seeing-deeply/",
+        "category": "Creative Practice",
+        "tags": ["mindfulness","photography","creativity","presence","observation","beauty","senses","art","slow-living","attention"],
+        "date": "April 1, 2026"
+    },
+    
+    {
+        "title": "The Butterfly Effect of Mindfulness: How Your Smallest Actions Create Enormous Change",
+        "excerpt": "A butterfly flapping its wings in Brazil can cause a tornado in Texas. In the same way, your smallest mindful actions—a single breath, a moment of kindness, a pause before reacting—can transform your entire life and ripple outward in ways you'll never fully see.",
+        "url": "/posts/butterfly-effect-mindfulness-small-actions-matter/",
+        "category": "Practice",
+        "tags": ["butterfly effect","mindfulness","small actions","daily practice","habits","awareness","compassion","ripple effect"],
+        "date": "March 31, 2026"
+    },
+    
+    {
+        "title": "Mindful Cooking: Turning Meal Preparation into a Meditation Practice",
+        "excerpt": "Discover how the kitchen can become your meditation hall. Learn to transform everyday cooking into a rich mindfulness practice that engages all five senses and brings deep presence to your daily routine.",
+        "url": "/posts/mindful-cooking-meditation-kitchen/",
+        "category": "Practice",
+        "tags": ["mindfulness","cooking","meditation","senses","daily-practice","presence","kitchen","food","slow-living","creativity"],
+        "date": "March 31, 2026"
+    },
+    
+    {
+        "title": "Mindful Grieving: Navigating Loss When There Is No Closure",
+        "excerpt": "Learn how mindfulness can help you process the grief of relationships that ended without closure—through estrangement, divorce, growing apart, or simply fading away. Discover how to sit with ambiguous loss and find peace without resolution.",
+        "url": "/posts/mindful-grieving-ambiguous-loss/",
+        "category": "Mental Health",
+        "tags": ["mindfulness","grief","loss","relationships","closure","healing","self-compassion","ambiguous-loss","emotional-processing","letting-go"],
+        "date": "March 30, 2026"
+    },
+    
+    {
         "title": "Managing Anxiety Through Progressive Muscle Relaxation",
         "excerpt": "Discover how Progressive Muscle Relaxation can help you release physical tension and calm anxiety through systematic body awareness.",
         "url": "/posts/managing-anxiety-progressive-muscle-relaxation/",

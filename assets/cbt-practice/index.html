@@ -498,6 +498,15 @@
     </div>
 
     <script>
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
         let currentExercise = 'thought-record';
 
         // Thought Record Exercise HTML
@@ -731,16 +740,24 @@
             const beliefChange = beliefAfter - beliefBefore;
             const changeDirection = beliefChange > 0 ? 'increased' : 'decreased';
 
+            const safeSituation = escapeHtml(situation);
+            const safeAutoThought = escapeHtml(autoThought);
+            const safeAltThought = escapeHtml(altThought);
+            const safeBeliefBefore = escapeHtml(String(beliefBefore));
+            const safeBeliefAfter = escapeHtml(String(beliefAfter));
+            const safeChangeDirection = escapeHtml(changeDirection);
+            const safeBeliefChange = escapeHtml(String(Math.abs(beliefChange)));
+
             resultDiv.innerHTML = `
                 <div class="result-box">
                     <h4>✅ Thought Record Summary</h4>
-                    <p><strong>Situation:</strong> ${situation}</p>
-                    <p><strong>Original Thought:</strong> ${autoThought}</p>
-                    <p><strong>Belief in Original Thought:</strong> ${beliefBefore}%</p>
-                    <p><strong>Alternative Thought:</strong> ${altThought}</p>
-                    <p><strong>Belief in Alternative:</strong> ${beliefAfter}%</p>
+                    <p><strong>Situation:</strong> ${safeSituation}</p>
+                    <p><strong>Original Thought:</strong> ${safeAutoThought}</p>
+                    <p><strong>Belief in Original Thought:</strong> ${safeBeliefBefore}%</p>
+                    <p><strong>Alternative Thought:</strong> ${safeAltThought}</p>
+                    <p><strong>Belief in Alternative:</strong> ${safeBeliefAfter}%</p>
                     <p style="color: var(--success); font-weight: 600;">
-                        Your belief in the alternative thought ${changeDirection} by ${Math.abs(beliefChange)}%.
+                        Your belief in the alternative thought ${safeChangeDirection} by ${safeBeliefChange}%.
                         ${beliefChange > 0 ? 'Great progress! The alternative perspective is becoming more believable.' : 'Keep practicing. Alternative thoughts become more believable with repetition.'}
                     </p>
                     <p style="margin-top: 15px;"><strong>Next Steps:</strong> Review this thought record when similar situations arise. Over time, alternative thoughts will become more automatic.</p>
@@ -882,10 +899,10 @@
                 <div class="result-box">
                     <h4>📅 Activity Scheduled</h4>
                     <p><strong>Category:</strong> ${categoryNames[category]}</p>
-                    <p><strong>Activity:</strong> ${activity}</p>
-                    <p><strong>Scheduled:</strong> ${formattedTime}</p>
-                    <p><strong>Current Mood:</strong> ${currentMood}/10</p>
-                    <p><strong>Expected Mood After:</strong> ${expectedMood}/10</p>
+                    <p><strong>Activity:</strong> ${escapeHtml(activity)}</p>
+                    <p><strong>Scheduled:</strong> ${escapeHtml(formattedTime)}</p>
+                    <p><strong>Current Mood:</strong> ${escapeHtml(String(currentMood))}/10</p>
+                    <p><strong>Expected Mood After:</strong> ${escapeHtml(String(expectedMood))}/10</p>
                     <p style="margin-top: 15px; color: var(--success); font-weight: 600;">
                         Great! You've planned an activity. Remember: motivation often comes AFTER starting, not before.
                     </p>
