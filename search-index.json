@@ -1,11 +1,110 @@
 [
     
     {
+        "title": "Ajahn Chah and Mindfulness: The Forest Master Who Taught the West to Let Go",
+        "excerpt": "Discover how Ajahn Chah's direct, humorous, and profoundly simple teachings shaped the way mindfulness is practiced in the West. Learn his approach to letting go, working with the mind, and finding peace through radical simplicity.",
+        "url": "/posts/ajahn-chah-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","ajahn-chah","theravada","buddhism","thai-forest-tradition","letting-go","simplicity","meditation","insight","equanimity"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Carl Jung and Mindfulness: The Unconscious Path to Self-Awareness",
+        "excerpt": "Discover how Carl Jung's revolutionary insights into the unconscious mind, shadow work, and individuation anticipated and enriched modern mindfulness practice. Learn to integrate his powerful techniques of self-awareness into your contemplative life.",
+        "url": "/posts/carl-jung-contribution-to-mindfulness/",
+        "category": "Science",
+        "tags": ["mindfulness","carl-jung","psychology","shadow-work","individuation","self-awareness","unconscious","archetypes","active-imagination","inner-work"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Ellen Langer and Mindfulness: The Science of Active Noticing",
+        "excerpt": "Discover Ellen Langer's revolutionary approach to mindfulness — no meditation required. Learn how the 'mother of mindfulness' in Western psychology proved that simply paying attention to novelty can transform health, creativity, and aging.",
+        "url": "/posts/ellen-langer-contribution-to-mindfulness/",
+        "category": "Science",
+        "tags": ["mindfulness","ellen-langer","psychology","science","active-noticing","cognitive-flexibility","creativity","research","awareness","novelty"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Jack Kornfield and Mindfulness: Bringing the Heart Into Practice",
+        "excerpt": "Explore how Jack Kornfield bridged Eastern meditation and Western psychology to create a uniquely accessible approach to mindfulness. Discover his teachings on the wise heart, the integration of therapy and meditation, and why compassion is the ground of true awareness.",
+        "url": "/posts/jack-kornfield-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","jack-kornfield","buddhism","psychotherapy","compassion","meditation","spirit-rock","heart","wisdom","healing"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Jon Kabat-Zinn and Mindfulness: The Man Who Brought Meditation to Medicine",
+        "excerpt": "Learn how Jon Kabat-Zinn revolutionized healthcare by bringing mindfulness meditation into hospitals and clinics. Discover the science, practices, and philosophy behind MBSR and how his work transformed mindfulness from a spiritual practice into an evidence-based intervention.",
+        "url": "/posts/jon-kabat-zinn-contribution-to-mindfulness/",
+        "category": "Science",
+        "tags": ["mindfulness","jon-kabat-zinn","mbsr","meditation","science","stress-reduction","psychology","healthcare","research","secular-mindfulness"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Lao Tzu and Mindfulness: The Ancient Sage Who Taught Us to Flow",
+        "excerpt": "Explore how Lao Tzu's Tao Te Ching — written 2,500 years ago — anticipates the deepest insights of modern mindfulness. Discover the sage's teachings on wu wei, simplicity, and the paradoxical power of doing less.",
+        "url": "/posts/lao-tzu-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","lao-tzu","tao-te-ching","wu-wei","philosophy","ancient-wisdom","simplicity","non-striving","nature","presence"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Pema Chödrön and Mindfulness: The Courage to Stay Present with Uncertainty",
+        "excerpt": "Learn how Pema Chödrön transformed our understanding of mindfulness through her teachings on groundlessness, radical acceptance, and the courage to stay present with discomfort. Discover why leaning into uncertainty is the path to genuine freedom.",
+        "url": "/posts/pema-chodron-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","pema-chodron","buddhism","tibetan-buddhism","groundlessness","compassion","courage","uncertainty","tonglen","vulnerability"],
+        "date": "April 3, 2026"
+    },
+    
+    {
         "title": "The Power of Silence: Why Intentional Quiet Is the Ultimate Mindfulness Practice",
         "excerpt": "In a world that never stops talking, silence has become radical. Discover why intentional periods of silence are one of the most transformative mindfulness practices—and how to bring more quiet into your daily life.",
         "url": "/posts/power-of-silence-mindfulness/",
         "category": "Practice",
         "tags": ["mindfulness","silence","solitude","meditation","noise","retreat","inner-peace","attention","stillness","awareness"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Ram Dass and Mindfulness: Be Here Now and the Journey to Presence",
+        "excerpt": "Explore how Ram Dass — Harvard professor turned spiritual icon — introduced millions to present-moment awareness. Discover the enduring wisdom of 'Be Here Now' and how his teachings on love, presence, and aging continue to shape mindfulness practice.",
+        "url": "/posts/ram-dass-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","ram-dass","be-here-now","presence","spirituality","consciousness","meditation","awareness","transformation","love"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "S.N. Goenka and Mindfulness: Democratizing the Ancient Art of Vipassana",
+        "excerpt": "Discover how S.N. Goenka made Vipassana meditation freely available to millions worldwide. Learn about his unique approach to mindfulness through body sensations, equanimity, and the radical principle that meditation should never be sold.",
+        "url": "/posts/sn-goenka-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","sn-goenka","vipassana","meditation","buddhism","insight-meditation","silent-retreat","awareness","equanimity","practice"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Thích Nhất Hạnh and Mindfulness: The Art of Living Deeply",
+        "excerpt": "Discover how Thích Nhất Hạnh transformed mindfulness from a monastic discipline into a way of life accessible to everyone. Learn his revolutionary teachings on interbeing, engaged Buddhism, and the art of finding peace in every step.",
+        "url": "/posts/thich-nhat-hanh-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","thich-nhat-hanh","zen","buddhism","engaged-buddhism","interbeing","peace","compassion","meditation","present-moment"],
+        "date": "April 3, 2026"
+    },
+    
+    {
+        "title": "Viktor Frankl and Mindfulness: Finding Meaning in Every Moment",
+        "excerpt": "Explore how Viktor Frankl's logotherapy and his search for meaning transformed our understanding of mindfulness. Discover practical lessons from his life and work that can deepen your own practice of present-moment awareness.",
+        "url": "/posts/viktor-frankl-contribution-to-mindfulness/",
+        "category": "Philosophy",
+        "tags": ["mindfulness","viktor-frankl","logotherapy","meaning","philosophy","resilience","suffering","awareness","psychology","ancient-wisdom"],
         "date": "April 3, 2026"
     },
     
