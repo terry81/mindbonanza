@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Muscle Relaxation | Mind Bonanza</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --tense: #E53E3E;
+            --release: #4299E1;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #2d3436 0%, #0f3460 50%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+        }
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: var(--primary); font-size: 2rem; margin-bottom: 8px; }
+        .subtitle { color: var(--text-light); font-size: 1rem; }
+        .info-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .info-box h3 { color: var(--primary); margin-bottom: 10px; }
+        .info-box p, .info-box ul { color: var(--text-dark); line-height: 1.8; }
+        .info-box ul { margin-left: 20px; margin-top: 8px; }
+        .settings {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+        .settings label { font-weight: 600; color: var(--text-dark); }
+        .settings select {
+            padding: 8px 12px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .settings select:focus { outline: none; border-color: var(--primary); }
+
+        .exercise-display {
+            text-align: center;
+            padding: 30px 20px;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .muscle-group-name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .instruction-text {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        .phase-indicator {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 15px 0;
+            transition: color 0.5s;
+        }
+        .phase-indicator.tense { color: var(--tense); }
+        .phase-indicator.release { color: var(--release); }
+        .phase-indicator.rest { color: var(--success); }
+        .timer-seconds {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        .progress-section { margin: 20px 0; }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #E2E8F0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: var(--primary);
+            transition: width 1s linear;
+            width: 0%;
+        }
+        .progress-label {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        .muscle-dots {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .muscle-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            transition: background 0.3s;
+        }
+        .muscle-dot.done { background: var(--success); }
+        .muscle-dot.active { background: var(--primary); box-shadow: 0 0 8px rgba(107,70,193,0.5); }
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+        button {
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+        .btn-start { background: var(--primary); color: var(--white); font-size: 1.1rem; padding: 16px 40px; }
+        .btn-start:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-stop { background: #E53E3E; color: var(--white); }
+        .btn-stop:hover { background: #C53030; transform: translateY(-2px); }
+        .btn-reset { background: #E2E8F0; color: var(--text-dark); }
+        .btn-reset:hover { background: #CBD5E0; transform: translateY(-2px); }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--bg-light);
+        }
+        .footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .hidden { display: none; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .timer-seconds { font-size: 3rem; }
+        }
+    </style>
+</head>
+<body>
+    {% include "header.njk" %}
+    <div class="container">
+        <header>
+            <h1>💪 Progressive Muscle Relaxation</h1>
+            <p class="subtitle">Release tension systematically, one muscle group at a time</p>
+        </header>
+
+        <div class="info-box">
+            <h3>What is PMR?</h3>
+            <p>Progressive Muscle Relaxation (PMR) is an evidence-based technique developed by Dr. Edmund Jacobson. You deliberately tense each muscle group for a few seconds, then release. The contrast teaches your body what true relaxation feels like.</p>
+            <ul>
+                <li>Reduces physical tension and anxiety</li>
+                <li>Improves sleep quality</li>
+                <li>Lowers blood pressure and heart rate</li>
+                <li>Enhances body awareness</li>
+            </ul>
+        </div>
+
+        <div class="settings" id="settingsPanel">
+            <div>
+                <label for="tenseDuration">Tense:</label>
+                <select id="tenseDuration">
+                    <option value="5" selected>5 seconds</option>
+                    <option value="7">7 seconds</option>
+                    <option value="10">10 seconds</option>
+                </select>
+            </div>
+            <div>
+                <label for="releaseDuration">Release:</label>
+                <select id="releaseDuration">
+                    <option value="10">10 seconds</option>
+                    <option value="15" selected>15 seconds</option>
+                    <option value="20">20 seconds</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="exercise-display" id="exerciseDisplay">
+            <div class="muscle-group-name" id="muscleGroupName">Ready to Begin</div>
+            <div class="instruction-text" id="instructionText">Find a comfortable position. You'll tense each muscle group, then release and notice the contrast.</div>
+            <div class="phase-indicator" id="phaseIndicator"></div>
+            <div class="timer-seconds" id="timerSeconds"></div>
+        </div>
+
+        <div class="muscle-dots" id="muscleDots"></div>
+
+        <div class="progress-section">
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+            <div class="progress-label" id="progressLabel">0 / 10 muscle groups</div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-start" id="btnStart" onclick="startPMR()">▶ Start Session</button>
+            <button class="btn-stop hidden" id="btnStop" onclick="stopPMR()">⏸ Pause</button>
+            <button class="btn-reset hidden" id="btnReset" onclick="resetPMR()">↺ Reset</button>
+        </div>
+
+        <div class="info-box">
+            <h3>Tips</h3>
+            <ul>
+                <li>Tense firmly but not to the point of pain or cramping</li>
+                <li>Focus on the contrast between tension and relaxation</li>
+                <li>Breathe normally throughout — don't hold your breath</li>
+                <li>Practice in a quiet, comfortable space</li>
+                <li>Best done lying down or in a supportive chair</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Part of <a href="/">Mind Bonanza</a> — Your journey to mindfulness and inner peace</p>
+            <p style="margin-top:10px;font-size:0.9rem;color:var(--text-light);">If you have injuries or chronic pain, consult your healthcare provider before tensing affected areas.</p>
+        </div>
+    </div>
+
+    <script>
+        const MUSCLE_GROUPS = [
+            { name: 'Hands & Forearms', tenseInstr: 'Make tight fists and curl your wrists inward. Squeeze firmly.', releaseInstr: 'Let your hands fall open. Feel the warmth spreading through your fingers.' },
+            { name: 'Biceps & Upper Arms', tenseInstr: 'Bend your elbows and flex your biceps like a strongman pose. Squeeze tight.', releaseInstr: 'Let your arms drop and go limp. Notice the heaviness.' },
+            { name: 'Shoulders', tenseInstr: 'Raise your shoulders up toward your ears as high as you can. Hold them there.', releaseInstr: 'Let your shoulders drop down. Feel the tension melting away.' },
+            { name: 'Forehead', tenseInstr: 'Raise your eyebrows as high as possible, wrinkling your forehead.', releaseInstr: 'Let your forehead become smooth and relaxed.' },
+            { name: 'Eyes & Cheeks', tenseInstr: 'Squeeze your eyes tightly shut and scrunch up your nose.', releaseInstr: 'Relax your face completely. Let it go soft and smooth.' },
+            { name: 'Jaw & Mouth', tenseInstr: 'Clench your jaw and press your tongue against the roof of your mouth.', releaseInstr: 'Let your jaw hang slightly open. Relax your tongue.' },
+            { name: 'Neck', tenseInstr: 'Gently press your head back into the surface behind you (or tilt chin to chest).', releaseInstr: 'Release and let your neck rest in a natural position.' },
+            { name: 'Chest & Back', tenseInstr: 'Take a deep breath and hold it while squeezing your shoulder blades together.', releaseInstr: 'Exhale and let your chest and back relax completely.' },
+            { name: 'Abdomen', tenseInstr: 'Tighten your stomach muscles as if bracing for a punch.', releaseInstr: 'Release your abdomen. Let it be soft and relaxed.' },
+            { name: 'Legs & Feet', tenseInstr: 'Extend your legs, point your toes toward your face, and tighten your thighs.', releaseInstr: 'Let your legs fall heavy and relaxed. Feel the release through your feet.' }
+        ];
+
+        let isRunning = false;
+        let currentGroup = 0;
+        let timer = null;
+        let secondsLeft = 0;
+        let phase = 'idle'; // 'tense', 'release', 'transition'
+
+        const muscleName = document.getElementById('muscleGroupName');
+        const instrText = document.getElementById('instructionText');
+        const phaseInd = document.getElementById('phaseIndicator');
+        const timerSec = document.getElementById('timerSeconds');
+        const progressFill = document.getElementById('progressFill');
+        const progressLabel = document.getElementById('progressLabel');
+        const dotsContainer = document.getElementById('muscleDots');
+
+        function getTenseDuration() { return parseInt(document.getElementById('tenseDuration').value); }
+        function getReleaseDuration() { return parseInt(document.getElementById('releaseDuration').value); }
+
+        function renderDots() {
+            dotsContainer.innerHTML = MUSCLE_GROUPS.map((_, i) => {
+                let cls = 'muscle-dot';
+                if (i < currentGroup) cls += ' done';
+                if (i === currentGroup && isRunning) cls += ' active';
+                return `<div class="${cls}"></div>`;
+            }).join('');
+        }
+
+        function updateProgress() {
+            const pct = (currentGroup / MUSCLE_GROUPS.length) * 100;
+            progressFill.style.width = pct + '%';
+            progressLabel.textContent = currentGroup + ' / ' + MUSCLE_GROUPS.length + ' muscle groups';
+        }
+
+        function startPMR() {
+            if (isRunning) return;
+            isRunning = true;
+            document.getElementById('btnStart').classList.add('hidden');
+            document.getElementById('btnStop').classList.remove('hidden');
+            document.getElementById('btnReset').classList.remove('hidden');
+            document.getElementById('settingsPanel').style.opacity = '0.5';
+            document.getElementById('settingsPanel').style.pointerEvents = 'none';
+
+            if (currentGroup === 0) {
+                // Intro countdown
+                muscleName.textContent = 'Get Ready';
+                instrText.textContent = 'Close your eyes and take a few deep breaths...';
+                phaseInd.textContent = '';
+                phaseInd.className = 'phase-indicator';
+                secondsLeft = 5;
+                timerSec.textContent = secondsLeft;
+                timer = setInterval(() => {
+                    secondsLeft--;
+                    if (secondsLeft <= 0) {
+                        clearInterval(timer);
+                        runGroup();
+                    } else {
+                        timerSec.textContent = secondsLeft;
+                    }
+                }, 1000);
+            } else {
+                runGroup();
+            }
+        }
+
+        function runGroup() {
+            if (!isRunning || currentGroup >= MUSCLE_GROUPS.length) {
+                finish();
+                return;
+            }
+            const group = MUSCLE_GROUPS[currentGroup];
+            renderDots();
+
+            // Tense phase
+            phase = 'tense';
+            muscleName.textContent = group.name;
+            instrText.textContent = group.tenseInstr;
+            phaseInd.textContent = '💪 TENSE';
+            phaseInd.className = 'phase-indicator tense';
+            secondsLeft = getTenseDuration();
+            timerSec.textContent = secondsLeft;
+
+            timer = setInterval(() => {
+                if (!isRunning) return;
+                secondsLeft--;
+                if (secondsLeft <= 0) {
+                    clearInterval(timer);
+                    runRelease();
+                } else {
+                    timerSec.textContent = secondsLeft;
+                }
+            }, 1000);
+        }
+
+        function runRelease() {
+            if (!isRunning) return;
+            const group = MUSCLE_GROUPS[currentGroup];
+            phase = 'release';
+            instrText.textContent = group.releaseInstr;
+            phaseInd.textContent = '😌 RELEASE';
+            phaseInd.className = 'phase-indicator release';
+            secondsLeft = getReleaseDuration();
+            timerSec.textContent = secondsLeft;
+
+            timer = setInterval(() => {
+                if (!isRunning) return;
+                secondsLeft--;
+                if (secondsLeft <= 0) {
+                    clearInterval(timer);
+                    currentGroup++;
+                    updateProgress();
+                    renderDots();
+                    runGroup();
+                } else {
+                    timerSec.textContent = secondsLeft;
+                }
+            }, 1000);
+        }
+
+        function finish() {
+            isRunning = false;
+            clearInterval(timer);
+            currentGroup = MUSCLE_GROUPS.length;
+            updateProgress();
+            renderDots();
+            muscleName.textContent = '✨ Session Complete';
+            instrText.textContent = 'Take a moment to notice how your body feels. Scan from head to toe and appreciate the deep relaxation.';
+            phaseInd.textContent = '';
+            timerSec.textContent = '🙏';
+            document.getElementById('btnStop').classList.add('hidden');
+        }
+
+        function stopPMR() {
+            isRunning = false;
+            clearInterval(timer);
+            document.getElementById('btnStart').classList.remove('hidden');
+            document.getElementById('btnStart').textContent = '▶ Resume';
+            document.getElementById('btnStop').classList.add('hidden');
+        }
+
+        function resetPMR() {
+            isRunning = false;
+            clearInterval(timer);
+            currentGroup = 0;
+            phase = 'idle';
+            muscleName.textContent = 'Ready to Begin';
+            instrText.textContent = 'Find a comfortable position. You\'ll tense each muscle group, then release and notice the contrast.';
+            phaseInd.textContent = '';
+            phaseInd.className = 'phase-indicator';
+            timerSec.textContent = '';
+            progressFill.style.width = '0%';
+            progressLabel.textContent = '0 / ' + MUSCLE_GROUPS.length + ' muscle groups';
+            renderDots();
+            document.getElementById('btnStart').classList.remove('hidden');
+            document.getElementById('btnStart').textContent = '▶ Start Session';
+            document.getElementById('btnStop').classList.add('hidden');
+            document.getElementById('btnReset').classList.add('hidden');
+            document.getElementById('settingsPanel').style.opacity = '1';
+            document.getElementById('settingsPanel').style.pointerEvents = 'auto';
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') { e.preventDefault(); isRunning ? stopPMR() : startPMR(); }
+            if (e.code === 'Escape') resetPMR();
+        });
+
+        // Init
+        renderDots();
+        updateProgress();
+    </script>
+</body>
+</html>
+

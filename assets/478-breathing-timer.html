@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4-7-8 Breathing Timer | Mind Bonanza</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --inhale: #4299E1;
+            --hold: #F6AD55;
+            --exhale: #48BB78;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .info-box h3 { color: var(--primary); margin-bottom: 10px; }
+        .info-box p { color: var(--text-dark); line-height: 1.8; margin-bottom: 8px; }
+        .info-box ul { margin-left: 20px; color: var(--text-dark); line-height: 1.8; }
+
+        .circle-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 30px auto;
+        }
+
+        .breath-circle {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107,70,193,0.1) 0%, rgba(107,70,193,0.05) 100%);
+            border: 4px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .breath-circle.inhale {
+            border-color: var(--inhale);
+            box-shadow: 0 0 40px rgba(66, 153, 225, 0.4);
+            animation: growCircle 4s ease-in-out forwards;
+        }
+
+        .breath-circle.hold {
+            border-color: var(--hold);
+            box-shadow: 0 0 40px rgba(246, 173, 85, 0.4);
+            transform: scale(1.15);
+        }
+
+        .breath-circle.exhale {
+            border-color: var(--exhale);
+            box-shadow: 0 0 40px rgba(72, 187, 120, 0.4);
+            animation: shrinkCircle 8s ease-in-out forwards;
+        }
+
+        @keyframes growCircle {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        @keyframes shrinkCircle {
+            from { transform: scale(1.15); }
+            to { transform: scale(1); }
+        }
+
+        .phase-label {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .phase-hint {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #E2E8F0;
+            border-radius: 3px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 1s linear, background 0.5s ease;
+            width: 0%;
+            background: var(--primary);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.85rem; color: var(--text-light); }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 25px 0;
+        }
+
+        button {
+            padding: 14px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-start {
+            background: var(--primary);
+            color: var(--white);
+            font-size: 1.1rem;
+            padding: 16px 40px;
+        }
+        .btn-start:hover { background: var(--secondary); transform: translateY(-2px); }
+
+        .btn-stop {
+            background: #E53E3E;
+            color: var(--white);
+        }
+        .btn-stop:hover { background: #C53030; transform: translateY(-2px); }
+
+        .btn-reset {
+            background: #E2E8F0;
+            color: var(--text-dark);
+        }
+        .btn-reset:hover { background: #CBD5E0; transform: translateY(-2px); }
+
+        .settings {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .settings label {
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-right: 10px;
+        }
+
+        .settings select, .settings input {
+            padding: 8px 12px;
+            border: 2px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .settings select:focus, .settings input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--bg-light);
+        }
+
+        .footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        .footer a:hover { color: var(--secondary); }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .circle-container { width: 220px; height: 220px; }
+            .breath-circle { width: 220px; height: 220px; }
+            .timer-display { font-size: 2.4rem; }
+        }
+    </style>
+</head>
+<body>
+    {% include "header.njk" %}
+    <div class="container">
+        <h1>🌬️ 4-7-8 Breathing Timer</h1>
+        <p class="subtitle">A manual override for your nervous system</p>
+
+        <div class="info-box">
+            <h3>How It Works</h3>
+            <p>The 4-7-8 technique, developed by Dr. Andrew Weil, activates your parasympathetic nervous system and forces your heart rate to slow down.</p>
+            <ul>
+                <li><strong style="color:var(--inhale)">Inhale</strong> quietly through your nose for <strong>4 seconds</strong></li>
+                <li><strong style="color:var(--hold)">Hold</strong> your breath for <strong>7 seconds</strong></li>
+                <li><strong style="color:var(--exhale)">Exhale</strong> slowly through your mouth for <strong>8 seconds</strong></li>
+            </ul>
+            <p style="margin-top:10px;">Start with 4 cycles and work up to 8. Practice twice daily for best results.</p>
+        </div>
+
+        <div class="settings">
+            <label for="cycleCount">Cycles:</label>
+            <select id="cycleCount">
+                <option value="3">3 cycles (~1 min)</option>
+                <option value="4" selected>4 cycles (~1.5 min)</option>
+                <option value="6">6 cycles (~2 min)</option>
+                <option value="8">8 cycles (~2.5 min)</option>
+                <option value="10">10 cycles (~3 min)</option>
+            </select>
+        </div>
+
+        <div class="circle-container">
+            <div class="breath-circle" id="breathCircle">
+                <div class="phase-label" id="phaseLabel">Ready</div>
+                <div class="timer-display" id="timerDisplay">4-7-8</div>
+                <div class="phase-hint" id="phaseHint">Press Start to begin</div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="currentCycle">0</div>
+                <div class="stat-label">Current Cycle</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="totalCycles">4</div>
+                <div class="stat-label">Total Cycles</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn-start" id="btnStart" onclick="startBreathing()">▶ Start</button>
+            <button class="btn-stop" id="btnStop" onclick="stopBreathing()" style="display:none">⏹ Stop</button>
+            <button class="btn-reset" id="btnReset" onclick="resetBreathing()" style="display:none">↺ Reset</button>
+        </div>
+
+        <div class="info-box" style="margin-top:20px;">
+            <h3>Tips for Best Results</h3>
+            <ul>
+                <li>Sit or lie down in a comfortable position</li>
+                <li>Place the tip of your tongue behind your upper front teeth</li>
+                <li>Exhale through your mouth making a whooshing sound</li>
+                <li>Practice on an empty stomach for maximum effect</li>
+                <li>Use before sleep, during stress, or anytime you need calm</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>Part of <a href="/">Mind Bonanza</a> — Your journey to mindfulness and inner peace</p>
+            <p style="margin-top:10px;font-size:0.9rem;color:var(--text-light);">
+                If you have respiratory conditions, consult your healthcare provider before practicing breathing exercises.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let isRunning = false;
+        let currentPhase = null; // 'inhale', 'hold', 'exhale'
+        let phaseTimer = null;
+        let secondTimer = null;
+        let cycle = 0;
+        let secondsLeft = 0;
+        let totalCycles = 4;
+
+        const PHASES = [
+            { name: 'inhale', label: 'Inhale', hint: 'Breathe in through your nose', duration: 4, color: '#4299E1' },
+            { name: 'hold', label: 'Hold', hint: 'Hold your breath gently', duration: 7, color: '#F6AD55' },
+            { name: 'exhale', label: 'Exhale', hint: 'Slowly breathe out through your mouth', duration: 8, color: '#48BB78' }
+        ];
+
+        const circle = document.getElementById('breathCircle');
+        const phaseLabel = document.getElementById('phaseLabel');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const phaseHint = document.getElementById('phaseHint');
+        const progressFill = document.getElementById('progressFill');
+        const currentCycleEl = document.getElementById('currentCycle');
+        const totalCyclesEl = document.getElementById('totalCycles');
+        const btnStart = document.getElementById('btnStart');
+        const btnStop = document.getElementById('btnStop');
+        const btnReset = document.getElementById('btnReset');
+        const cycleSelect = document.getElementById('cycleCount');
+
+        cycleSelect.addEventListener('change', () => {
+            totalCycles = parseInt(cycleSelect.value);
+            totalCyclesEl.textContent = totalCycles;
+        });
+
+        // Keyboard shortcut
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space') { e.preventDefault(); isRunning ? stopBreathing() : startBreathing(); }
+            if (e.code === 'Escape') { resetBreathing(); }
+        });
+
+        function startBreathing() {
+            if (isRunning) return;
+            isRunning = true;
+            totalCycles = parseInt(cycleSelect.value);
+            totalCyclesEl.textContent = totalCycles;
+            cycle = 0;
+            btnStart.style.display = 'none';
+            btnStop.style.display = '';
+            btnReset.style.display = '';
+            cycleSelect.disabled = true;
+            nextCycle();
+        }
+
+        function nextCycle() {
+            if (!isRunning) return;
+            cycle++;
+            if (cycle > totalCycles) {
+                finish();
+                return;
+            }
+            currentCycleEl.textContent = cycle;
+            runPhase(0);
+        }
+
+        function runPhase(phaseIndex) {
+            if (!isRunning) return;
+            if (phaseIndex >= PHASES.length) {
+                nextCycle();
+                return;
+            }
+
+            const phase = PHASES[phaseIndex];
+            secondsLeft = phase.duration;
+
+            // Update UI
+            circle.className = 'breath-circle ' + phase.name;
+            phaseLabel.textContent = phase.label;
+            phaseLabel.style.color = phase.color;
+            timerDisplay.textContent = secondsLeft;
+            phaseHint.textContent = phase.hint;
+            progressFill.style.background = phase.color;
+            updateProgress();
+
+            secondTimer = setInterval(() => {
+                if (!isRunning) return;
+                secondsLeft--;
+                if (secondsLeft <= 0) {
+                    clearInterval(secondTimer);
+                    timerDisplay.textContent = '0';
+                    runPhase(phaseIndex + 1);
+                } else {
+                    timerDisplay.textContent = secondsLeft;
+                    updateProgress();
+                }
+            }, 1000);
+        }
+
+        function updateProgress() {
+            const totalSeconds = totalCycles * 19; // 4+7+8 per cycle
+            const completedCycleSeconds = (cycle - 1) * 19;
+            // seconds spent in current cycle
+            let currentPhaseOffset = 0;
+            const circleClass = circle.className;
+            if (circleClass.includes('hold')) currentPhaseOffset = 4;
+            else if (circleClass.includes('exhale')) currentPhaseOffset = 4 + 7;
+
+            const currentPhaseDuration = circleClass.includes('inhale') ? 4 : circleClass.includes('hold') ? 7 : 8;
+            const elapsed = completedCycleSeconds + currentPhaseOffset + (currentPhaseDuration - secondsLeft);
+            const pct = Math.min((elapsed / totalSeconds) * 100, 100);
+            progressFill.style.width = pct + '%';
+        }
+
+        function stopBreathing() {
+            isRunning = false;
+            clearInterval(secondTimer);
+            btnStart.style.display = '';
+            btnStart.textContent = '▶ Resume';
+            btnStop.style.display = 'none';
+        }
+
+        function resetBreathing() {
+            isRunning = false;
+            clearInterval(secondTimer);
+            cycle = 0;
+            currentCycleEl.textContent = '0';
+            circle.className = 'breath-circle';
+            phaseLabel.textContent = 'Ready';
+            phaseLabel.style.color = 'var(--primary)';
+            timerDisplay.textContent = '4-7-8';
+            phaseHint.textContent = 'Press Start to begin';
+            progressFill.style.width = '0%';
+            btnStart.style.display = '';
+            btnStart.textContent = '▶ Start';
+            btnStop.style.display = 'none';
+            btnReset.style.display = 'none';
+            cycleSelect.disabled = false;
+        }
+
+        function finish() {
+            isRunning = false;
+            clearInterval(secondTimer);
+            circle.className = 'breath-circle';
+            circle.style.borderColor = 'var(--primary)';
+            circle.style.boxShadow = '0 0 40px rgba(107,70,193,0.4)';
+            phaseLabel.textContent = '✓ Complete';
+            phaseLabel.style.color = 'var(--primary)';
+            timerDisplay.textContent = '🙏';
+            phaseHint.textContent = totalCycles + ' cycles finished — well done!';
+            progressFill.style.width = '100%';
+            progressFill.style.background = 'var(--primary)';
+            btnStart.style.display = 'none';
+            btnStop.style.display = 'none';
+            btnReset.style.display = '';
+            btnReset.textContent = '↺ Start Again';
+            cycleSelect.disabled = false;
+        }
+    </script>
+</body>
+</html>
+

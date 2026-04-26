@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Gratitude Journal | Mind Bonanza</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #6B46C1;
+            --secondary: #9F7AEA;
+            --accent: #F6AD55;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+            --bg-light: #F7FAFC;
+            --white: #FFFFFF;
+            --success: #48BB78;
+            --warm: #ED8936;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 20px;
+            padding-top: 100px;
+            color: var(--text-dark);
+        }
+        .container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        header { text-align: center; margin-bottom: 30px; }
+        h1 { color: var(--primary); font-size: 2rem; margin-bottom: 8px; }
+        .subtitle { color: var(--text-light); font-size: 1rem; margin-bottom: 20px; }
+        .info-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+        .info-box h3 { color: var(--primary); margin-bottom: 10px; }
+        .info-box p { color: var(--text-dark); line-height: 1.8; }
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); }
+        .stat-label { font-size: 0.85rem; color: var(--text-light); }
+        .prompt-box {
+            background: linear-gradient(135deg, rgba(107,70,193,0.08), rgba(159,122,234,0.08));
+            border-left: 4px solid var(--primary);
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 20px;
+        }
+        .prompt-box p { color: var(--text-dark); font-style: italic; line-height: 1.6; }
+        .prompt-box button {
+            margin-top: 8px;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0;
+            box-shadow: none;
+        }
+        .prompt-box button:hover { color: var(--secondary); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            min-height: 80px;
+            resize: vertical;
+            transition: border-color 0.3s;
+        }
+        .form-group textarea:focus { outline: none; border-color: var(--primary); }
+        .gratitude-items { display: flex; flex-direction: column; gap: 12px; }
+        .gratitude-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .gratitude-item span {
+            font-size: 1.5rem;
+            line-height: 1;
+            padding-top: 10px;
+        }
+        .gratitude-item textarea { flex: 1; min-height: 50px; }
+        .mood-selector {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 15px 0;
+        }
+        .mood-btn {
+            font-size: 2rem;
+            padding: 10px 14px;
+            border: 3px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            background: var(--bg-light);
+            transition: all 0.3s;
+            box-shadow: none;
+        }
+        .mood-btn:hover { transform: scale(1.15); }
+        .mood-btn.selected { border-color: var(--primary); background: rgba(107,70,193,0.1); transform: scale(1.15); }
+        .buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 25px 0; }
+        button.btn-primary {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(107,70,193,0.3);
+            transition: all 0.3s;
+        }
+        button.btn-primary:hover { background: var(--secondary); transform: translateY(-2px); }
+        button.btn-secondary {
+            padding: 14px 32px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: #E2E8F0;
+            color: var(--text-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        button.btn-secondary:hover { background: #CBD5E0; transform: translateY(-2px); }
+        .entries-list { margin-top: 30px; }
+        .entries-list h3 { color: var(--primary); margin-bottom: 15px; text-align: center; }
+        .entry-card {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .entry-date { font-weight: 600; color: var(--text-dark); }
+        .entry-mood { font-size: 1.5rem; }
+        .entry-items { list-style: none; padding: 0; }
+        .entry-items li { padding: 4px 0; color: var(--text-dark); line-height: 1.6; }
+        .entry-items li::before { content: "🙏 "; }
+        .entry-reflection { margin-top: 10px; color: var(--text-light); font-style: italic; line-height: 1.6; }
+        .entry-delete {
+            background: none;
+            border: none;
+            color: #E53E3E;
+            cursor: pointer;
+            font-size: 0.85rem;
+            padding: 4px 8px;
+            box-shadow: none;
+        }
+        .empty-state { text-align: center; color: var(--text-light); padding: 30px; }
+        .empty-state span { font-size: 3rem; display: block; margin-bottom: 10px; }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid var(--bg-light);
+        }
+        .footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.5rem; }
+            .mood-btn { font-size: 1.5rem; padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    {% include "header.njk" %}
+    <div class="container">
+        <header>
+            <h1>🙏 Daily Gratitude Journal</h1>
+            <p class="subtitle">Cultivate joy by noticing what's already good in your life</p>
+        </header>
+
+        <div class="info-box">
+            <h3>Why Gratitude?</h3>
+            <p>Research shows that writing down 3 things you're grateful for each day can significantly increase happiness, improve sleep, and reduce symptoms of depression — in as little as two weeks. This simple practice rewires your brain to notice the positive.</p>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat">
+                <div class="stat-value" id="totalEntries">0</div>
+                <div class="stat-label">Total Entries</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="currentStreak">0</div>
+                <div class="stat-label">Day Streak 🔥</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="longestStreak">0</div>
+                <div class="stat-label">Best Streak</div>
+            </div>
+        </div>
+
+        <div class="prompt-box" id="promptBox">
+            <p id="promptText">Loading prompt...</p>
+            <button onclick="newPrompt()">↻ New prompt</button>
+        </div>
+
+        <div class="form-group">
+            <label>How are you feeling right now?</label>
+            <div class="mood-selector">
+                <button class="mood-btn" data-mood="😔" onclick="selectMood(this)">😔</button>
+                <button class="mood-btn" data-mood="😐" onclick="selectMood(this)">😐</button>
+                <button class="mood-btn" data-mood="🙂" onclick="selectMood(this)">🙂</button>
+                <button class="mood-btn" data-mood="😊" onclick="selectMood(this)">😊</button>
+                <button class="mood-btn" data-mood="🥰" onclick="selectMood(this)">🥰</button>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Three things I'm grateful for today:</label>
+            <div class="gratitude-items">
+                <div class="gratitude-item">
+                    <span>1.</span>
+                    <textarea id="g1" placeholder="Something or someone you appreciate..."></textarea>
+                </div>
+                <div class="gratitude-item">
+                    <span>2.</span>
+                    <textarea id="g2" placeholder="A moment that made you smile..."></textarea>
+                </div>
+                <div class="gratitude-item">
+                    <span>3.</span>
+                    <textarea id="g3" placeholder="Something you often take for granted..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Reflection (optional):</label>
+            <textarea id="reflection" placeholder="How did focusing on gratitude make you feel? Any patterns you notice?"></textarea>
+        </div>
+
+        <div class="buttons">
+            <button class="btn-primary" onclick="saveEntry()">💾 Save Entry</button>
+            <button class="btn-secondary" onclick="clearForm()">🔄 Clear</button>
+        </div>
+
+        <div class="entries-list" id="entriesList">
+            <h3>📖 Past Entries</h3>
+            <div id="entriesContainer"></div>
+        </div>
+
+        <div class="footer">
+            <p>Part of <a href="/">Mind Bonanza</a> — Your journey to mindfulness and inner peace</p>
+        </div>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'mb_gratitude_entries';
+        let selectedMood = null;
+
+        const prompts = [
+            "What small moment brought you unexpected joy today?",
+            "Who is someone that made your life better this week?",
+            "What ability or skill are you thankful to have?",
+            "What is something in nature that you find beautiful?",
+            "What challenge helped you grow recently?",
+            "What comfort do you enjoy that others might not have?",
+            "What memory always makes you smile?",
+            "What part of your daily routine do you genuinely enjoy?",
+            "Who believed in you when you needed it most?",
+            "What technology are you grateful to have access to?",
+            "What lesson learned from a mistake are you grateful for?",
+            "What sensory experience did you enjoy today — a taste, sound, or sight?",
+            "What freedom do you have that you're thankful for?",
+            "What is something about your body you appreciate?",
+            "What act of kindness — given or received — are you grateful for?"
+        ];
+
+        function escapeHtml(str) {
+            return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function newPrompt() {
+            document.getElementById('promptText').textContent = prompts[Math.floor(Math.random() * prompts.length)];
+        }
+
+        function selectMood(btn) {
+            document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+            btn.classList.add('selected');
+            selectedMood = btn.dataset.mood;
+        }
+
+        function getEntries() {
+            try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; } catch { return []; }
+        }
+
+        function saveEntries(entries) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+        }
+
+        function saveEntry() {
+            const g1 = document.getElementById('g1').value.trim();
+            const g2 = document.getElementById('g2').value.trim();
+            const g3 = document.getElementById('g3').value.trim();
+
+            if (!g1 && !g2 && !g3) {
+                alert('Please write at least one thing you\'re grateful for.');
+                return;
+            }
+
+            const items = [g1, g2, g3].filter(Boolean);
+            const reflection = document.getElementById('reflection').value.trim();
+            const entry = {
+                id: Date.now(),
+                date: new Date().toISOString(),
+                mood: selectedMood || '🙂',
+                items: items,
+                reflection: reflection
+            };
+
+            const entries = getEntries();
+            entries.unshift(entry);
+            saveEntries(entries);
+            clearForm();
+            renderEntries();
+            updateStats();
+        }
+
+        function deleteEntry(id) {
+            if (!confirm('Delete this entry?')) return;
+            const entries = getEntries().filter(e => e.id !== id);
+            saveEntries(entries);
+            renderEntries();
+            updateStats();
+        }
+
+        function clearForm() {
+            document.getElementById('g1').value = '';
+            document.getElementById('g2').value = '';
+            document.getElementById('g3').value = '';
+            document.getElementById('reflection').value = '';
+            document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('selected'));
+            selectedMood = null;
+        }
+
+        function renderEntries() {
+            const entries = getEntries();
+            const container = document.getElementById('entriesContainer');
+
+            if (entries.length === 0) {
+                container.innerHTML = '<div class="empty-state"><span>📝</span><p>No entries yet. Start your gratitude practice today!</p></div>';
+                return;
+            }
+
+            container.innerHTML = entries.slice(0, 30).map(e => {
+                const d = new Date(e.date);
+                const dateStr = d.toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+                const itemsHtml = e.items.map(i => '<li>' + escapeHtml(i) + '</li>').join('');
+                const reflectionHtml = e.reflection ? '<div class="entry-reflection">' + escapeHtml(e.reflection) + '</div>' : '';
+                return `
+                    <div class="entry-card">
+                        <div class="entry-header">
+                            <span class="entry-date">${escapeHtml(dateStr)}</span>
+                            <span class="entry-mood">${escapeHtml(e.mood)}</span>
+                            <button class="entry-delete" onclick="deleteEntry(${e.id})">✕</button>
+                        </div>
+                        <ul class="entry-items">${itemsHtml}</ul>
+                        ${reflectionHtml}
+                    </div>`;
+            }).join('');
+        }
+
+        function updateStats() {
+            const entries = getEntries();
+            document.getElementById('totalEntries').textContent = entries.length;
+
+            // Calculate streaks by unique dates
+            const dates = [...new Set(entries.map(e => new Date(e.date).toDateString()))].sort((a, b) => new Date(b) - new Date(a));
+            let current = 0, longest = 0, streak = 0;
+            const today = new Date(); today.setHours(0,0,0,0);
+
+            for (let i = 0; i < dates.length; i++) {
+                const d = new Date(dates[i]); d.setHours(0,0,0,0);
+                const expected = new Date(today); expected.setDate(expected.getDate() - i);
+                if (d.getTime() === expected.getTime()) {
+                    streak++;
+                } else break;
+            }
+            current = streak;
+
+            // Longest streak
+            streak = 1;
+            for (let i = 1; i < dates.length; i++) {
+                const prev = new Date(dates[i-1]);
+                const curr = new Date(dates[i]);
+                const diff = (prev - curr) / (1000*60*60*24);
+                if (Math.round(diff) === 1) { streak++; } else { longest = Math.max(longest, streak); streak = 1; }
+            }
+            longest = Math.max(longest, streak, current);
+            if (dates.length === 0) { longest = 0; }
+
+            document.getElementById('currentStreak').textContent = current;
+            document.getElementById('longestStreak').textContent = longest;
+        }
+
+        // Init
+        newPrompt();
+        renderEntries();
+        updateStats();
+    </script>
+</body>
+</html>
+
