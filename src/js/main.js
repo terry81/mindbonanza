@@ -47,13 +47,12 @@ initThemeToggle();
 // Meditation Timer
 let timerInterval;
 let timeLeft = 300; // 5 minutes in seconds
-let isPaused = false;
 
-function setTimer(minutes) {
+window.setTimer = function(minutes) {
     timeLeft = minutes * 60;
     updateTimerDisplay();
     pauseTimer();
-}
+};
 
 function updateTimerDisplay() {
     const timerElement = document.getElementById('timer');
@@ -65,7 +64,7 @@ function updateTimerDisplay() {
     }
 }
 
-function startTimer() {
+window.startTimer = function() {
     if (timerInterval) return; // Already running
 
     timerInterval = setInterval(() => {
@@ -78,18 +77,18 @@ function startTimer() {
             showNotification('Meditation Complete', 'Your meditation session is complete. 🧘‍♀️');
         }
     }, 1000);
-}
+};
 
 function pauseTimer() {
     clearInterval(timerInterval);
     timerInterval = null;
 }
 
-function resetTimer() {
+window.resetTimer = function() {
     pauseTimer();
     timeLeft = 300;
     updateTimerDisplay();
-}
+};
 
 // Play a gentle completion sound
 function playCompletionSound() {
@@ -262,53 +261,6 @@ function createScrollToTopButton() {
     `;
     document.body.appendChild(scrollBtn);
 
-    // Add styles dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-        .scroll-to-top {
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(107, 70, 193, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all 0.3s ease;
-            z-index: 997;
-        }
-
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .scroll-to-top:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .scroll-to-top {
-                bottom: 85px;
-                right: 20px;
-                width: 44px;
-                height: 44px;
-            }
-        }
-    `;
-    document.head.appendChild(style);
-
     // Show/hide based on scroll position
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
@@ -331,21 +283,6 @@ function createReadingProgressIndicator() {
     const progressBar = document.createElement('div');
     progressBar.className = 'reading-progress';
     document.body.appendChild(progressBar);
-
-    const style = document.createElement('style');
-    style.textContent = `
-        .reading-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background: var(--gradient-1);
-            width: 0%;
-            z-index: 1001;
-            transition: width 0.1s ease-out;
-        }
-    `;
-    document.head.appendChild(style);
 
     window.addEventListener('scroll', () => {
         const postRect = postContent.getBoundingClientRect();
@@ -547,7 +484,7 @@ async function performSearch(query) {
 function highlightMatch(text, term) {
     if (!term) return escapeHtml(text);
     const regex = new RegExp(`(${escapeRegExp(term)})`, 'gi');
-    return escapeHtml(text).replace(regex, '<mark style="background: rgba(107, 70, 193, 0.2); padding: 0 2px; border-radius: 2px;">$1</mark>');
+    return escapeHtml(text).replace(regex, '<mark class="search-highlight">$1</mark>');
 }
 
 function escapeHtml(text) {
