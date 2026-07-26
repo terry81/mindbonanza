@@ -3,6 +3,58 @@ layout: base.njk
 title: Discover Your Inner Peace
 ---
 
+<!-- Hero Section -->
+<section class="hero home-hero" aria-labelledby="home-hero-title">
+    <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+    <div class="container hero-layout">
+        <div class="hero-content">
+            <p class="eyebrow">Mindfulness for real life</p>
+            <h1 id="home-hero-title">Find calm, focus, and clarity—one mindful moment at a time.</h1>
+            <p>Explore evidence-informed articles, structured courses, and practical tools that make mindfulness easier to start and sustain.</p>
+            <div class="hero-actions">
+                <a href="/assets/meditation-timer/" class="cta-button cta-button-primary">Start a 5-minute practice</a>
+                <a href="/courses/" class="cta-button cta-button-secondary">Explore courses</a>
+            </div>
+            <div class="hero-metrics" aria-label="Mind Bonanza resources">
+                <div>
+                    <strong>100+</strong>
+                    <span>Mindfulness articles</span>
+                </div>
+                <div>
+                    <strong>14</strong>
+                    <span>Practice tools</span>
+                </div>
+                <div>
+                    <strong>4</strong>
+                    <span>Guided programs</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="mindful-card mindful-card-primary">
+                <span class="mindful-card-icon">🧘</span>
+                <div>
+                    <strong>Today’s practice</strong>
+                    <span>3 mindful breaths before your next task</span>
+                </div>
+            </div>
+            <div class="breath-ring">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="mindful-card mindful-card-secondary">
+                <span class="mindful-card-icon">🌿</span>
+                <div>
+                    <strong>Gentle progress</strong>
+                    <span>Small practices, repeated daily</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Affiliate Banner Section -->
 {% include "affiliate-banner.njk" %}
 
@@ -48,7 +100,7 @@ title: Discover Your Inner Peace
             {%- endif -%}
             {%- endfor -%}
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
+        <div class="section-action">
             <a href="/blog/" class="cta-button">View All Posts</a>
         </div>
     </div>
@@ -124,7 +176,7 @@ title: Discover Your Inner Peace
                 <a href="/assets/cbt-practice/" class="read-more">Try CBT Tool →</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2rem;">
+        <div class="section-action">
             <a href="/tools/" class="cta-button">View All Tools</a>
         </div>
     </div>
@@ -170,7 +222,7 @@ title: Discover Your Inner Peace
                 <a href="/courses/stress-management/" class="course-cta">Learn More →</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 2.5rem;">
+        <div class="section-action section-action-spacious">
             <a href="/courses/" class="cta-button">View All Courses</a>
         </div>
     </div>
