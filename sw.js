@@ -1,15 +1,12 @@
 // Service Worker for Mind Bonanza
-// Provides offline capability and enhanced caching
+// Provides an offline fallback without serving stale site content.
 
-const CACHE_VERSION = 'v2.0.0';
+const CACHE_VERSION = 'v3.0.0';
 const CACHE_NAME = `mindbonanza-${CACHE_VERSION}`;
 
-// Files to cache immediately on install
+// Keep only the offline fallback. Pages and assets must be fetched fresh so a
+// deployment is visible immediately instead of being hidden by this worker.
 const PRECACHE_URLS = [
-  '/',
-  '/css/main.css?v=2.0.0',
-  '/js/main.js?v=2.0.0',
-  '/blog/',
   '/offline.html'
 ];
 
@@ -43,7 +40,8 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache with network fallback
+// Fetch event - always prefer the network. The cache is used only when a
+// navigation fails, allowing the site to remain usable offline.
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
@@ -52,62 +50,14 @@ self.addEventListener('fetch', (event) => {
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   event.respondWith(
-    caches.match(event.request)
-      .then((cachedResponse) => {
-        // Return cached response if found
-        if (cachedResponse) {
-          return cachedResponse;
-        }
-
-        // Clone the request
-        const fetchRequest = event.request.clone();
-
-        return fetch(fetchRequest).then((response) => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          // Clone the response
-          const responseToCache = response.clone();
-
-          // Cache the new response
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              // Only cache specific file types
-              if (shouldCache(event.request.url)) {
-                cache.put(event.request, responseToCache);
-              }
-            });
-
-          return response;
-        }).catch(() => {
-          // If network fails, try to return offline page
-          if (event.request.destination === 'document') {
-            return caches.match('/offline.html');
-          }
-        });
-      })
+    fetch(event.request).catch(() => {
+      if (event.request.mode === 'navigate') {
+        return caches.match('/offline.html');
+      }
+      return Response.error();
+    })
   );
 });
-
-// Determine if a URL should be cached
-function shouldCache(url) {
-  const urlObj = new URL(url);
-  const pathname = urlObj.pathname;
-
-  // Cache static assets
-  if (pathname.match(/\.(css|js|jpg|jpeg|png|gif|webp|svg|woff|woff2|ttf|otf)$/)) {
-    return true;
-  }
-
-  // Cache HTML pages
-  if (pathname.match(/\.html$/) || pathname.endsWith('/')) {
-    return true;
-  }
-
-  return false;
-}
 
 // Handle messages from the main thread
 self.addEventListener('message', (event) => {

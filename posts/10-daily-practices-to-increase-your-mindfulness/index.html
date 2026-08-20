@@ -495,25 +495,21 @@ function copyToClipboard() {
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
+          let reloadingForServiceWorker = false;
+
+          navigator.serviceWorker.register('/sw.js', { updateViaCache: 'none' })
             .then(registration => {
               console.log('Service Worker registered successfully:', registration.scope);
-
-              // Check for updates
-              registration.addEventListener('updatefound', () => {
-                const newWorker = registration.installing;
-                newWorker.addEventListener('statechange', () => {
-                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                    // New service worker available, reload to activate
-                    if (confirm('A new version of Mind Bonanza is available. Reload to update?')) {
-                      newWorker.postMessage({ type: 'SKIP_WAITING' });
-                      window.location.reload();
-                    }
-                  }
-                });
-              });
+              return registration.update();
             })
             .catch(err => console.log('Service Worker registration failed:', err));
+
+          navigator.serviceWorker.addEventListener('controllerchange', () => {
+            if (!reloadingForServiceWorker) {
+              reloadingForServiceWorker = true;
+              window.location.reload();
+            }
+          });
         });
       }
     </script>
