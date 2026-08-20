@@ -15,26 +15,19 @@
 #    - Remove any Page Rules that set "Edge Cache TTL" for HTML pages
 #    - Page Rules override the _headers file!
 
-# 3. If using Page Rules, use these LESS aggressive settings:
-#
-#    Pattern: *mindbonanza.com/css/*
-#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
-#
-#    Pattern: *mindbonanza.com/js/*
-#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
-#
-#    Pattern: *mindbonanza.com/assets/*.png
-#    Settings: Cache Level = Cache Everything, Edge Cache TTL = 1 month
-#
-#    DO NOT set Edge Cache TTL for HTML pages - let _headers control it
+# 3. Do not create Page Rules or Cache Rules that set a Browser Cache TTL or
+#    Edge Cache TTL for this site. They can override _headers and make a
+#    deployment appear stale. Let _headers control all cache lifetimes.
 
 # 4. Caching > Tiered Cache:
 #    - Enable "Tiered Cache" for better cache hit rates on static assets
 
 # ===========================================
-# PURGE CACHE AFTER DEPLOYMENT
+# PURGE EXISTING CACHE ONCE AFTER DEPLOYMENT
 # ===========================================
-# After deploying new content, purge the Cloudflare cache:
+# After deploying the cache-policy change, purge the Cloudflare cache once to
+# remove responses stored under the old rules. Future content deployments do
+# not require a purge when Cloudflare respects _headers.
 # - Go to Caching > Configuration > Purge Cache
 # - Choose "Purge Everything" or specific URLs
 #
