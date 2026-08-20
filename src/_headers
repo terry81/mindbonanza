@@ -1,132 +1,143 @@
-# Cloudflare Pages Headers Configuration
-# This file sets cache headers and optimizations for all assets
-
-# HTML pages - no caching at edge, browser can cache briefly
+# Content must always be revalidated. This prevents browsers, Cloudflare, and
+# service workers from showing an old deployment after new content is published.
 /*.html
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Main index page - no edge caching
+# Clean content URLs - no browser or edge caching
 /index.html
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
 
-# Root path (handles both / and /index.html)
 /
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
 
-# Blog index
+# Blog pages
 /blog/
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
 
 /blog/*
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
 
-# Tools page
+# Course, tools, and post pages
 /tools/
-  Cache-Control: public, max-age=0, s-maxage=0, must-revalidate
-  CDN-Cache-Control: max-age=0
-  Cloudflare-CDN-Cache-Control: max-age=0
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
 
-# CSS files - long cache with immutable flag
+/courses/*
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
+
+# CSS and JavaScript use stable filenames, so retain them for at most one day.
 /css/*.css
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
   X-Content-Type-Options: nosniff
 
-# JavaScript files - long cache with immutable flag
 /js/*.js
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=86400, must-revalidate
   X-Content-Type-Options: nosniff
 
-# Images - long cache
+# The service worker controls all navigations, so never cache its script.
+/sw.js
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
+  X-Content-Type-Options: nosniff
+
+# Images and fonts can be retained for a week, but must revalidate afterwards.
 /assets/*.jpg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.jpeg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.gif
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.webp
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.svg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
-# Fonts - very long cache
 /assets/*.woff
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.woff2
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.ttf
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
 /assets/*.otf
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=604800, must-revalidate
   X-Content-Type-Options: nosniff
 
-# HTML files in assets directory (tools) - short edge cache
+# Interactive tools and their clean URLs are content, not long-lived assets.
 /assets/*.html
-  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
-  CDN-Cache-Control: max-age=300
-  Cloudflare-CDN-Cache-Control: max-age=300
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
 
-# Assets subdirectories (tool pages) - short edge cache
 /assets/*/
-  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
-  CDN-Cache-Control: max-age=300
-  Cloudflare-CDN-Cache-Control: max-age=300
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
 
-# Blog posts - short edge cache (5 minutes)
+# Published articles and search data
 /posts/*
-  Cache-Control: public, max-age=300, s-maxage=300, stale-while-revalidate=60
-  CDN-Cache-Control: max-age=300
-  Cloudflare-CDN-Cache-Control: max-age=300
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
 
-# Sitemap and robots - cache for 1 day
+/search-index.json
+  Cache-Control: no-store, max-age=0
+  CDN-Cache-Control: no-store
+  Cloudflare-CDN-Cache-Control: no-store
+
+# Search engine metadata is refreshed hourly.
 /sitemap.xml
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
 
 /robots.txt
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
 
 # Default for everything else
